@@ -1,0 +1,27 @@
+#footer{
+    height: 40px;
+    width: 100%;
+    background-color: rgb(80, 112, 123);
+    position:fixed;
+    bottom:0;
+    text-align:center;
+    margin: 0;
+    z-index: 10;
+}
+
+#left-bottom-image{
+    float: left;
+}
+
+#right-bottom-timer{
+    float:right;
+    margin-right: 10px;
+    color: white;
+    margin-top: 15px;
+}
+
+#logo{
+    margin: 2px 0 0 0 !important;
+    width:150px;
+    height: 40px;
+}

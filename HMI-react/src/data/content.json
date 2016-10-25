@@ -1,0 +1,54 @@
+[
+  {
+    "lang": "EN",
+    "page": {
+      "header": {
+        "title": "Title",
+        "subtitle": "subTitle"
+      },
+      "menu":{
+        "favourite": "FAVOURITE",
+        "history": "HISTORY",
+        "current": "CURRENT"
+      },
+      "content":{
+        "title": "Home Page"
+      },
+      "graph":{
+        "rotation": "Rotation",
+        "machine": "Machine"
+      },
+      "option":{
+        "group": "Group",
+        "shift": "Shift",
+        "unit": "Unit"
+      }
+    }
+  },
+  {
+    "lang": "CZ",
+    "page": {
+      "header": {
+        "title": "Nadpis",
+        "subtitle": "Pod nadpis"
+      },
+      "menu":{
+        "favourite": "OBLÍBENÉ",
+        "history": "HISTORIE",
+        "current": "AKTUÁLNÍ"
+      },
+      "content":{
+        "title": "Domovská stránka"
+      },
+      "graph":{
+        "rotation": "Rotace",
+        "machine": "Stroj"
+      },
+      "option":{
+        "group": "Skupina",
+        "shift": "Směna",
+        "unit": "Jednotka"
+      }
+    }
+  }
+]

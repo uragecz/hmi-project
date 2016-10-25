@@ -1,0 +1,29 @@
+.Graph-content {
+  width: 800px;
+  margin: auto auto;
+  padding: 10px;
+}
+
+#appContainer{
+  width:100%;
+  height:100%;
+  background-color: #bdc9ce;
+}
+
+#content {
+  position: fixed;
+  float: left;
+  top: 130px;
+  left: 2px;
+  width: 900px;
+  height: 600px;
+  background-color: rgb(211,219,222);
+  border: 2px solid #b5c0c4;
+}
+
+#navigation{
+  position: fixed;
+  width: auto;
+  display: table;
+  z-index: 10;
+}

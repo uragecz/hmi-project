@@ -1,0 +1,46 @@
+.close-modal{
+    float: left;
+    height:50px;
+    width: 50px;
+    margin-top:15px;
+}
+
+.save-modal{
+    height: 50px;
+    width: 50px;
+    float:right;
+    margin-top:15px;
+}
+
+.bottom-buttons{
+    display: table-footer-group;
+}
+
+.modal{
+    border-collapse:collapse;
+    display : table;
+    width: 100%;
+}
+#close img{
+    display: block;
+    height: 51px;
+    width: 50px;
+    margin: -5px 0 0 -10px;
+}
+
+#save img{
+    display: block;
+    height: 51px;
+    width: 50px;
+    margin: -5px 0 0 -10px;
+}
+
+.toolButton{
+    width:100px;
+    height:100px;
+    margin-right:5px;
+}
+
+.helpButton{
+    float: left;
+}

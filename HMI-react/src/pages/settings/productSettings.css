@@ -1,0 +1,72 @@
+.column{
+    float: left;
+    position: relative;
+}
+
+.left.up.column{
+    width: 70%;
+}
+
+.right.up.column{
+    width: 30%;
+}
+
+.boxInputLabel.count-3{
+    width: 33.33%;
+    float: left;
+}
+
+.boxLabel{
+    width: 50%;
+    float: left;
+}
+
+.boxInput{
+    width: 50%;
+    float: left;
+}
+
+.row-1{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    padding: 5px;
+    background-color: #50707b;
+    color: white;
+    border-radius: 5px;
+}
+
+#rotor-image{
+    background-image: url('../../../assets/rotor.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 210px;
+    height:280px;
+}
+
+
+.column-1{
+    width:  25%;
+}
+
+.column-2{
+    width: 50%;
+}
+
+.column-3{
+    width: 75%;
+}
+
+.column-4{
+    width: 100%;
+}
+
+.count-3{
+    width: 33.33%;
+}
+
+
+.item{
+    float: left;
+    margin-bottom: 7px;
+}

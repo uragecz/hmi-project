@@ -1,0 +1,16 @@
+.languageButton{
+    width: 85px;
+    height: 70px;
+    background-color: rgb(36,76,90);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin: 3px;
+    border-right: 3px solid #11303a;
+    border-bottom: 3px solid #11303a;
+}
+
+#languageMenu{
+    background-color: rgba(80, 112, 123, 0.55);
+    border-radius: 5px;
+}

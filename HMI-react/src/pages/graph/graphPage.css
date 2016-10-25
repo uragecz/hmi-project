@@ -1,0 +1,12 @@
+.inputs{
+    width:50%;
+    height:100%;
+    position:absolute;
+    float:left;
+}
+
+.graph{
+    width:50%;
+    height:100%;
+    float:right;
+}

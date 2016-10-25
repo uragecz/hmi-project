@@ -1,0 +1,346 @@
+#menu{
+    position:absolute;
+    z-index: 11;
+    height: calc(100% - 80px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#hide-menu{
+    display:none;
+}
+
+#openNav {
+    position: absolute;
+    z-index: 15;
+}
+.entireMenu{
+    width:100%;
+    height:  100%;
+    position:absolute;
+}
+
+a.menuLink{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.entireMenu.open{
+    z-index: 11;
+}
+
+.panel{
+    position: fixed;
+    height: calc(100% - 120px);
+    width: 125px;
+    top: 80px;
+}
+
+.panel.left{
+    left: 0;
+}
+
+.panel.right{
+    right: 0;
+}
+
+.bottomMenu{
+    width: 100%;
+    height: 125px;
+    position: absolute;
+    bottom: -40px;
+}
+
+.bottomMenu.open{
+    display: auto;
+}
+
+.bottomMenu.close{
+    display:none;
+}
+
+.option{
+    width: 400px;
+    height: 180px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    bottom: 0;
+}
+
+.option.close{
+    display:none;
+}
+
+.option.open{
+    display:auto;
+}
+
+#openMainMenu{
+    width:50px;
+    height:50px;
+}
+
+.opacityBoxMenu{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    z-index: 12;
+    position: absolute;
+}
+
+.opacityBoxMenu.close{
+    background-color: transparent;
+    z-index: 0;
+}
+
+#svgMenuOpen{
+    left: 50%;
+    bottom: 0;
+    z-index: 11;
+    position: fixed;
+    transform: translate(-50%,0);
+    width: 252px;
+}
+
+.favouriteHistory{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#leftMenu{
+    position: absolute;
+    left: 0;
+    width: 100px;
+    height: 100%;
+}
+
+.leftMenuItem{
+    width: 100%;
+    height: 80px;
+    background-color: #244c5a;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #11303a;
+    border-right: 2px solid #11303a;
+    position: relative;
+}
+
+.leftMenuItem.active{
+    background-color: #11303a;
+}
+
+.leftMenuItem.history{
+    background-color: #385b67;
+    display: block;
+}
+
+.arrow{
+    float: left;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 15px;
+}
+
+h4.itemValue{
+    color:white;
+    margin-left: 2px;
+}
+
+.option{
+    width: 460px;
+    height: 560px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+
+.option.close{
+    display: none;
+}
+
+#topOption{
+    height:85px;
+    width: 100%;
+}
+
+#menuContent{
+    width: 100%;
+    height: calc(100% - 80px);
+}
+
+.topIcon{
+    position: relative;
+    float: left;
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    background-color: #dce0e2;
+    border-left: 1px solid #d8d8d8;
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+/*
+    background-color: #d0d0d0;
+    border-left: 1px solid #9b9b9b;
+    border-top: 1px solid #9b9b9b;
+    border-bottom: 1px solid #9b9b9b;
+*/
+}
+
+.topIcon.true{
+    background-color: lightgrey;
+    border-bottom: none;
+    border-top: 3px solid rgb(80, 112, 123);
+}
+
+.topIconImage{
+    margin-right: 10px;
+}
+
+.topIconText{
+    color: #7B7B7B;
+}
+
+.topIcon.true .topIconText{
+    color: rgb(80, 112, 123);
+}
+
+.optionIcon img {
+    fill: #244c5a;
+}
+
+.topMenu{
+    width: 900px;
+    left: 2px;
+    position: absolute;
+    top: 80px;
+    height: 50px;
+    border-left: 2px solid #b5c0c4;
+    border-right: 2px solid #b5c0c4;
+}
+
+.topMenuItem{
+    height: 100%;
+    float: left;
+}
+.topMenuItem.active{
+    font-weight: 700;
+    padding-right: 10px;
+}
+
+.topMenuIcon{
+    height:100%;
+    float: left;
+    width: 120px;
+}
+
+#menuOpenButton{
+    width: 127px;
+    height: 73px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #244c5a;
+    margin: 4px 0 0 2px;
+    z-index:1;
+}
+
+.topIconImage{
+    width:35px;
+    height:35px;
+
+}
+
+.topIconImage.menu{
+    background: url('../../../assets/menuOptions.png') 0 0;
+}
+
+.topIconImage.history{
+    background: url('../../../assets/menuOptions.png') 35px 0;
+}
+
+.topIconImage.favourite{
+    background: url('../../../assets/menuOptions.png') 70px 0;
+}
+
+.topIcon.true .topIconImage.menu{
+    background: url('../../../assets/menuOptions.png') 0 -35px;
+}
+
+.topIcon.true .topIconImage.history{
+    background: url('../../../assets/menuOptions.png') 35px -35px;
+}
+
+.topIcon.true .topIconImage.favourite{
+    background: url('../../../assets/menuOptions.png') 70px -35px;
+}
+
+.subTopMenuItem{
+    border-bottom: 1px solid #244c5a;
+    height: 50px;
+}
+
+.subTopMenu {
+    top: 23px;
+    padding: 0 10px 0 10px;
+    position: absolute;
+}
+
+.level-0{
+    background-color: rgb(80,112,123);
+    fill: rgb(80,112,123);
+}
+
+.level-1{
+    background-color: rgb(124,148,156);
+    fill: rgb(124,148,156);
+}
+
+.level-2{
+    background-color: rgb(167,183,189);
+    fill: rgb(167,183,189);
+}
+
+.subTop{
+    position: relative;
+    z-index: 15;
+    width: 100%;
+    top: 50px;
+}
+
+#arrowDown{
+    position: absolute;
+    height: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.menuIcon{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: -17px;
+}
+
+.menuIcon.true{
+    visibility:hidden;
+}
+
+.arrowLeft{
+    width: 30px;
+    float: left;
+}
+

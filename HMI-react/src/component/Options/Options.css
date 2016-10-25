@@ -1,0 +1,36 @@
+.optionCircle{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+.optionPanel{
+    position: absolute;
+    width: 252px;
+    height: 360px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+.rightOptionIcons{
+    width: 32px;
+    height: 32px;
+}
+
+.optionIcon{
+    width: 60px;
+    height:60px;
+    left: 50px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.optionIcon.up{
+
+}
+
+.optionIcon.down{
+    bottom: 0;
+}

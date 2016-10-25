@@ -1,0 +1,15 @@
+.listTitle{
+    text-align: center;
+    border-bottom: 2px solid rgb(27, 58, 69);
+    height: 30px;
+    background-color: rgb(226,234,102);
+    padding: 5px;
+}
+
+.modalTitle{
+    margin: 0;
+}
+
+.listItems{
+    margin-top: 10px;
+}

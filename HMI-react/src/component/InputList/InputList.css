@@ -1,0 +1,20 @@
+.inputs-root{
+    width: 100%;
+}
+.inputs-description{
+    width: 100%;
+    background-color: rgb(226,234,102);
+    color: #000000;
+    padding: 5px 5px 5px 10px;
+    font-weight: 600;
+    border-left: 2px solid #d3dbde;
+}
+
+.inputList{
+    padding: 2px 2px 0 2px;
+}
+
+.input-container{
+    height: 27px;
+    display: flex;
+}

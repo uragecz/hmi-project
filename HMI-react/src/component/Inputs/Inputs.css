@@ -1,0 +1,57 @@
+.inputs-container{
+    width: 100%;
+    height: auto;
+    padding: 2px 0 2px 0;
+}
+
+
+.inputList.disable{
+    pointer-events: none;
+}
+
+.inputs-root{
+    font-size: small;
+}
+
+
+.modalInputs-root{
+    width: 100%;
+}
+
+.captionLabel{
+    width: 50%;
+    float:left;
+}
+
+.unitLabel{
+    width: 20%;
+    float:left;
+    padding-left: 5px;
+    text-align: right;
+}
+
+input.modalTextInput{
+    width: 25%;
+    height: 25px;
+    text-align: right;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #9da0a4;
+    border-width: 1px;
+    float: left;
+    font-size: 18px;
+}
+
+input.textInput{
+    width: 25%;
+    height: 25px;
+    text-align: right;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #9da0a4;
+    border-width: 1px;
+    float: left;
+    font-size: 18px;
+}
+
+
