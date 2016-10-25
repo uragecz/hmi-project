@@ -1,6 +1,10 @@
 .inputs-root{
     width: 100%;
 }
+
+.input-root.true{
+  background-color: rgb(189, 201, 206);
+}
 .inputs-description{
     width: 100%;
     background-color: rgb(226,234,102);

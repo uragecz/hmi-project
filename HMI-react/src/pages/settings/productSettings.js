@@ -26,52 +26,22 @@ class ProductSettings extends React.Component {
 
         return(
             <Page>
-                <div className="item column-3">
-                    <div className="item column-1 count-3">
+                <div className="item column-4">
+                    <div className="item count-3">
                         <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} descTitle={"Speed"}/>
                     </div>
-                    <div className="item column-1 count-3">
+                    <div className="item count-3">
                         <div id="rotor-image">
                         </div>
                     </div>
-                    <div className="item column-1 count-3">
+                    <div className="item count-3">
                         <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} descTitle={'Package'}/>
-                    </div>
-                    <div className="item column-2">
-                        <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} descTitle={"Rotor"}/>
                     </div>
                     <div className="item column-2">
                         <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} descTitle={"Air"}/>
                     </div>
-                </div>
-
-                <div className="item column-1">
-                    <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAMISpin} descTitle={"AMISpin"}/>
-                    <div className="bottom row-1">
-                        <div className="boxInputLabel count-3">
-                            <div className="boxLabel">
-                                QSI
-                            </div>
-                            <div className="boxInput">
-                                <input className={'boxInput'} checked={false} onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>
-                            </div>
-                        </div>
-                        <div className="boxInputLabel count-3">
-                            <div className="boxLabel">
-                                FSI
-                            </div>
-                            <div className="boxInput">
-                                <input className={'boxInput'} checked={false} onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>
-                            </div>
-                        </div>
-                        <div className="boxInputLabel count-3">
-                            <div className="boxLabel">
-                                ASI
-                            </div>
-                            <div className="boxInput">
-                                <input className={'boxInput'} checked={false} onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>
-                            </div>
-                        </div>
+                    <div className="item column-2">
+                        <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} descTitle={"Rotor"}/>
                     </div>
                 </div>
             </Page>

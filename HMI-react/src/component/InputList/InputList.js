@@ -16,6 +16,7 @@ class InputList extends Component{
 
     render(){
         const{checkBox, modal, list, descTitle} = this.props;
+        let even = false;
         return(
             <div className={this.props.modal? 'modalInputs-root': 'inputs-root'}>
                 <div className={'inputs-container'} onClick={!modal ? this.handleClick.bind(this,true) : false} >
@@ -24,9 +25,10 @@ class InputList extends Component{
                     </div>
                     <div className={ modal ? "inputList" : "inputList disable"}>
                         {Object.keys(list).map(function (item) {
+                            even = !even;
                             let model = list[item];
                             return(
-                                <Input key={item} changeValue={this.changeValue.bind(this)} checkBox={checkBox} name={item} value={model.value} unit={model.unit}/>
+                                <Input key={item} even={even} changeValue={this.changeValue.bind(this)} checkBox={checkBox} name={item} value={model.value} unit={model.unit}/>
                             )
                         },this)}
                     </div>

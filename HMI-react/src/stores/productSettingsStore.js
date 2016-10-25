@@ -57,9 +57,9 @@ var _store = {
     },
     air:{
         spinningVacuum: {value: 0, unit:""},
-        "": {value: 0,unit:""},
+        a: {value: 0,unit:""},
         trashRemoval: {value: 0, unit:""},
-        "": {value: 0,unit:""}
+        b: {value: 0,unit:""}
     },
     qsi:{
         enable: false,
