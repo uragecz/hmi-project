@@ -28,7 +28,7 @@ class InputList extends Component{
                             even = !even;
                             let model = list[item];
                             return(
-                                <Input key={item} even={even} changeValue={this.changeValue.bind(this)} checkBox={checkBox} name={item} value={model.value} unit={model.unit}/>
+                                <Input key={item} modal={modal} even={even} changeValue={this.changeValue.bind(this)} checkBox={checkBox} name={item} value={model.value} unit={model.unit}/>
                             )
                         },this)}
                     </div>
@@ -68,7 +68,9 @@ class InputList extends Component{
         this.setState({
             clicked: !this.state.clicked,
         });
-        this.props.save(list,this.props.descTitle);
+
+        if (list)
+            this.props.save(list,this.props.descTitle);
     }
 }
 

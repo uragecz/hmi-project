@@ -14,9 +14,9 @@ class Input extends Component{
     }
 
     render(){
-        const{unit, name, checkBox, even} = this.props;
+        const{unit, name, checkBox, even, modal} = this.props;
         return(
-            <div className={'input-root ' + even}>
+            <div className={'input-root ' + (!modal ? even : false)}>
                 <div className={'input-container'}>
                     {this.state.clicked ? <NumpadModal onUpdate={this.handleClick.bind(this)} value={this.state.value} editValue={this.editValue.bind(this)}/>  : false}
                     <label className={'captionLabel'}>{name}</label>

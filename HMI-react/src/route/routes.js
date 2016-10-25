@@ -134,10 +134,10 @@ var routes = {
                 value: "2.1",
                 icon: "../../assets/config.png",
                 children: {
-                    "just-graphaa": {
-                        hash: "/graph/just-graph/just-graphaa",
-                        name: "just-graphaa",
-                        page: "GraphAA",
+                    "piecing": {
+                        hash: "/settings/product-settings/piecing",
+                        name: "piecing",
+                        page: "Piecing",
                         value: "2.1.1",
                         icon: "../../assets/config.png",
                         setting: ["shift","unit","group"],

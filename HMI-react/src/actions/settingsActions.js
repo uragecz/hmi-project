@@ -57,6 +57,12 @@ var settingsActions = {
             actionType: settingsConstants.SET_PRODUCT_ROTOR,
             data: group
         });
+    },
+    setSilverFeedLength: function(group){
+        Dispatcher.handleAction({
+            actionType: settingsConstants.SET_PRODUCT_SVL,
+            data: group
+        });
     }
 };
 

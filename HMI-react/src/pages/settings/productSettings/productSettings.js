@@ -2,10 +2,10 @@
  * Created by urunzl on 20.10.2016.
  */
 import React from 'react';
-import Page from '../../component/Page/Page'
-import InputList from '../../component/InputList/InputList';
-import productSettingsStore from '../../stores/productSettingsStore';
-import actionSettings from '../../actions/settingsActions';
+import Page from '../../../component/Page/Page'
+import InputList from '../../../component/InputList/InputList';
+import productSettingsStore from '../../../stores/productSettingsStore';
+import actionSettings from '../../../actions/settingsActions';
 import './productSettings.css';
 
 class ProductSettings extends React.Component {
@@ -14,7 +14,6 @@ class ProductSettings extends React.Component {
         this.state = {
             productSpeed: productSettingsStore.getTotalSpeed(),
             productPackage: productSettingsStore.getPackage(),
-            productAMISpin: productSettingsStore.getAMISpin(),
             productAIR: productSettingsStore.getAIR(),
             productROTOR: productSettingsStore.getROTOR()
         };
@@ -26,23 +25,16 @@ class ProductSettings extends React.Component {
 
         return(
             <Page>
-                <div className="item column-4">
-                    <div className="item count-3">
-                        <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} descTitle={"Speed"}/>
-                    </div>
-                    <div className="item count-3">
-                        <div id="rotor-image">
-                        </div>
-                    </div>
-                    <div className="item count-3">
-                        <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} descTitle={'Package'}/>
-                    </div>
-                    <div className="item column-2">
-                        <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} descTitle={"Air"}/>
-                    </div>
-                    <div className="item column-2">
-                        <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} descTitle={"Rotor"}/>
-                    </div>
+                <div className="item size-3">
+                    <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} descTitle={"Speed"}/>
+                    <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} descTitle={"Air"}/>
+                </div>
+                <div className="item size-3">
+                    <div id="rotor-image"></div>
+                </div>
+                <div className="item size-3">
+                    <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} descTitle={'Package'}/>
+                    <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} descTitle={"Rotor"}/>
                 </div>
             </Page>
         )
@@ -65,7 +57,6 @@ class ProductSettings extends React.Component {
         this.setState({
             productSpeed: productSettingsStore.getTotalSpeed(),
             productPackage: productSettingsStore.getPackage(),
-            productAMISpin: productSettingsStore.getAMISpin(),
             productROTOR: productSettingsStore.getROTOR(),
             productAIR: productSettingsStore.getAIR()
         })
@@ -76,8 +67,6 @@ class ProductSettings extends React.Component {
             actionSettings.setProductSpeed(list);
         else if(type === "Package")
             actionSettings.setProductPackage(list);
-        else if(type === "AMISpin")
-            actionSettings.setAMISpin(list);
         else if(type === "Air")
             actionSettings.setAir(list);
         else if(type === "Rotor")

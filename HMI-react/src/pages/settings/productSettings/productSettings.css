@@ -37,11 +37,11 @@
 }
 
 #rotor-image{
-    background-image: url('../../../assets/Spinning1.png');
+    background-image: url('../../../../assets/Spinning1.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 290px;
-    height:280px;
+    height:420px;
 }
 
 
@@ -61,7 +61,7 @@
     width: 100%;
 }
 
-.count-3{
+.size-3{
     width: 33.33%;
 }
 

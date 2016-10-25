@@ -36,7 +36,9 @@ var _store = {
         compensatorTime: {value: 0, unit: "s"},
         compensatorTimeDoffing: {value: 0, unit: "s"},
         yarnReserve: {value: 0, unit: "mm"},
-        yarnLength: {value: 0, unit: "mm"},
+        yarnLength: {value: 0, unit: "mm"}
+    },
+    silverFeedLength: {
         p1: {value: 0, unit: "mm"},
         p2: {value: 0, unit: "mm"},
         p3: {value: 0, unit: "mm"},
@@ -96,6 +98,9 @@ var setAIR = function (list) {
 var setROTOR = function (list) {
     _store.rotor = list;
 };
+var setSVL = function (list) {
+    _store.silverFeedLength = list;
+}
 
 var productSettingsStore = objectAssign({}, EventEmitter.prototype, {
     addChangeListener: function(cb){
@@ -128,6 +133,9 @@ var productSettingsStore = objectAssign({}, EventEmitter.prototype, {
     },
     getROTOR: function(){
         return _store.rotor;
+    },
+    getSVL: function(){
+        return _store.silverFeedLength;
     }
 });
 
@@ -164,6 +172,10 @@ Dispatcher.register(function(payload){
             break;
         case settingsConstants.SET_PRODUCT_AIR:
             setAIR(action.data);
+            productSettingsStore.emit(CHANGE_EVENT);
+            break;
+        case settingsConstants.SET_PRODUCT_SVL:
+            setSVL(action.data);
             productSettingsStore.emit(CHANGE_EVENT);
             break;
         default:

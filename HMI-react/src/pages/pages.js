@@ -7,7 +7,8 @@ import SubGraphA from './subGraphA/subGraphA';
 import SubGraphB from './subGraphB/subGraphB';
 import SubHomeA from './subHomeA/subHomeA';
 import SubHomeB from './subHomeB/subHomeB';
-import ProductSettings from './settings/productSettings';
+import ProductSettings from './settings/productSettings/productSettings';
+import Piecing from './settings/productSettings/piecing/piecing';
 
 module.exports = {
     Graph: GraphPage,
@@ -16,5 +17,6 @@ module.exports = {
     SubHomeB: SubHomeB,
     SubGraphA: SubGraphA,
     SubGraphB: SubGraphB,
-    ProductSettings: ProductSettings
+    ProductSettings: ProductSettings,
+    Piecing: Piecing
 };

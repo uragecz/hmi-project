@@ -10,6 +10,7 @@ var settingsConstants = {
     SET_PRODUCT_AMISpin: "SET_PRODUCT_AMISpin",
     SET_PRODUCT_ROTOR: "SET_PRODUCT_ROTOR",
     SET_PRODUCT_AIR: "SET_PRODUCT_AIR",
+    SET_PRODUCT_SVL: "SET_PRODUCT_SVL"
 };
 
 module.exports = settingsConstants;
