@@ -20,20 +20,19 @@ class ProductSettings extends React.Component {
         this.update = this.update.bind(this);
     }
     render(){
-        console.log('parent');
         var {...other} = this.props;
         return(
             <Page>
                 <div className="item size-3">
-                    <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} descTitle={"Speed"}/>
-                    <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} descTitle={"Air"}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} descTitle={"Speed"}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} descTitle={"Air"}/>
                 </div>
                 <div className="item size-3">
                     <div id="rotor-image"></div>
                 </div>
                 <div className="item size-3">
-                    <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} descTitle={'Package'}/>
-                    <InputList modal={false} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} descTitle={"Rotor"}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} descTitle={'Package'}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} descTitle={"Rotor"}/>
                 </div>
             </Page>
         )

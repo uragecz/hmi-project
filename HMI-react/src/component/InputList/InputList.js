@@ -15,7 +15,7 @@ class InputList extends Component{
     }
 
     render(){
-        const{checkBox, modal, list, descTitle} = this.props;
+        const{modal, list, descTitle, type, multiple} = this.props;
         let even = false;
         return(
             <div className={this.props.modal? 'modalInputs-root': 'inputs-root'}>
@@ -27,15 +27,30 @@ class InputList extends Component{
                         {Object.keys(list).map(function (item) {
                             even = !even;
                             let model = list[item];
+                            if(multiple){
+                                let names = [];
+                                let values = [];
+                                let units = [];
+                                Object.keys(model).map(function (item) {
+                                    values.push(model[item].value);
+                                    names.push(item);
+                                    units.push(model[item].unit);
+                                    console.log(model[item])
+                                });
+                                return (
+                                    <Input key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)} name={names[0]} name1={names[1]}
+                                           value={values[0]} value1={values[1]} unit={units[0]} unit1={units[1]}/>
+                                )
+                            }
                             return(
-                                <Input key={item} modal={modal} even={even} changeValue={this.changeValue.bind(this)} checkBox={checkBox} name={item} value={model.value} unit={model.unit}/>
+                                <Input key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)} name={item} value={model.value} unit={model.unit}/>
                             )
                         },this)}
                     </div>
                 </div>
                 {this.state.clicked ?
                     <ModalWin save={this.saveValues.bind(this)} update={this.handleClick.bind(this)}>
-                        <InputList modal={true} checkBox={checkBox} list={list} descTitle={descTitle} />
+                        <InputList multiple={multiple} modal={true} type={type} list={list} descTitle={descTitle} />
                     </ModalWin>
                     : false
                 }
@@ -43,11 +58,11 @@ class InputList extends Component{
         )
     }
 
-    clone(obj) {
+    cloneObject(obj) {
         var copy = {};
         if (null == obj || "object" != typeof obj) return obj;
         for (var attr in obj) {
-            if (obj.hasOwnProperty(attr)) copy[attr] = this.clone(obj[attr]);
+            if (obj.hasOwnProperty(attr)) copy[attr] = this.cloneObject(obj[attr]);
         }
         return copy;
     }
@@ -58,9 +73,19 @@ class InputList extends Component{
         })
     }
 
-    changeValue(item,value){
-        let oldStates = this.clone(this.props.list);
-        oldStates[item].value = value;
+    changeValue(name,value){
+        let oldStates = this.cloneObject(this.props.list);
+        if(this.props.multiple){
+            Object.keys(oldStates).map(function(item){
+                let model = oldStates[item];
+                if(model[name])
+                    model[name].value = value;
+
+            })
+        }
+        else
+            oldStates[name].value = value;
+
         this.props.changeValue(oldStates);
     }
 
@@ -68,7 +93,6 @@ class InputList extends Component{
         this.setState({
             clicked: !this.state.clicked,
         });
-
         if (list)
             this.props.save(list,this.props.descTitle);
     }

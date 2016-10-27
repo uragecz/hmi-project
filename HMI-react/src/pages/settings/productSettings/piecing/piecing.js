@@ -22,8 +22,8 @@ class Piecing extends Component{
         return(
             <Page>
                 <div className="item column-2">
-                    <InputList modal={false} checkBox={false} save={this.saveList} list={this.state.amiSpin} descTitle="AMISpin - sequence"/>
-                    <InputList modal={false} checkBox={false} save={this.saveList} list={this.state.silverFeedLength} descTitle="Silver feed length [mm]"/>
+                    <InputList modal={false} multiple={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList} list={this.state.amiSpin} descTitle="AMISpin - sequence"/>
+                    <InputList modal={false} multiple={true} type={["name1","input1","unit1","name2","input2","unit2","box"]} checkBox={false} save={this.saveList} list={this.state.silverFeedLength} descTitle="Silver feed length [mm]"/>
                 </div>
                 <div className="item size-2">
 

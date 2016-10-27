@@ -2,6 +2,12 @@
     width: 100%;
 }
 
+.inputs-container{
+    width: 100%;
+    height: auto;
+    padding: 2px 0 2px 0;
+}
+
 .input-root.true{
   background-color: rgb(189, 201, 206);
 }
@@ -21,4 +27,64 @@
 .input-container{
     height: 27px;
     display: flex;
+}
+
+.captionLabel{
+    width: 50%;
+    float:left;
+}
+
+.captionLabel2{
+    margin-left:50px;
+    width: 50%;
+    float: left;
+}
+
+.unitLabel{
+    width: 20%;
+    float:left;
+    padding-left: 5px;
+    text-align: right;
+}
+
+.boxInput{
+    width: 15%;
+    float: left;
+}
+
+.textInput {
+    width: 35%;
+    height: 25px;
+    text-align: right;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #9da0a4;
+    border-width: 1px;
+    float: left;
+    font-size: 18px;
+}
+
+input.modalTextInput{
+    width: 25%;
+    height: 25px;
+    text-align: right;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #9da0a4;
+    border-width: 1px;
+    float: left;
+    font-size: 18px;
+}
+
+.inputList.disable{
+    pointer-events: none;
+}
+
+.inputs-root{
+    font-size: small;
+}
+
+
+.modalInputs-root{
+    width: 100%;
 }
