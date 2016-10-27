@@ -22,7 +22,6 @@ class ProductSettings extends React.Component {
     render(){
         console.log('parent');
         var {...other} = this.props;
-
         return(
             <Page>
                 <div className="item size-3">
@@ -39,7 +38,6 @@ class ProductSettings extends React.Component {
             </Page>
         )
     }
-
 
     componentWillUnmount(){
         productSettingsStore.removeChangeListener(this.update);
