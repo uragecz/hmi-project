@@ -16,10 +16,11 @@ class Options extends Component{
     constructor(props){
         super(props);
         this.state = {
-            xPos : [16, 35, 60, 65],
-            yPos : [100, 155, 175, 180],
-            xRot : [0, 68, 82, 90],
-            yRot : [0, 182, 202, 207],
+            xPos : [16, 35, 75, 65],
+            yPos : [100, 155, 165, 180],
+            xRot : [0, 68, 90, 90],
+            yRot : [0, 182, 186, 207],
+            width: 100,
             prevAngleInRadians: null,
             previousX: null,
             previousY: null,
@@ -43,8 +44,8 @@ class Options extends Component{
     componentWillMount(){
         selectionStore.addChangeListener(this.update);
         let prevAngle = -270 * (Math.PI / 180.0);
-        let prevX = 125 + (125 * Math.cos(prevAngle));
-        let prevY = 125 + (125 * Math.sin(prevAngle));
+        let prevX = 125 + (this.state.width * Math.cos(prevAngle));
+        let prevY = 125 + (this.state.width * Math.sin(prevAngle));
         this.setState({
             prevAngleInRadians : prevAngle,
             previousX: prevX,
@@ -74,8 +75,8 @@ class Options extends Component{
         const {options, data} = this.props;
         let posAngle = -(180/options.length);
         let angleInRadians = -(270 + posAngle) * (Math.PI / 180.0);
-        let x = 125 + (125 * Math.cos(angleInRadians));
-        let y = 125 + (125 * Math.sin(angleInRadians));
+        let x = 125 + (this.state.width * Math.cos(angleInRadians));
+        let y = 125 + (this.state.width * Math.sin(angleInRadians));
         let angle = -posAngle;
         return(
             <div className="right panel">
@@ -91,14 +92,14 @@ class Options extends Component{
                             {options.map(function(item){
                                 posAngle += angle;
                                 return(
-                                    <Option key={item} posAngle={posAngle} width={125} previousX={this.state.previousX} previousY={this.state.previousY}
+                                    <Option key={item} posAngle={posAngle} width={this.state.width} previousX={this.state.previousX} previousY={this.state.previousY}
                                         x={x} y={y} xRot={this.state.xRot[options.length-1]} yRot={this.state.yRot[options.length-1]}  xPos={this.state.xPos[options.length-1]}
                                             yPos={this.state.yPos[options.length-1]} update={this.changeActiveOption} type={item} activeItem={this.state.activeType === item}
                                             value={item === 'shift' ? this.state.shift : item === 'group' ? this.state.group : this.state.unit}/>
                                 )
                             },this)}
                             <g onClick={this.handleOpenList} >
-                                <circle cx="125" cy="125" r="50" stroke="rgba(0,0,0,0.1)" strokeWidth="2" fill="white" />
+                                <circle cx="125" cy="125" r="45" stroke="rgba(0,0,0,0.1)" strokeWidth="2" fill="white" />
                                 <image href={openMenu} id="menuButton"  x="100" y="100" height="50px" width="50px"/>
                             </g>
                         </svg>

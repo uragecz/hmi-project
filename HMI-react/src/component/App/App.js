@@ -5,7 +5,6 @@ import Header from '../Header/Header';
 import languageActions from '../../actions/languageActions'
 import languageStore from '../../stores/languageStore';
 import routes from '../../route/routes';
-import MenuOption from '../Menu/MenuOption';
 import Menu from '../Menu/Menu';
 
 global.Perf = require('react-addons-perf');
@@ -75,7 +74,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*<BottomMenu width={150} index={0} routes={routes} pathName={this.props.location.pathname}/>*/
-/*<NavButton index={0} routes={routes} pathName={this.props.location.pathname}/>*/
-/*<SquareButton width={125} index={0} routes={routes} pathName={this.props.location.pathname}/>*/

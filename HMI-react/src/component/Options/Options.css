@@ -7,7 +7,7 @@
 .optionPanel{
     position: absolute;
     width: 252px;
-    height: 360px;
+    height: 330px;
     top: 50%;
     transform: translate(0,-50%);
 }

@@ -11,8 +11,7 @@ import { browserHistory } from 'react-router';
 import historyActions from '../../actions/historyActions';
 import Options from '../Options/Options';
 import MenuTopOptions from './MenuTopOptions';
-import arrowDown from '../../../assets/arrowD.png';
-import goFoward from '../../../assets/forward.png';
+
 
 class LeftMenu extends Component{
     constructor(props){

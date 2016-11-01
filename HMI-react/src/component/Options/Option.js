@@ -15,12 +15,12 @@ class Option extends Component{
         return(
             <g transform={"rotate("+ posAngle +",125 125)"} onClick={this.handleClick.bind(this)}>
                 <path fill={activeItem ? "rgb(36,76,90)" : "white"} stroke="rgba(0,0,0,0.1)" strokeWidth="2"
-                      d={"M125,125 L" +previousX+ ", " +previousY+ " A125,125 0 0,1 " +x+ ", " +y+ " z"} >
+                      d={"M125,125 L" +previousX+ ", " +previousY+ " A100,100 0 0,1 " +x+ ", " +y+ " z"} >
                 </path>
                 <image transform={"rotate(-"+posAngle+" "+ xRot + " " + yRot + ")"}
-                       href={type === 'shift' ? setShift : type === 'group' ? setGroup : setUnit} x={xPos} y={yPos-8}  height="50px" width="50px"/>
+                       href={type === 'shift' ? setShift : type === 'group' ? setGroup : setUnit} x={xPos} y={yPos-8}  height="35px" width="35px"/>
                 <text textAnchor="middle" transform={"rotate(-"+posAngle+" "+ xRot + " " + yRot + ")"}
-                      x={xPos+25} y={yPos+54} fontFamily="sans-serif" fontSize="16px" fill={activeItem ? "white" : "black"}>{value}
+                      x={xPos+15} y={yPos+40} fontFamily="sans-serif" fontSize="14px" fill={activeItem ? "white" : "black"}>{value}
                 </text>
             </g>
         )

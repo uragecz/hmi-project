@@ -15,7 +15,7 @@ class Languages extends Component{
 
     render(){
         return(
-            <div>
+            <div className="info-button">
                 <button onClick={this.openLanguages.bind(this)} className={this.state.openMenu ? 'infoButton open' : 'infoButton'}>{this.state.actualLanguage}</button>
                 {this.state.openMenu ?
                     <div id="languageMenu">

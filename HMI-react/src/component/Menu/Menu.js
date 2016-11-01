@@ -3,13 +3,10 @@
  */
 //component/stores/action
 import React,{Component} from 'react';
-
 import { browserHistory } from 'react-router';
 import historyActions from '../../actions/historyActions'
-
 import TopMenu from './TopMenu';
 import Options from '../Options/Options';
-import LeftMenu from './LeftMenu';
 import MenuTopOptions from './MenuTopOptions';
 
 //styles/icons

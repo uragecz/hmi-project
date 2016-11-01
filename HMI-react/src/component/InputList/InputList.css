@@ -9,7 +9,7 @@
 }
 
 .input-root.true{
-  background-color: rgb(189, 201, 206);
+    background-color: rgb(211,219,222);
 }
 
 .inputs-description{
@@ -52,14 +52,14 @@
 
 .textInput {
     width: 35%;
-    height: 25px;
+    height: 22.5px;
     text-align: right;
     border-style: solid;
-    border-color: #9da0a4;
+    border-color: transparent;
     border-width: 1px;
     float: left;
     font-size: 18px;
-    border-radius: 3px;
+
     padding: 2px;
 }
 
@@ -86,4 +86,9 @@ input.modalTextInput{
 
 .modalInputs-root{
     width: 100%;
+}
+
+.modalInputs-root .textInput{
+    border-color: #9da0a4;
+    border-radius: 1px;
 }
