@@ -34,6 +34,22 @@ class ProductSettings extends React.Component {
                     <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} descTitle={'Package'}/>
                     <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} descTitle={"Rotor"}/>
                 </div>
+                <div className="item column-4">
+                    <div id="switch">
+                        <div className="switchElement">
+                            <label className='captionLabel'>FSI</label>
+                            <input className='boxInput' onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>
+                        </div>
+                        <div className="switchElement">
+                            <label className='captionLabel'>QSI</label>
+                            <input className='boxInput' onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>
+                        </div>
+                        <div className="switchElement">
+                            <label className='captionLabel'>ASI</label>
+                            <input className='boxInput' onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>
+                        </div>
+                    </div>
+                </div>
             </Page>
         )
     }

@@ -22,33 +22,25 @@ class Input extends Component{
             <div className={'input-root ' + (!modal ? even : false)}>
                 <div className={'input-container'}>
                     {this.state.clicked ? <NumpadModal value={this.state.active === "value" ? this.state.value : this.state.value1}
-                                                       onUpdate={this.handleClick.bind(this)} editValue={this.editValue.bind(this)}/>
-                        : false
-                    }
+                                                       onUpdate={this.handleClick.bind(this)} editValue={this.editValue.bind(this)}/>: false}
                     {type.map(function(item){
                         switch(item){
                             case "name1":
                                 return <label key={item} className={'captionLabel'}>{name}</label>;
-                                break;
                             case "name2":
                                 return <label key={item} className={'captionLabel2'}>{name1}</label>;
-                                break;
                             case "unit1":
                                 return <label key={item} className={'unitLabel'}>{unit}</label>;
-                                break;
                             case "unit2":
                                 return <label key={item} className={'unitLabel'}>{unit1}</label>;
-                                break;
                             case "input1":
                                 return <input key={item} className={'textInput'} onClick={this.handleClick.bind(this,"value1")} onChange={this.handleChange.bind(this)}
                                               value={this.state.value} type="text"/>;
-                                break;
                             case "input2":
                                 return <input key={item} className={'textInput'} onClick={this.handleClick.bind(this,"value2")} onChange={this.handleChange.bind(this)}
                                               value={this.state.value1} type="text"/>;
                             case "box":
                                 return <input key={item} className={'boxInput'} onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>;
-                                break;
                             default:
                                 break;
                         }

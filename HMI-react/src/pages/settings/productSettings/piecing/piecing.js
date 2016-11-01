@@ -21,13 +21,34 @@ class Piecing extends Component{
     render(){
         return(
             <Page>
-                <div className="item column-2">
-                    <InputList modal={false} multiple={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList} list={this.state.amiSpin} descTitle="AMISpin - sequence"/>
-                    <InputList modal={false} multiple={true} type={["name1","input1","unit1","name2","input2","unit2","box"]} checkBox={false} save={this.saveList} list={this.state.silverFeedLength} descTitle="Silver feed length [mm]"/>
+                <div className="item column-4">
+                    <div className="inputs-description">
+                        AMISpin - Sequence
+                    </div>
+                    <div className="item column-2">
+                        <InputList modal={false} multiple={false} name="AMISpin" type={["name1","input1","unit1"]} checkBox={false} save={this.saveList} list={this.state.amiSpin} />
+                    </div>
+                    <div className="item column-2">
+                        <div id="piecing-graph1"></div>
+                    </div>
                 </div>
-                <div className="item size-2">
+                <div className="item column-4">
+                    <div className="inputs-description">
+                        <div className="firstDesc">
+                            Silver feed length
+                        </div>
+                        <div id="silverFeedSpeed-desc">
+                            Silver feed speed
+                        </div>
+                    </div>
+                    <div className="item column-2">
+                        <InputList modal={false} multiple={true} name="SilverFeed" type={["name1","input1","unit1","name2","input2","unit2","box"]} checkBox={false} save={this.saveList} list={this.state.silverFeedLength} />
+                    </div>
+                    <div className="item column-2">
+                        <div id="piecing-graph2"></div>
+                    </div>
+                </div>
 
-                </div>
             </Page>
         )
     }
@@ -48,9 +69,9 @@ class Piecing extends Component{
     }
 
     saveList(list,type){
-        if(type === 'AMISpin - sequence')
+        if(type === 'AMISpin')
             actionSettings.setAMISpin(list);
-        else if(type === "Silver feed length [mm]")
+        else if(type === "SilverFeed")
             actionSettings.setSilverFeedLength(list);
     }
 

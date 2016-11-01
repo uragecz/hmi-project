@@ -20,9 +20,9 @@ class InputList extends Component{
         return(
             <div className={this.props.modal? 'modalInputs-root': 'inputs-root'}>
                 <div className={'inputs-container'} onClick={!modal ? this.handleClick.bind(this,true) : false} >
-                    <div className="inputs-description">
+                    {descTitle ? <div className="inputs-description">
                         {descTitle}
-                    </div>
+                    </div> : false }
                     <div className={ modal ? "inputList" : "inputList disable"}>
                         {Object.keys(list).map(function (item) {
                             even = !even;
@@ -35,7 +35,6 @@ class InputList extends Component{
                                     values.push(model[item].value);
                                     names.push(item);
                                     units.push(model[item].unit);
-                                    console.log(model[item])
                                 });
                                 return (
                                     <Input key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)} name={names[0]} name1={names[1]}
@@ -90,11 +89,13 @@ class InputList extends Component{
     }
 
     saveValues(list){
+        console.log(list);
+        let type = this.props.descTitle? this.props.descTitle: this.props.name;
         this.setState({
             clicked: !this.state.clicked,
         });
         if (list)
-            this.props.save(list,this.props.descTitle);
+            this.props.save(list,type);
     }
 }
 

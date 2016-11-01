@@ -5,28 +5,26 @@
 .inputs-container{
     width: 100%;
     height: auto;
-    padding: 2px 0 2px 0;
+    padding-bottom: 4px;
 }
 
 .input-root.true{
   background-color: rgb(189, 201, 206);
 }
+
 .inputs-description{
     width: 100%;
+    height: 28px;
     background-color: rgb(226,234,102);
     color: #000000;
     padding: 5px 5px 5px 10px;
     font-weight: 600;
-    border-left: 2px solid #d3dbde;
-}
-
-.inputList{
-    padding: 2px 2px 0 2px;
 }
 
 .input-container{
     height: 27px;
     display: flex;
+    padding: 3px 3px 3px 5px;
 }
 
 .captionLabel{
@@ -57,11 +55,12 @@
     height: 25px;
     text-align: right;
     border-style: solid;
-    border-radius: 5px;
     border-color: #9da0a4;
     border-width: 1px;
     float: left;
     font-size: 18px;
+    border-radius: 3px;
+    padding: 2px;
 }
 
 input.modalTextInput{

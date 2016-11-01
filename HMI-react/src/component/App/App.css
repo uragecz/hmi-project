@@ -14,12 +14,9 @@
   position: fixed;
   float: left;
   top: 130px;
-  left: 2px;
   width: 900px;
   height: 600px;
   background-color: rgb(211,219,222);
-  border: 2px solid #b5c0c4;
-  padding: 10px;
 }
 
 #navigation{
