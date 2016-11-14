@@ -15,13 +15,14 @@ class InputList extends Component{
     }
 
     render(){
-        const{modal, list, descTitle, type, multiple} = this.props;
+        const{modal, list, descTitle, hideDesc, type, multiple, ...others} = this.props;
         let even = false;
         return(
             <div className={this.props.modal? 'modalInputs-root': 'inputs-root'}>
                 <div className={'inputs-container'} onClick={!modal ? this.handleClick.bind(this,true) : false} >
-                    {descTitle ? <div className="inputs-description">
-                        {descTitle}
+                    { modal || !hideDesc ? <div className="inputs-description">
+                        <div className="descTitle first">{descTitle}</div>
+                        <div className="descTitle second">{this.props.descUnit}</div>
                     </div> : false }
                     <div className={ modal ? "inputList" : "inputList disable"}>
                         {Object.keys(list).map(function (item) {
@@ -49,7 +50,7 @@ class InputList extends Component{
                 </div>
                 {this.state.clicked ?
                     <ModalWin save={this.saveValues.bind(this)} update={this.handleClick.bind(this)}>
-                        <InputList multiple={multiple} modal={true} type={type} list={list} descTitle={descTitle} />
+                        <InputList multiple={multiple} modal={true} type={type} list={list} descTitle={descTitle} {...others} />
                     </ModalWin>
                     : false
                 }

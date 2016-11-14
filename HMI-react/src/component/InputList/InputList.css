@@ -92,3 +92,11 @@ input.modalTextInput{
     border-color: #9da0a4;
     border-radius: 1px;
 }
+
+.descTitle{
+    position: absolute;
+}
+
+.descTitle.second{
+    left: 52%;
+}

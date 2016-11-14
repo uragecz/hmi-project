@@ -77,7 +77,7 @@ class MenuTopOptions extends Component{
     }
 
     pageClick(e) {
-        if(e.target.id === 'menuOpen'){
+        if(this.props.show && e.target.id === 'menuOpen'){
             this.handleClick(false,this.state.type);
         }
     }
