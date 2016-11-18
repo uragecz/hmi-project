@@ -57,7 +57,7 @@
 }
 
 .size-3{
-    width: 33.33%;
+    width: 33.333%;
 }
 
 
@@ -91,20 +91,23 @@
 }
 
 #switch{
-    width: 300px;
+    width: 100%;
     position: relative;
     height: 50px;
     margin: auto auto;
     margin-top: 20px;
     display: flex;
-    padding: 20px;
 }
 
 .switchElement{
     position: relative;
     float: left;
-    width: 100px;
+    width: 33.3%;
     display: flex;
+    background-color: #a7b7bd;
+    padding: 10px;
+    margin-left: 2px;
+    justify-content: center;
 }
 
 .boxInput{

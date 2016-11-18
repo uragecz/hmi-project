@@ -1,10 +1,10 @@
 #header{
-    height: 80px;
+    height: 84px;
     width: 100%;
-    background-color: rgb(226,234,102);
+    background-color: rgb(211,219,222);
     position:fixed;
-    z-index: 1;
     top: 0;
+    z-index:1;
 }
 
 #info-buttons{

@@ -7,15 +7,16 @@
 #appContainer{
   width:100%;
   height:100%;
-  background-color: #bdc9ce;
+  background-color: #d3dbde;
 }
 
 #content {
   position: fixed;
   float: left;
-  top: 130px;
-  width: 900px;
-  height: 600px;
+  top: 90px;
+  width: calc(100% - 125px);
+  height: calc(100% - 130px);
+  background-color: #bdc9ce;
 }
 
 #navigation{

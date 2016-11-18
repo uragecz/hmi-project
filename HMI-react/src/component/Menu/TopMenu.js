@@ -25,6 +25,7 @@ class TopMenu extends Component{
         let counter = -1;
         let counterA = -1;
         return(
+            <div id="header">
             <div className={"topMenu level-" + visitedItems.length }>
                 {visitedItems.map(function (item){
                     let model = item;
@@ -92,12 +93,30 @@ class TopMenu extends Component{
                                         {model.name.toUpperCase()}
                                 </Link>
                             </div>
+
                             <div className="arrow">
                                 |
                             </div>
+                            {activeItem ?
+                            <div className="arrowDown"></div>
+                                : false }
                         </div>
                     )
                 },this)}
+            </div>
+                <div id="topInfo">
+                    <div className="topInfoPage left">
+                        2.1.1 AMISpin piecing settings
+                    </div>
+                    <div className="topInfoPage right">
+                        <div className="topInfoText name">
+                            Article
+                        </div>
+                        <div className="topInfoText value">
+                            Perla a.s. CZ, Bavlna, 22Text, 5,5kTex
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

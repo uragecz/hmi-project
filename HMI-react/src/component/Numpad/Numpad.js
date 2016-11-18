@@ -19,7 +19,7 @@ class Numpad extends React.Component {
   };
 
   componentDidMount(){
-    const input = ReactDOM.findDOMNode(this.refs.nInput);
+    const input = ReactDOM.findDOMNode(this.refs.Input);
     input.focus();
     input.select();
   }
@@ -36,7 +36,7 @@ class Numpad extends React.Component {
               {this.props.min}.. {this.props.max}
             </div>
           </div>
-          <input className={'numpadInput'} onChange={this.handleChange} value={this.state.value} ref="nInput" type="text"/><br/>
+          <input className={'numpadInput'} onChange={this.handleChange} value={this.state.value} ref="Input" type="text"/><br/>
           <Button className={'row1 column1'} update={this.addValue} value={'1'}/>
           <Button className={'row1 column2'} update={this.addValue} value={'2'}/>
           <Button className={'row1 column3'} update={this.addValue} value={'3'}/><br/>

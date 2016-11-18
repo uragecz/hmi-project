@@ -80,6 +80,14 @@ class Options extends Component{
         let angle = -posAngle;
         return(
             <div className="right panel">
+                <div id="optionInfo">
+                    <div id="optionLabel">
+                        GROUP
+                    </div>
+                    <div id="optionValue">
+                        PG1
+                    </div>
+                </div>
                 <div className="optionPanel">
                     <div className="optionIcon up">
                         <img className="rightOptionIcons" onClick={this.handleChangeValueByOne.bind(this,'+')} src={goBack}/>

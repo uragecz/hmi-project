@@ -34,3 +34,28 @@
 .optionIcon.down{
     bottom: 0;
 }
+
+#optionInfo{
+    width: 80%;
+    height: 100px;
+    text-align: center;
+    background-color: rgb(36,76,90);
+    margin: auto auto;
+    margin-top: 5px;
+}
+
+#optionLabel{
+    background-color: #e2ea66;
+    color: black;
+    height: 30%;
+    padding: 5px;
+}
+
+#optionValue{
+    color: white;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}

@@ -16,7 +16,7 @@ class InputList extends Component{
 
     render(){
         const{modal, list, descTitle, hideDesc, type, multiple, ...others} = this.props;
-        let even = false;
+        let even = true;
         return(
             <div className={this.props.modal? 'modalInputs-root': 'inputs-root'}>
                 <div className={'inputs-container'} onClick={!modal ? this.handleClick.bind(this,true) : false} >

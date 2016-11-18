@@ -133,6 +133,7 @@ var routes = {
                 page: "ProductSettings",
                 value: "2.1",
                 icon: "../../assets/config.png",
+                setting: ["shift","unit","group"],
                 children: {
                     "piecing": {
                         hash: "/settings/product-settings/piecing",

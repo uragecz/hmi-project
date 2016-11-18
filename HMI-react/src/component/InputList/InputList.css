@@ -9,7 +9,7 @@
 }
 
 .input-root.true{
-    background-color: rgb(211,219,222);
+    background-color: rgb(167, 183, 189);
 }
 
 .inputs-description{
@@ -42,12 +42,13 @@
     width: 20%;
     float:left;
     padding-left: 5px;
-    text-align: right;
+    text-align: center;
 }
 
 .boxInput{
     width: 15%;
     float: left;
+    height: 22px;
 }
 
 .textInput {
