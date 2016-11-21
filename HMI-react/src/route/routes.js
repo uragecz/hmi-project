@@ -141,7 +141,7 @@ var routes = {
                         page: "Piecing",
                         value: "2.1.1",
                         icon: "../../assets/config.png",
-                        setting: ["shift","unit","group"],
+                        setting: ["shift","unit"],
                         children: {}
                     },
                     "sub-grapha": {

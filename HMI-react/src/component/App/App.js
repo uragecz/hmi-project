@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
 import languageActions from '../../actions/languageActions'
 import languageStore from '../../stores/languageStore';
 import routes from '../../route/routes';
@@ -25,7 +24,6 @@ class App extends Component {
     render() {
         return (
             <div id="appContainer">
-                <Header pathName={this.state.pathname} switchLanguage={this.switchLanguage}/>
                 <Menu goBack={this.goBack.bind(this)} saveToHistory={this.props.children !== null} data={this.state.data} routes={routes}
                             pathName={this.state.goBack ? this.state.pathname : this.props.location.pathname}/>
                 <div id="content">

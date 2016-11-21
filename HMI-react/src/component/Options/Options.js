@@ -16,10 +16,10 @@ class Options extends Component{
     constructor(props){
         super(props);
         this.state = {
-            xPos : [16, 35, 75, 65],
-            yPos : [100, 155, 165, 180],
-            xRot : [0, 68, 90, 90],
-            yRot : [0, 182, 186, 207],
+            xPos : [16, 60, 75, 65],
+            yPos : [100, 158, 165, 180],
+            xRot : [0, 72, 90, 90],
+            yRot : [0, 180, 186, 207],
             width: 100,
             prevAngleInRadians: null,
             previousX: null,

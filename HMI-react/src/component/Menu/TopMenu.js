@@ -97,9 +97,6 @@ class TopMenu extends Component{
                             <div className="arrow">
                                 |
                             </div>
-                            {activeItem ?
-                            <div className="arrowDown"></div>
-                                : false }
                         </div>
                     )
                 },this)}
@@ -110,7 +107,7 @@ class TopMenu extends Component{
                     </div>
                     <div className="topInfoPage right">
                         <div className="topInfoText name">
-                            Article
+                            ARTICLE
                         </div>
                         <div className="topInfoText value">
                             Perla a.s. CZ, Bavlna, 22Text, 5,5kTex
