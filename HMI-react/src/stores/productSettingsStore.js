@@ -172,7 +172,6 @@ var productSettingsStore = objectAssign({}, EventEmitter.prototype, {
         return _store.package;
     },
     getTotalSpeed: function(){
-        console.log('getSpeed',_store.totalSpeed.alfaTex);
         return _store.totalSpeed;
     },
     getQSI: function(){

@@ -16,11 +16,6 @@
     position: absolute;
     z-index: 15;
 }
-.entireMenu{
-    width:100%;
-    height:  100%;
-    position:absolute;
-}
 
 a.menuLink{
     width: 100%;
@@ -36,9 +31,9 @@ a.menuLink{
 
 .panel{
     position: fixed;
-    height: calc(100% - 120px);
+    height: calc(100% - 155px);
     width: 125px;
-    top: 85px;
+    top: 116px;
 }
 
 .panel.left{
@@ -47,7 +42,6 @@ a.menuLink{
 
 .panel.right{
     right: 0;
-    background-color: rgb(211,219,222)
 }
 
 .bottomMenu{
@@ -145,14 +139,6 @@ a.menuLink{
     display: block;
 }
 
-.arrow{
-    float: left;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    margin: 0 10px 0 10px;
-}
-
 h4.itemValue{
     color:white;
     margin-left: 2px;
@@ -193,12 +179,6 @@ h4.itemValue{
     border-left: 1px solid #d8d8d8;
     border-top: 1px solid #d8d8d8;
     border-bottom: 1px solid #d8d8d8;
-/*
-    background-color: #d0d0d0;
-    border-left: 1px solid #9b9b9b;
-    border-top: 1px solid #9b9b9b;
-    border-bottom: 1px solid #9b9b9b;
-*/
 }
 
 .topIcon.true{
@@ -226,8 +206,8 @@ h4.itemValue{
 .topMenu{
     width: calc(100% - 104px);
     position: absolute;
-    height: 50px;
-    left: 104px;
+    height: 70px;
+    left: 103px;
 }
 
 .topMenuItem{
@@ -236,13 +216,14 @@ h4.itemValue{
     font-size: smaller;
     position: relative;
 }
+
+.topMenuItem.finalItem{
+    padding: 0 10px 0 0;
+    margin-right: 10px;
+}
 .topMenuItem.active{
     font-weight: 700;
     padding-right: 10px;
-}
-
-.topMenuItem.true .arrow{
-    visibility: hidden;
 }
 
 .topMenuIcon{
@@ -253,7 +234,7 @@ h4.itemValue{
 
 #menuOpenButton{
     width: 102px;
-    height: 84px;
+    height: 70px;
     position: absolute;
     display: flex;
     align-items: center;
@@ -308,15 +289,24 @@ h4.itemValue{
     background-color: rgb(80,112,123);
     fill: rgb(80,112,123);
 }
+.item-0{
+    border-right: 1px solid rgb(124,148,156);
+}
 
 .level-1{
     background-color: rgb(124,148,156);
     fill: rgb(124,148,156);
 }
+.item-1{
+    border-right: 1px solid rgb(167,183,189);
+}
 
 .level-2{
     background-color: rgb(167,183,189);
     fill: rgb(167,183,189);
+}
+.item-2{
+    border-right: 1px solid #d3dbde;
 }
 
 .subTop{
@@ -342,41 +332,23 @@ h4.itemValue{
     float: left;
 }
 
-
-
-#topInfo{
+#arrowDown{
+    top: 0;
+    width: 100%;
     position: absolute;
-    top: 52px;
-    left: 104px;
-    background-color: #bdc9ce;
-    width: calc(100% - 104px);
-    height: 32px;
+    left: 50%;
 }
 
-.topInfoPage{
-    height:100%;
+.topMenuItem.actual{
+    border-bottom: 8px solid #e2ea66;
 }
 
-.topInfoPage.left{
-    float: left;
-    padding: 5px;
+.topMenuItem.actual .topMenuIcon{
+    padding-top: 8px;
 }
 
-.topInfoPage.right{
-    float: right;
-}
-
-.topInfoText{
-    display: inline-block;
-    color: #000000;
-    height: 100%;
-    padding: 5px 10px 5px 10px;
-    background-color: #e2ea66;
-    font-weight: 600;
-}
-
-.topInfoText.value{
-    font-weight: normal;
-    color: white;
-    background-color: rgb(36,76,90);
+#header{
+    position: absolute;
+    width: 100%;
+    height: 70px;
 }

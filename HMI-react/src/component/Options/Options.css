@@ -35,16 +35,49 @@
     bottom: 0;
 }
 
-#optionInfo{
+#topOptionInfo{
     width: 80%;
     height: 100px;
     text-align: center;
     background-color: rgb(36,76,90);
     margin: auto auto;
-    margin-top: 5px;
 }
 
-#optionLabel{
+#bottomOptionInfo{
+    width: 80%;
+    height: 100px;
+    text-align: center;
+    background-color: rgb(36,76,90);
+    margin: auto auto;
+    bottom: 5px;
+    position: absolute;
+    right: 12px;
+}
+
+#bottomOptionInfo .optionValue{
+    font-size: small;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    display: inline-block;
+}
+
+.animationText{
+    display: inline-block;
+    text-indent: 0;
+    animation: animationText 20s linear infinite;
+    padding-left: 100%;
+    padding-top: 12px;
+}
+
+@keyframes animationText {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+.optionLabel{
     background-color: #e2ea66;
     color: black;
     height: 30%;
@@ -52,7 +85,7 @@
     font-weight: 600;
 }
 
-#optionValue{
+.optionValue{
     color: white;
     font-size: xx-large;
     display: flex;

@@ -5,11 +5,11 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router';
 import routes from '../../route/routes';
+import Toolbar from '../Toolbar/Toolbar';
 
 //styles/icons
 import './Menu.css';
 import arrowDown from '../../../assets/arrow-down.png'
-import equal from '../../../assets/equal.png';
 
 class TopMenu extends Component{
     constructor(props){
@@ -29,14 +29,15 @@ class TopMenu extends Component{
             <div className={"topMenu level-" + visitedItems.length }>
                 {visitedItems.map(function (item){
                     let model = item;
+                    let activeItem = pathArray[pathArray.length-1] === model.name;
                     counter++;
                     if (model.name !== pathArray[pathArray-1]){
                         return(
-                            <div className={"topMenuItem active level-"+counter} onClick={this.showSubMenu.bind(this,model)}>
+                            <div key={model.name} className={"topMenuItem active level-"+counter + " " + (activeItem? "actual" : "")} onClick={this.showSubMenu.bind(this,model)}>
                                 {counter !== 0 ?
                                     <div className="arrowLeft">
-                                        <svg width={50} height={50}>
-                                            <polygon className={"topMenuPolygon level-"+(counter-1)} fill="white" stroke="none" strokeWidth="1" points="0,0 20,25 0,50"/>
+                                        <svg width={20} height={70}>
+                                            <polygon className={"topMenuPolygon level-"+(counter-1)} fill="white" stroke="none" strokeWidth="1" points="0,0 20,35 0,70"/>
                                         </svg>
                                     </div>
                                     : false
@@ -81,39 +82,26 @@ class TopMenu extends Component{
                     counterA++;
                     let activeItem = pathArray[pathArray.length-1] === model.name;
                     return(
-                        <div className={ "topMenuItem " + activeItem + " item-"+(counter+1) }>
+                        <div key={model.name} className={ "topMenuItem finalItem item-"+(counter+1) + " " + (activeItem? "actual" : "")}>
                             {counterA === 0 && counter !== -1 ? <div className="arrowLeft">
-                                <svg width={50} height={50}>
-                                    <polygon className={"topMenuPolygon level-"+counter} fill="white" stroke="none" strokeWidth="1" points="0,0 20,25 0,50"/>
+                                <svg width={20} height={70}>
+                                    <polygon className={"topMenuPolygon level-"+counter} fill="white" stroke="none" strokeWidth="1" points="0,0 20,35 0,70"/>
+                                    {counterA === 0 && !activeItem ?<polygon className={"smallPolygon"} fill="#e2ea66" stroke="none" strokeWidth="1" points="0,70 0,62 4.5,62"/> : false}
                                 </svg>
                             </div> : false}
                             <div className="topMenuIcon">
                                 <Link key={item} to={model.hash} className="menuLink">
                                     <img src={model.icon} height="40px" className="topIcons" width="40px"/>
+                                    <div className="topMenuText">
                                         {model.name.toUpperCase()}
+                                    </div>
                                 </Link>
-                            </div>
-
-                            <div className="arrow">
-                                |
                             </div>
                         </div>
                     )
                 },this)}
             </div>
-                <div id="topInfo">
-                    <div className="topInfoPage left">
-                        2.1.1 AMISpin piecing settings
-                    </div>
-                    <div className="topInfoPage right">
-                        <div className="topInfoText name">
-                            ARTICLE
-                        </div>
-                        <div className="topInfoText value">
-                            Perla a.s. CZ, Bavlna, 22Text, 5,5kTex
-                        </div>
-                    </div>
-                </div>
+                <Toolbar actualPage={this.props.actualPage}/>
             </div>
         )
     }

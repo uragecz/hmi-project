@@ -13,9 +13,9 @@
 #content {
   position: fixed;
   float: left;
-  top: 90px;
+  top: 116px;
   width: calc(100% - 125px);
-  height: calc(100% - 130px);
+  height: calc(100% - 124px);
   background-color: #bdc9ce;
 }
 

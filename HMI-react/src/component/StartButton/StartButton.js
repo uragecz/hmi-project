@@ -22,12 +22,11 @@ class StartButton extends Component{
                     console.log(height[count-1],width[count-1],count);
                     x += width[count-1];
                     if (x >= 125 && y < 20){
-                        console.log(x,'if');
                         x = 41;
                         y = 20;
                     }
                     return(
-                        <rect x={x} y={y} width={width[count-1]} height={height[count-1]} fill={modelStatus ? "rgb(80, 112, 123)" : "rgb(226, 77, 77)"} strokeWidth="1" stroke="#d3dbde"/>
+                        <rect key={item} x={x} y={y} width={width[count-1]} height={height[count-1]} fill={modelStatus ? "rgb(80, 112, 123)" : "rgb(226, 77, 77)"} strokeWidth="1" stroke="#d3dbde"/>
                     )
                 })}
             </svg>

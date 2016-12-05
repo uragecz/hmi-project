@@ -8,6 +8,7 @@ import historyActions from '../../actions/historyActions'
 import TopMenu from './TopMenu';
 import Options from '../Options/Options';
 import MenuTopOptions from './MenuTopOptions';
+import Toolbar from '../Toolbar/Toolbar';
 
 //styles/icons
 import './Menu.css';
@@ -46,12 +47,12 @@ class Menu extends Component{
         Object.keys(history).length !== 0 && this.props.saveToHistory ? historyActions.pushHistory(history) : false;
 
         return(
-            <div id="entireMenu">
+            <div className="entirePage">
                 <div id="menuOpenButton" onClick={this.updateShow.bind(this)}>
-                    <img src={openMenu} id="menuButton" height="50px" width="50px" />
+                    <img src={openMenu} id="menuButton" height="40px" width="40px" />
                 </div>
                 <MenuTopOptions update={this.updateShow.bind(this)} data={this.props.data} show={this.state.showMenu} pathName={pathName} routes={routes} />
-                <TopMenu obj={obj} visitedItems={visitedItems} pathArray={pathArray} />
+                <TopMenu actualPage={history} obj={obj} visitedItems={visitedItems} pathArray={pathArray} />
                 {pathArray.length !== 0 && history.setting ? <Options show={false} data={this.props.data} options={setting} /> : false }
             </div>
         )

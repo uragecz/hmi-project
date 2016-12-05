@@ -16,7 +16,7 @@ var customStyles = {
         height                : 'auto',
         right                 : 'auto',
         bottom                : 'auto',
-        transform             : 'translate(-50%, -50%)'
+        transform             : 'translate(-50%, -50%)',
     }
 };
 

@@ -80,11 +80,11 @@ class Options extends Component{
         let angle = -posAngle;
         return(
             <div className="right panel">
-                <div id="optionInfo">
-                    <div id="optionLabel">
+                <div id="topOptionInfo">
+                    <div className="optionLabel">
                         GROUP
                     </div>
-                    <div id="optionValue">
+                    <div className="optionValue">
                         PG1
                     </div>
                 </div>
@@ -129,6 +129,16 @@ class Options extends Component{
                         })()
                         : false
                     }
+                </div>
+                <div id="bottomOptionInfo">
+                    <div className="optionLabel">
+                        ARTICLE
+                    </div>
+                    <div className="optionValue">
+                        <p className="animationText">
+                            Perla a.s. CZ, Bavlna, 22Text, 5,5Tex
+                        </p>
+                    </div>
                 </div>
             </div>
         )
