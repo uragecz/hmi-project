@@ -18,10 +18,7 @@ class Option extends Component{
                       d={"M125,125 L" +previousX+ ", " +previousY+ " A100,100 0 0,1 " +x+ ", " +y+ " z"} >
                 </path>
                 <image transform={"rotate(-"+posAngle+" "+ xRot + " " + yRot + ")"}
-                       href={type === 'shift' ? setShift : type === 'group' ? setGroup : setUnit} x={xPos} y={yPos-8}  height="35px" width="35px"/>
-                <text textAnchor="middle" transform={"rotate(-"+posAngle+" "+ xRot + " " + yRot + ")"}
-                      x={xPos+15} y={yPos+40} fontFamily="sans-serif" fontSize="14px" fill={activeItem ? "white" : "black"}>{value}
-                </text>
+                       href={type === 'shift' ? setShift : type === 'group' ? setGroup : setUnit} x={xPos} y={yPos}  height="35px" width="35px"/>
             </g>
         )
     }

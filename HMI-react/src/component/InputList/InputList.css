@@ -60,8 +60,11 @@
     border-width: 1px;
     float: left;
     font-size: 18px;
-
     padding: 2px;
+}
+
+.textInput.active{
+    border: 2px solid rgb(226,234,102) !important;
 }
 
 input.modalTextInput{

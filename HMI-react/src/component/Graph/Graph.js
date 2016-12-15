@@ -482,10 +482,9 @@ Axis.propTypes = {
 
 class Graph extends React.Component {
   render() {
-    var {canvas} = this.props;
+    const {canvas} = this.props;
     return (
       <div>
-
         <Columns canvas={canvas} />
         <Grid canvas={canvas}/>
         <Axis canvas={canvas}/>
@@ -493,7 +492,7 @@ class Graph extends React.Component {
     )
   }
 
-componentWillMount(){
+  componentWillMount(){
     graphActions.startLoadValue();
   }
 

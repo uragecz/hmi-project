@@ -17,7 +17,7 @@ class Options extends Component{
         super(props);
         this.state = {
             xPos : [16, 60, 75, 65],
-            yPos : [100, 158, 165, 180],
+            yPos : [100, 160, 165, 180],
             xRot : [0, 72, 90, 90],
             yRot : [0, 180, 186, 207],
             width: 100,
@@ -32,13 +32,19 @@ class Options extends Component{
             maxUnit: selectionStore.getMaxUnit(),
             shiftList: selectionStore.getShiftList(),
             groupList: selectionStore.getGroupList(),
-            activeType: 'group',
+            activeType: this.props.options[this.props.options.length - 1],
             showList: false
         };
         this.handleOpenList = this.handleOpenList.bind(this);
         this.changeValue = this.changeValue.bind(this);
         this.changeActiveOption = this.changeActiveOption.bind(this);
         this.update = this.update.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            activeType : nextProps.options[[nextProps.options.length - 1]]
+        })
     }
 
     componentWillMount(){

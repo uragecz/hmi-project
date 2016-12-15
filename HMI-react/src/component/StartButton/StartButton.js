@@ -19,7 +19,6 @@ class StartButton extends Component{
                 <image href={powerButton} x={7} y={7} width={27} height={26} />
                 {Object.keys(groups).map(function(item){
                     let modelStatus = groups[item].status;
-                    console.log(height[count-1],width[count-1],count);
                     x += width[count-1];
                     if (x >= 125 && y < 20){
                         x = 41;

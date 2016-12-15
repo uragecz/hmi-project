@@ -24,12 +24,12 @@ class ModalWin extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: null
+            list: this.props.children.props.list
         }
     }
     render() {
         customStyles.content["width"] = this.props.width;
-        var {update, children} = this.props;
+        const {update, children} = this.props;
         return (
             <div>
                 <Modal
@@ -38,7 +38,7 @@ class ModalWin extends React.Component {
                     style={customStyles}>
                     <div className="modal">
                         <div className="modal-content">
-                            {React.cloneElement(children, { changeValue: this.changeValue.bind(this)})}
+                            {React.cloneElement(children, { changeValue: this.changeValue.bind(this),list: this.state.list})}
                         </div>
                         <div className="bottom-buttons">
                             <img className="close-modal" onClick={update.bind(this)} src={close}/>
@@ -50,10 +50,7 @@ class ModalWin extends React.Component {
         )
     }
 
-    shouldComponentUpdate(nextProps,nextState){
-        return false;
-    }
-
+    //saves list to parent InputList
     sendToParent(){
         this.props.save(this.state.list);
     }

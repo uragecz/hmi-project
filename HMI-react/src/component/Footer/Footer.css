@@ -63,13 +63,13 @@
 }
 
 #bottomRight{
-    width: 125px;
+    width: 123px;
     height: 100%;
     float: left;
 }
 
 #bottomLeft{
-    width: calc(100% - 125px);
+    width: calc(100% - 123px);
     height: 100%;
     float: left;
 }

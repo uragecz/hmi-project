@@ -8,7 +8,6 @@ import historyActions from '../../actions/historyActions'
 import TopMenu from './TopMenu';
 import Options from '../Options/Options';
 import MenuTopOptions from './MenuTopOptions';
-import Toolbar from '../Toolbar/Toolbar';
 
 //styles/icons
 import './Menu.css';

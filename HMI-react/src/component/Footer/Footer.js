@@ -31,19 +31,12 @@ class Footer extends Component{
     constructor(props){
         super(props);
         this.state = {
-            openHelp: false
+            openHelp: false,
+            timeHM: null,
+            timeYM: null
         }
     }
     render(){
-        const currentDate = new Date();
-        let dd = currentDate.getDate();
-        let mm = currentDate.getMonth()+1;
-        let yy = currentDate.getFullYear();
-        if(dd < 10)
-            dd= '0' + dd;
-        if(mm < 10)
-            mm= '0' + mm;
-
         return(
             <div className="entirePage" >
                 <div id="footer">
@@ -52,8 +45,8 @@ class Footer extends Component{
                             <img id="logo" src='../../assets/rieter.png'/>
                         </div>
                         <div className="bottom-item date">
-                            {currentDate.getHours() + ":" +currentDate.getMinutes()}<br/>
-                            {dd+ "." + mm + "." + yy}
+                            {this.state.timeHM}<br/>
+                            {this.state.timeYM}
                         </div>
                         <div className="bottom-item warning-input">
                             <img src={warningMark} height={20}/>
@@ -70,7 +63,7 @@ class Footer extends Component{
                         </div>
                     </div>
                 </div>
-                {this.state.openHelp ? <Help closeHelpPage={this.handleLogoClick.bind(this)}/>: false}
+                {this.state.openHelp ? <Help pathName={this.props.pathName} closeHelpPage={this.handleLogoClick.bind(this)}/>: false}
             </div>
         )
     }
@@ -79,10 +72,36 @@ class Footer extends Component{
     }
 
     handleLogoClick(){
-        console.log('hadnleLogClick',!this.state.openHelp);
         this.setState({
             openHelp: !this.state.openHelp
         })
+    }
+
+    componentDidMount() {
+        this.tick();
+        this.interval = setInterval(() => this.tick(), 60000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
+    tick() {
+        const currentDate = new Date();
+        let dd = currentDate.getDate();
+        let mm = currentDate.getMonth()+1;
+        let yy = currentDate.getFullYear();
+        let min = currentDate.getMinutes();
+        if(min < 10)
+            min = '0' + min;
+        if(dd < 10)
+            dd= '0' + dd;
+        if(mm < 10)
+            mm= '0' + mm;
+        this.setState((prevState) => ({
+            timeHM: currentDate.getHours() + ":" +min,
+            timeYM: dd+ "." + mm + "." + yy
+        }));
     }
 }
 

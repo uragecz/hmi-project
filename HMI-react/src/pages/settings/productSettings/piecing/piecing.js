@@ -26,7 +26,7 @@ class Piecing extends Component{
                         AMISpin - Sequence
                     </div>
                     <div className="item column-2">
-                        <InputList modal={false} descTitle='Silver feed length'  hideDesc={true} multiple={false} name="AMISpin" type={["name1","input1","unit1"]} checkBox={false} save={this.saveList} list={this.state.amiSpin} />
+                        <InputList modal={false} descTitle='AMISpin - Sequence' hideDesc={true} multiple={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList} list={this.state.amiSpin} />
                     </div>
                     <div className="item column-2">
                         <div id="piecing-graph1"></div>
@@ -42,7 +42,7 @@ class Piecing extends Component{
                         </div>
                     </div>
                     <div className="item column-2">
-                        <InputList modal={false} descTitle='Silver feed length' descUnit="Silver feed speed" hideDesc={true} multiple={true} name="SilverFeed" type={["name1","input1","unit1","name2","input2","unit2","box"]} checkBox={false} save={this.saveList} list={this.state.silverFeedLength} />
+                        <InputList modal={false} descTitle='Silver feed length' descUnit="Silver feed speed" hideDesc={true} multiple={true} type={["name1","input1","unit1","name2","input2","unit2","box"]} checkBox={false} save={this.saveList} list={this.state.silverFeedLength} />
                     </div>
                     <div className="item column-2">
                         <div id="piecing-graph2"></div>
@@ -62,6 +62,8 @@ class Piecing extends Component{
     }
 
     update(){
+        console.log('updatePiecing')
+
         this.setState({
             amiSpin: productSettingsStore.getAMISpin(),
             silverFeedLength: productSettingsStore.getSVL()
@@ -69,9 +71,10 @@ class Piecing extends Component{
     }
 
     saveList(list,type){
-        if(type === 'AMISpin')
+        console.log('saveList',list,type);
+        if(type === 'AMISpin - Sequence')
             actionSettings.setAMISpin(list);
-        else if(type === "SilverFeed")
+        else if(type === "Silver feed length")
             actionSettings.setSilverFeedLength(list);
     }
 

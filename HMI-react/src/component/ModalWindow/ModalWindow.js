@@ -87,15 +87,7 @@ class ModalWindow extends React.Component {
     });
   }
 }
-ModalWindow.propTypes = {
-  update: React.PropTypes.func.isRequired,
-  type: React.PropTypes.string.isRequired,
-  descTitle: React.PropTypes.string,
-  disableList: React.PropTypes.object,
-  list: React.PropTypes.object,
-  save: React.PropTypes.func,
-  unit: React.PropTypes.string
-};
+
 
 export default ModalWindow;
 

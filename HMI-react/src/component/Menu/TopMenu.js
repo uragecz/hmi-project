@@ -73,7 +73,6 @@ class TopMenu extends Component{
                                     </div>
                                     :false}
                             </div>
-
                         )
                     }
                 },this)}

@@ -1,5 +1,7 @@
-
-	{
-  		"plugins": ["transform-async-to-generator","transform-runtime"]
-  		
- 	}
+{
+  	"plugins": [
+		"transform-async-to-generator",
+		"transform-runtime"
+	],
+	"presets": ["react"]
+}

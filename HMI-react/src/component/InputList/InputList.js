@@ -38,12 +38,12 @@ class InputList extends Component{
                                     units.push(model[item].unit);
                                 });
                                 return (
-                                    <Input key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)} name={names[0]} name1={names[1]}
-                                           value={values[0]} value1={values[1]} unit={units[0]} unit1={units[1]}/>
+                                    <Input inputKey={item} key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)} enable={model.enable} name={names[0]} name1={names[1]}
+                                           value={values[0]} value1={values[1]}  unit={units[0]} unit1={units[1]}/>
                                 )
                             }
                             return(
-                                <Input key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)} name={item} value={model.value} unit={model.unit}/>
+                                <Input inputKey={item} key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)} name={item} value={model.value} unit={model.unit}/>
                             )
                         },this)}
                     </div>
@@ -59,9 +59,9 @@ class InputList extends Component{
     }
 
     cloneObject(obj) {
-        var copy = {};
+        let copy = {};
         if (null == obj || "object" != typeof obj) return obj;
-        for (var attr in obj) {
+        for (let attr in obj) {
             if (obj.hasOwnProperty(attr)) copy[attr] = this.cloneObject(obj[attr]);
         }
         return copy;
@@ -73,25 +73,25 @@ class InputList extends Component{
         })
     }
 
-    changeValue(name,value){
+    changeValue(name,value,enable,key) {
         let oldStates = this.cloneObject(this.props.list);
-        if(this.props.multiple){
-            Object.keys(oldStates).map(function(item){
+        if (this.props.multiple) {
+            Object.keys(oldStates).map(function (item) {
                 let model = oldStates[item];
-                if(model[name])
+                if (model[name])
                     model[name].value = value;
-
-            })
+                })
         }
         else
             oldStates[name].value = value;
-
+        if(enable !== undefined)
+            oldStates[key].enable = enable;
         this.props.changeValue(oldStates);
     }
 
     saveValues(list){
         console.log(list);
-        let type = this.props.descTitle? this.props.descTitle: this.props.name;
+        let type = this.props.descTitle;
         this.setState({
             clicked: !this.state.clicked,
         });

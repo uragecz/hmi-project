@@ -12,8 +12,9 @@ class Input extends Component{
             clicked: false,
             value: this.props.value,
             value1: this.props.value1,
-            active: null
-        }
+            active: null,
+            enable: this.props.enable == undefined ? true : this.props.enable
+        };
     }
 
     render(){
@@ -21,7 +22,7 @@ class Input extends Component{
         return(
             <div className={'input-root ' + (!modal ? even : false)}>
                 <div className={'input-container'}>
-                    {this.state.clicked ? <NumpadModal value={this.state.active === "value" ? this.state.value : this.state.value1}
+                    {this.state.clicked ? <NumpadModal value={this.state.active === "input1" ? this.state.value : this.state.value1}
                                                        onUpdate={this.handleClick.bind(this)} editValue={this.editValue.bind(this)}/>: false}
                     {type.map(function(item){
                         switch(item){
@@ -34,13 +35,13 @@ class Input extends Component{
                             case "unit2":
                                 return <label key={item} className={'unitLabel'}>{unit1}</label>;
                             case "input1":
-                                return <input key={item} className={'textInput'} onClick={this.handleClick.bind(this,"value1")} onChange={this.handleChange.bind(this)}
+                                return <input key={item} disabled={!this.state.enable} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
                                               value={this.state.value} type="text"/>;
                             case "input2":
-                                return <input key={item} className={'textInput'} onClick={this.handleClick.bind(this,"value2")} onChange={this.handleChange.bind(this)}
+                                return <input key={item} disabled={!this.state.enable} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
                                               value={this.state.value1} type="text"/>;
                             case "box":
-                                return <input key={item} className={'boxInput'} onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>;
+                                return <input key={item} className={'boxInput'} onChange={this.toggleChange.bind(this)} checked={this.state.enable}  type="checkbox"  ref="box"/>;
                             default:
                                 break;
                         }
@@ -53,9 +54,9 @@ class Input extends Component{
     componentWillReceiveProps (nextProps){
         this.setState({
             value: nextProps.value,
-            value1: nextProps.value1
+            value1: nextProps.value1,
+            enable: nextProps.enable == undefined ? true : nextProps.enable
         });
-
     }
 
     handleClick(active){
@@ -66,27 +67,28 @@ class Input extends Component{
     }
 
     toggleChange(){
-
-    }
-
-    handleChange(){
-
+        this.setState({
+            enable: !this.state.enable
+        });
+        this.props.changeValue(null,null,!this.state.enable,this.props.inputKey);
     }
 
     editValue(value) {
-        if(this.state.active === "value1") {
+        if(this.state.active === "input1") {
             this.setState({
                 value: value,
-                clicked: false
+                clicked: false,
+                active: false
             });
-            this.props.changeValue(this.props.name,value);
+            this.props.changeValue(this.props.name,value,this.state.enable,this.props.inputKey);
         }
         else {
             this.setState({
                 value1: value,
-                clicked: false
+                clicked: false,
+                active: false
             });
-            this.props.changeValue(this.props.name1,value);
+            this.props.changeValue(this.props.name1,value,this.state.enable,this.props.inputKey);
         }
     }
 }

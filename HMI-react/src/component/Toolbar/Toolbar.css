@@ -114,8 +114,12 @@
 
 .closeTab{
     position: absolute;
-    right: 6px;
+    right: 0;
     color: black;
+    width: 25px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
 }
 
 .toolbarLink{

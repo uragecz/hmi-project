@@ -39,7 +39,6 @@ class Toolbar extends Component{
     }
 
     update(){
-        console.log('update',tabsStore.getOpenTabs(),tabsStore.getActiveTab());
         this.setState({
             openTabs : tabsStore.getOpenTabs(),
             activeTab: tabsStore.getActiveTab()
@@ -49,7 +48,7 @@ class Toolbar extends Component{
     render(){
         let counter = -1;
         const actualPage = this.props.actualPage;
-        console.log('render',this.state.activeTab,this.state.openTabs);
+
         return(
         <div id="toolbar">
             {this.state.openTabs.map(function(item){

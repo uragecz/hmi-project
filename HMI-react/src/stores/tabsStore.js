@@ -16,7 +16,6 @@ var _store = {
 var addTab = function(item){
     _store.openTabs.push(item);
     _store.activeTab = _store.openTabs.length-1;
-    console.log('addTab',_store.activeTab,_store.openTabs);
 };
 
 var closeTab = function(index){
@@ -29,17 +28,14 @@ var closeTab = function(index){
     else
         _store.activeTab -= 1;
     _store.openTabs.splice(index,1);
-    console.log('closeTab',index,_store.openTabs);
 };
 
 var changeTab = function(item){
     _store.openTabs[_store.activeTab] = item;
-    console.log('changeTab',_store.activeTab,_store.openTabs);
 };
 
 var changeActiveTab = function(index){
     _store.activeTab = index;
-    console.log('changeActiveTab',_store.activeTab,_store.openTabs);
 };
 
 var tabsStore = objectAssign({}, EventEmitter.prototype, {

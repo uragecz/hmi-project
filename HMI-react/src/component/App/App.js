@@ -29,7 +29,7 @@ class App extends Component {
                 <div id="content">
                     {React.cloneElement(this.state.children, { data: this.state.data})}
                 </div>
-                <Footer />
+                <Footer pathName={this.props.location.pathname}/>
             </div>
         );
     }
