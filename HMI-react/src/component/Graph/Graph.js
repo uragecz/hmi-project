@@ -4,7 +4,6 @@
 import React from 'react';
 import graphStore from '../../stores/graphStore';
 import graphActions from '../../actions/graphActions'
-import ModalWindow from '../ModalWindow/ModalWindow';
 import './Graph.css';
 
 /* eslint-disable */
@@ -21,11 +20,7 @@ class Rect extends React.Component {
 
   render() {
     if (this.state.clicked) {
-      return (
-          <div>
-            <ModalWindow descTitle={this.state.id} type="rect" update={this.didClick} open={this.state.clicked}/>
-          </div>
-      );
+      return (<div></div>);
     }
     else
       return (null);
@@ -51,7 +46,7 @@ class Rect extends React.Component {
         height: this.props.height,
         width: this.props.width,
         stroke: 'black',
-        fill: '#ffffff',
+        fill: 'rgba(0, 0, 0, 0)',
         selectable: false
       });
       this.text1= new fabric.Text(this.props.QM_Rem.toString(), {
@@ -177,8 +172,8 @@ class Column extends React.Component {
         top: 0,
         evented: false,
         selectable: false,
-        border: '#9679a7',
-        fill: "rgb(206,220,0)",
+        border: "#e2ea66",
+        fill: "#e2ea66",
       });
       this.state.canvas.add(this.column);
     }
@@ -190,12 +185,12 @@ class Column extends React.Component {
         top: this.props.height,
         evented: false,
         selectable: false,
-        border: '#9679a7',
-        fill: '#9679a7'
+        border: "#e2ea66",
+        fill: "#e2ea66",
       });
       this.state.canvas.add(this.column);
     }
-    this.state.canvas.moveTo(this.column,0 ); // set level of stack
+    this.state.canvas.moveTo(this.column, 3); // set level of stack
   }
 
   shouldComponentUpdate(nextProps){
@@ -215,74 +210,49 @@ class Columns extends React.Component {
     super(props);
     this.state = {
       canvas: props.canvas,
-      states: graphStore.getGraphValue(),
+      channels: this.props.channels,
     };
-    this.onInputUpdated = this.onInputUpdated.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (nextProps.channels !== this.props.channels){
+      this.setState({
+        channels: nextProps.channels
+      })
+    }
   }
 
   render() {
+    let i = -1;
     return(
       <div>
-        {this.state.states.nb !==0 && this.state.states.na !== 0 ? <Column x={this.state.states.nb} color={'rgba(255,0,0,0.5)'} width={this.getWidth(0)}
-                                              height={this.state.states.na} canvas={this.state.canvas}/>: false}
-        {this.state.states.s1b !==0 && this.state.states.s1a !== 0 ? <Column x={this.state.states.s1b} color={'rgba(255,0,0,0.5)'} width={this.getWidth(1)}
-                                              height={this.state.states.s1a} canvas={this.state.canvas}/>: false}
-        {this.state.states.s2b !==0 && this.state.states.s2a !== 0 ?  <Column x={this.state.states.s2b} color={'rgba(255,0,0,0.5)'} width={this.getWidth(2)}
-                                              height={this.state.states.s2a} canvas={this.state.canvas}/>: false}
-        {this.state.states.s3b !==0 && this.state.states.s3a !== 0 ? <Column x={this.state.states.s3b} color={'rgba(255,0,0,0.5)'} width={this.getWidth(3)}
-                                              height={this.state.states.s3a} canvas={this.state.canvas}/>: false}
-        {this.state.states.s4b !==0 && this.state.states.s4a !== 0 ? <Column x={this.state.states.s4b} color={'rgba(255,0,0,0.5)'} width={this.getWidth(4)}
-                                              height={this.state.states.s4a} canvas={this.state.canvas}/>: false}
-        {this.state.states.l1b !==0 && this.state.states.l1a !== 0 ? <Column x={this.state.states.l1b} color={'rgba(255,0,0,0.5)'} width={this.getWidth(5)}
-                                              height={this.state.states.l1a} canvas={this.state.canvas}/>: false}
-        {this.state.states.l2b !==0 && this.state.states.l2a !== 0 ? <Column x={this.state.states.l2b} color={'rgba(255,0,0,0.5)'} width={this.getWidth(6)}
-                                              height={this.state.states.l2a} canvas={this.state.canvas}/>: false}
-        {this.state.states.l3b !==0 && this.state.states.l3a !== 0 ?  <Column x={this.state.states.l3b} color={'rgba(255,0,0,0.5)'} width={this.getWidth(7)}
-                                              height={this.state.states.l3a} canvas={this.state.canvas}/>: false}
-        {this.state.states.t1b !==0 && this.state.states.t1a !== 0 ? <Column x={this.state.states.t1b} color={'rgba(255,0,0,0.5)'} width={this.getWidth(8)}
-                                              height={this.state.states.t1a} canvas={this.state.canvas}/>: false}
-        {this.state.states.t2b !==0 && this.state.states.t2a !== 0 ?  <Column x={this.state.states.t2b} color={'rgba(255,0,0,0.5)'} width={this.getWidth(9)}
-                                              height={this.state.states.t2a} canvas={this.state.canvas}/>: false}
-        {this.state.states.t3b !==0 && this.state.states.t3a !== 0 ? <Column x={this.state.states.t3b} color={'rgba(255,0,0,0.5)'} width={this.getWidth(10)}
-                                              height={this.state.states.t3a} canvas={this.state.canvas}/>: false}
-
+          {Object.keys(this.state.channels).map(function (item) {
+            let model = this.state.channels[item];
+            i++;
+            let shape = [];
+            Object.keys(model).map(function(it){
+              shape.push(model[it].value);
+            });
+            console.log('rect - ',this.getX(shape[1]),this.getY(shape[0]),this.getWidth(i));
+            return (
+                <Column x={this.getX(shape[1])} height={this.getY(shape[0])} canvas={this.state.canvas} color={'rgba(255,0,0,0.5)'} width={this.getWidth(i)}/>
+            )
+          },this)}
       </div>
     )
   }
 
-  shouldComponentUpdate(nextState){
-    return (this.state.states !== nextState.states);
-  }
-
-  onInputUpdated(list){
-    let oldStates = Object.assign({},this.state.states);
-    for (let i of Object.keys(list)){
-      let char = i.slice(-1);
-      switch(char){
-        case 'a':
-          oldStates[i] = this.getY(list[i]);
-          break;
-        case 'b':
-          oldStates[i] = this.getX(list[i]);
-          break;
-        default:
-          break;
-      }
-    }
-    graphActions.saveValueToMachine(oldStates);
-    this.setState({
-      states: oldStates
-    });
+  shouldComponentUpdate(nextProps){
+    return (this.props.channels !== nextProps.channels);
   }
 
   getY(a) {
     if (a===0)
       return 0;
-    var numbers = [300, 200, 120, 100, 80, 60, 40, 20, 0, -20, -30];
-    var i = 0;
-    var number = 0;
-    for (;i < numbers.length; i++)
-    {
+    let numbers = [300, 200, 120, 100, 80, 60, 40, 20, 0, -20, -30];
+    let i = 0;
+    let number = 0;
+    for (;i < numbers.length; i++) {
       if(numbers[i] <= a){
         break;
       }
@@ -294,9 +264,9 @@ class Columns extends React.Component {
   }
 
   getX(a){
-    var numbers=[2, 10, 20, 30, 50, 80, 160, 320, 5000];
-    var i = 0;
-    var number = 0;
+    let numbers=[2, 10, 20, 30, 50, 80, 160, 320, 5000];
+    let i = 0;
+    let number = 0;
     for(;i<numbers.length;i++){
       if (numbers[i] >= a)
         break;
@@ -309,25 +279,44 @@ class Columns extends React.Component {
   }
 
   getWidth(e){
-    var states = [this.state.states.nb,this.state.states.s1b,this.state.states.s2b,this.state.states.s3b,this.state.states.s4b,this.state.states.l1b,this.state.states.l2b,this.state.states.l3b,
-      this.state.states.t1b,this.state.states.t2b,this.state.states.t3b];
-    var number = 0;
-    var i = e +1;
-    for(; i < states.length; i++){
-      if (i < 8) {
-        if (states[i] > 0) {
-          number = states[i];
-          break;
+    let number = 0;
+    let i = e + 1;
+    let helpNum = -1;
+    let actualItemValue;
+    let helpArr = [];
+    for (let key in this.state.channels) {
+        helpArr = [];
+        helpNum++;
+        if(helpNum === e){
+            let model = this.state.channels[key];
+            Object.keys(model).map(function (item) {
+                helpArr.push(model[item]);
+            });
+            actualItemValue = this.getX(helpArr[1].value);
         }
-      }else{
-        if (states[i] > 0){
-          number = states[i];
-          break;
+        if (helpNum >= i && i < 8) {
+            let model = this.state.channels[key];
+            Object.keys(model).map(function (item) {
+                helpArr.push(model[item]);
+            });
+            if (helpArr[1].value > 0) {
+                number = this.getX(helpArr[1].value);
+                break;
+            }
         }
-      }
+        else if (helpNum >= i && i > 8){
+            let model = this.state.channels[key];
+            Object.keys(model).map(function (item) {
+                helpArr.push(model[item]);
+            });
+            if (helpArr[1].value > 0) {
+                number = this.getX(helpArr[1].value);
+                break;
+            }
+        }
 
     }
-    return number === 0 ? (840 - states[e]) : ((number-states[e]) + 0.15);
+    return number === 0 ? (840 - actualItemValue) : ((number-actualItemValue) + 0.15);
   }
 }
 Columns.propTypes = {
@@ -350,14 +339,14 @@ class Grid extends React.Component {
   }
 
   render(){
-    var arrayCells = [];
-    var arrayCells2 = [];
-    var letters1 = ['a','b','c','d','e'];
-    var letters2 = ['i','j','k'];
+    let arrayCells = [];
+    let arrayCells2 = [];
+    let letters1 = ['a','b','c','d','e'];
+    let letters2 = ['i','j','k'];
 
     for (let i = 0; i < 8; i++){
-      var num1 = 6;
-      var num2 = 1;
+      let num1 = 6;
+      let num2 = 1;
       for (let j = 0; j < 11; j++){
         if((i < 5) && (j<6)){
           arrayCells.push(<Rect key={letters1[i]+""+num1} x={i*70} y={j*50} canvas={this.state.canvas} width={70} height={50} id={letters1[i]+""+num1}
@@ -374,6 +363,12 @@ class Grid extends React.Component {
 
     return (
       <div>
+        <Rect canvas={this.state.canvas} x={0} y={0} width={840} height={550} select={0} id={null}
+              QM_Dec={0} QM_Rem={0}/>
+        <Rect canvas={this.state.canvas} x={0} y={300} width={560} height={100} select={0} id={null}
+              QM_Dec={0} QM_Rem={0}/>
+        <Rect canvas={this.state.canvas} x={0} y={400} width={560} height={150} select={0} id={null}
+              QM_Dec={0} QM_Rem={0}/>
         {arrayCells}
         <Rect canvas={this.state.canvas} x={350} y={0} width={210} height={300} id={'f'}
               QM_Dec={this.state.QM_detected['f']} QM_Rem={this.state.QM_removed['f']}/>
@@ -381,14 +376,11 @@ class Grid extends React.Component {
               QM_Dec={0} QM_Rem={0}/>
         <Rect canvas={this.state.canvas} x={700} y={0} width={140} height={400} id={null}
               QM_Dec={0} QM_Rem={0}/>
-        <Rect canvas={this.state.canvas} x={0} y={300} width={560} height={100} select={0} id={null}
-              QM_Dec={0} QM_Rem={0}/>
+
         <Rect canvas={this.state.canvas} x={350} y={300} width={140} height={50} id={'g'}
               QM_Dec={this.state.QM_detected['g']} QM_Rem={this.state.QM_removed['g']}/>
         <Rect canvas={this.state.canvas} x={490} y={300} width={70} height={50} id={'h'}
               QM_Dec={this.state.QM_detected['h']} QM_Rem={this.state.QM_removed['h']}/>
-        <Rect canvas={this.state.canvas} x={0} y={400} width={560} height={150} select={0} id={null}
-              QM_Dec={0} QM_Rem={0}/>
         {arrayCells2}
         <Rect canvas={this.state.canvas} x={560} y={400} width={140} height={150} id={null}
               QM_Dec={0} QM_Rem={0}/>
@@ -481,12 +473,13 @@ Axis.propTypes = {
 };
 
 class Graph extends React.Component {
-  render() {
+  render(){
     const {canvas} = this.props;
+    canvas.getContext()
     return (
       <div>
-        <Columns canvas={canvas} />
         <Grid canvas={canvas}/>
+        <Columns channels={this.props.channels} canvas={canvas} />
         <Axis canvas={canvas}/>
       </div>
     )
@@ -508,12 +501,12 @@ class Print extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      canvas: null,
+        canvas: null,
     }
   }
 
   shouldComponentUpdate(nextProps,nextState){
-    return this.state.canvas !== nextState.canvas;
+    return this.state.canvas !== nextState.canvas || this.props.channels !== nextProps.channels;
   }
 
   componentDidMount()
@@ -521,6 +514,28 @@ class Print extends React.Component {
     this.setState({
       canvas: new fabric.Canvas(this.refs.canvas),
     });
+
+    let context  = document.getElementById("contextCanvas").getContext('2d');
+    context.webkitImageSmoothingEnabled = false;
+    context.mozImageSmoothingEnabled = false;
+    context.imageSmoothingEnabled = false;
+  }
+
+  componentWillMount(){
+      graphContainer = document.getElementById('graphColumn');
+      canWidth= ''+(graphContainer.offsetWidth/895) * 100 ;
+      if (canWidth < 100){
+          canWidth= parseFloat('0.' + graphContainer.offsetWidth);
+      }
+      else{
+          canWidth = canWidth.slice( 1 );
+          canWidth= parseFloat('1.' + canWidth);
+      }
+      canWidth.toFixed(2);
+      canvas = {
+          transform : 'scale('+(canWidth-0.02)+')',
+          transformOrigin : 'top right'
+      };
   }
 
   componentDidUpdate(){
@@ -529,18 +544,19 @@ class Print extends React.Component {
 
   render() {
     return (
-      <div className="subMaster">
-        <div className="container">
-          <canvas className="canvas" ref="canvas" width="895" height="560"></canvas>
+        <div id="graph-container">
+          <canvas style={canvas} id="contextCanvas" className="canvas" ref="canvas" width={895} height={560}></canvas>
           <div>
-            {this.state.canvas !== null ? <Graph canvas={this.state.canvas} /> : false}
+            {this.state.canvas !== null ? <Graph canvas={this.state.canvas} channels={this.props.channels} /> : false}
           </div>
         </div>
-      </div>
     )
   }
 }
 
+var canWidth;
+var graphContainer;
+var canvas = {};
 export default Print;
 
 

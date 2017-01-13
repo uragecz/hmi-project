@@ -20,34 +20,32 @@ class Input extends Component{
     render(){
         const{unit, unit1, name, name1, even, modal,type} = this.props;
         return(
-            <div className={'input-root ' + (!modal ? even : false)}>
-                <div className={'input-container'}>
-                    {this.state.clicked ? <NumpadModal value={this.state.active === "input1" ? this.state.value : this.state.value1}
-                                                       onUpdate={this.handleClick.bind(this)} editValue={this.editValue.bind(this)}/>: false}
-                    {type.map(function(item){
-                        switch(item){
-                            case "name1":
-                                return <label key={item} className={'captionLabel'}>{name}</label>;
-                            case "name2":
-                                return <label key={item} className={'captionLabel2'}>{name1}</label>;
-                            case "unit1":
-                                return <label key={item} className={'unitLabel'}>{unit}</label>;
-                            case "unit2":
-                                return <label key={item} className={'unitLabel'}>{unit1}</label>;
-                            case "input1":
-                                return <input key={item} disabled={!this.state.enable} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
-                                              value={this.state.value} type="text"/>;
-                            case "input2":
-                                return <input key={item} disabled={!this.state.enable} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
-                                              value={this.state.value1} type="text"/>;
-                            case "box":
-                                return <input key={item} className={'boxInput'} onChange={this.toggleChange.bind(this)} checked={this.state.enable}  type="checkbox"  ref="box"/>;
-                            default:
-                                break;
+            <tr className={"table-row " + (!modal ? even : false)}>
+                {this.state.clicked ? <td className="hidden"><NumpadModal value={this.state.active === "input1" ? this.state.value : this.state.value1}
+                                                       onUpdate={this.handleClick.bind(this)} editValue={this.editValue.bind(this)}/></td>: false}
+                {type.map(function(item){
+                    switch(item){
+                        case "name1":
+                            return <td className="table-cell caption"><label key={item} className={'captionLabel'}>{name}</label></td>;
+                        case "name2":
+                            return <td className="table-cell caption"><label key={item} className={'captionLabel2'}>{name1}</label></td>;
+                        case "unit1":
+                            return <td className="table-cell unit"><label key={item} className={'unitLabel'}>{unit}</label></td>;
+                        case "unit2":
+                            return <td className="table-cell unit"><label key={item} className={'unitLabel'}>{unit1}</label></td>;
+                        case "input1":
+                            return <td className="table-cell input"><input key={item} disabled={!this.state.enable} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
+                                              value={this.state.value} type="text"/></td>;
+                        case "input2":
+                            return <td className="table-cell input"><input key={item} disabled={!this.state.enable} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
+                                              value={this.state.value1} type="text"/></td>;
+                        case "box":
+                            return <td className="table-cell box"><input key={item} className={'boxInput'} onChange={this.toggleChange.bind(this)} checked={this.state.enable}  type="checkbox"  ref="box"/></td>;
+                        default:
+                            break;
                         }
                     },this)}
-                </div>
-            </div>
+            </tr>
         )
     }
 

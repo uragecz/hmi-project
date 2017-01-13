@@ -88,8 +88,6 @@ class CircleMenu extends Component {
         )
     }
 
-
-
     getPositions(len,from,numbs,size){
         let arr = [];
         let half = len/2;

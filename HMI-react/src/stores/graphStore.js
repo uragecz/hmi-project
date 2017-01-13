@@ -21,13 +21,51 @@ var _store = {
     "d3": 24, "d4": 25, "d5": 26, "d6": 27, "e1": 28, "e2": 29, "e3": 30, "e4": 31, "e5": 32,  "e6": 33,
     "f": 34, "g": 35, "h": 36, "i1": 37, "i2": 38, "j1": 39, "j2": 40, "k1": 41, "k2": 42
   },
-  graphValues: {
-    machine:{
-      "na":0,"s1a":0,"s2a":0,"s3a":0,"s4a":0,"l1a":0,"l2a":0,"l3a":0,"t1a":0,"t2a":0,"t3a":0
-    },
-    rotation:{
-      "nb":0,"s1b":0,"s2b":0,"s3b":0,"s4b":0,"l1b":0,"l2b":0,"l3b":0,"t1b":0,"t2b":0,"t3b":0
-    }
+  channels: {
+      ch1: {
+          N:    {value: 10, unit: "%"},
+          nmm: {value: 20, unit: "mm"}
+      },
+      ch2: {
+          S1:   {value: 50, unit: "%"},
+          s1mm: {value : 60, unit : "mm" }
+      },
+      ch3: {
+          S2:   {value: 55, unit: "%"},
+          s2mm: {value : 81, unit : "mm" }
+      },
+      ch4: {
+          S3:   {value: 150, unit: "%"},
+          s3mm: {value : 180, unit : "mm" }
+      },
+      ch5: {
+          S4:   {value: 190, unit: "%"},
+          s4mm: {value : 256, unit : "mm" }
+      },
+      ch6: {
+          L1:   {value: 100, unit: "%"},
+          l1mm: {value : 290, unit : "mm" }
+      },
+      ch7: {
+          L2:   {value: 96, unit: "%"},
+          l2mm: {value : 301, unit : "mm" }
+      },
+      ch8: {
+          L3:   {value: 60, unit: "%"},
+          l3mm: {value : 319, unit : "mm" }
+      },
+      ch9: {
+          T1:   {value: -15, unit: "%"},
+          t1mm: {value : 81, unit : "mm" }
+      },
+      ch10: {
+          T2:   {value: -26, unit: "%"},
+          t2mmm: {value : 99, unit : "mm" }
+      },
+      ch11: {
+          T3:   {value: -29, unit: "%"},
+          t3mm: {value : 569, unit : "mm" }
+      },
   }
 };
 
@@ -39,8 +77,8 @@ var setQMRem = function(list){
   _store.qm_rem = list;
 };
 
-var setGraphValues = function(list){
-  _store.graphValues = list;
+var setChannels = function(list){
+  _store.channels = list;
 };
 
 var graphStore = objectAssign({}, EventEmitter.prototype, {
@@ -56,8 +94,8 @@ var graphStore = objectAssign({}, EventEmitter.prototype, {
   getQmRem: function(){
     return _store.qm_rem;
   },
-  getGraphValue: function(){
-    return _store.graphValues;
+  getChannels: function(){
+    return _store.channels;
   }
 
 });
@@ -71,7 +109,7 @@ GraphDispatcher.register(function(payload){
       graphStore.emit(CHANGE_EVENT);
       break;
     case graphConstants.CHANGE_VALUES:
-      setGraphValues(action.data);
+      setChannels(action.data);
       graphStore.emit(CHANGE_EVENT);
       break;
     default:

@@ -25,27 +25,35 @@ class InputList extends Component{
                         <div className="descTitle second">{this.props.descUnit}</div>
                     </div> : false }
                     <div className={ modal ? "inputList" : "inputList disable"}>
-                        {Object.keys(list).map(function (item) {
-                            even = !even;
-                            let model = list[item];
-                            if(multiple){
-                                let names = [];
-                                let values = [];
-                                let units = [];
-                                Object.keys(model).map(function (item) {
-                                    values.push(model[item].value);
-                                    names.push(item);
-                                    units.push(model[item].unit);
-                                });
-                                return (
-                                    <Input inputKey={item} key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)} enable={model.enable} name={names[0]} name1={names[1]}
-                                           value={values[0]} value1={values[1]}  unit={units[0]} unit1={units[1]}/>
-                                )
-                            }
-                            return(
-                                <Input inputKey={item} key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)} name={item} value={model.value} unit={model.unit}/>
-                            )
-                        },this)}
+                        <table cellSpacing="0" className="table-list">
+                            <thead>
+                            </thead>
+                            <tbody>
+                                {Object.keys(list).map(function (item) {
+                                    even = !even;
+                                    let model = list[item];
+                                    if(multiple){
+                                        let names = [];
+                                        let values = [];
+                                        let units = [];
+                                        Object.keys(model).map(function (item) {
+                                            values.push(model[item].value);
+                                            names.push(item);
+                                            units.push(model[item].unit);
+                                        });
+                                        return (
+                                            <Input inputKey={item} key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)} enable={model.enable}
+                                                       name={names[0]} name1={names[1]} value={values[0]} value1={values[1]}  unit={units[0]} unit1={units[1]}/>
+
+                                        )
+                                    }
+                                    return(
+                                        <Input inputKey={item} key={item} type={type} modal={modal} even={even} changeValue={this.changeValue.bind(this)}
+                                                   name={item} value={model.value} unit={model.unit}/>
+                                    )
+                                },this)}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 {this.state.clicked ?
@@ -75,6 +83,7 @@ class InputList extends Component{
 
     changeValue(name,value,enable,key) {
         let oldStates = this.cloneObject(this.props.list);
+        console.log(name,value,key,oldStates,this.props.multiple);
         if (this.props.multiple) {
             Object.keys(oldStates).map(function (item) {
                 let model = oldStates[item];

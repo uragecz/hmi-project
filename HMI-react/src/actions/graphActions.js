@@ -8,7 +8,7 @@ import http from 'superagent';
 var timer;
 var graphActions = {
   ///GRAPH ACTIONS
-  saveValueToMachine: async function(list){
+  setChannels: async function(list){/*
     try {
       let obj = await graphActions.sendData(list);
       if (obj) {
@@ -21,6 +21,11 @@ var graphActions = {
     catch(err){
       console.log(err);
     }
+    */
+      Dispatcher.handleAction({
+          actionType: graphConstants.CHANGE_VALUES,
+          data: list
+      });
   },
 
   getValueFromMachine: async function(){
