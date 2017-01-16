@@ -522,30 +522,29 @@ class Print extends React.Component {
   }
 
   componentWillMount(){
-      graphContainer = document.getElementById('graphColumn');
-      canWidth= ''+(graphContainer.offsetWidth/895) * 100 ;
+      const graphContainer = document.getElementById('graphColumn');
+      canWidth= ''+(graphContainer.offsetWidth/CANVAS_WIDTH) * 100 ;
       if (canWidth < 100){
           canWidth= parseFloat('0.' + graphContainer.offsetWidth);
+          canWidth += 0.08;
       }
       else{
           canWidth = canWidth.slice( 1 );
           canWidth= parseFloat('1.' + canWidth);
+          canWidth += 0.08;
       }
-      canWidth.toFixed(2);
-      canvas = {
-          transform : 'scale('+(canWidth-0.02)+')',
+      canWidth.toFixed(3);
+      console.log(canWidth);
+      canvasStyle = {
+          transform : 'scale('+canWidth+')',
           transformOrigin : 'top right'
       };
-  }
-
-  componentDidUpdate(){
-    this.props.readyToRender();
   }
 
   render() {
     return (
         <div id="graph-container">
-          <canvas style={canvas} id="contextCanvas" className="canvas" ref="canvas" width={895} height={560}></canvas>
+          <canvas style={canvasStyle} id="contextCanvas" className="canvas" ref="canvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT}></canvas>
           <div>
             {this.state.canvas !== null ? <Graph canvas={this.state.canvas} channels={this.props.channels} /> : false}
           </div>
@@ -554,9 +553,10 @@ class Print extends React.Component {
   }
 }
 
+const CANVAS_WIDTH = 895;
+const CANVAS_HEIGHT = 560;
 var canWidth;
-var graphContainer;
-var canvas = {};
+var canvasStyle = {};
 export default Print;
 
 

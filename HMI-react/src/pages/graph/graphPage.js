@@ -18,13 +18,16 @@ class GraphPage extends React.Component {
             loaded: false,
             print: null,
             loading: true,
-            channels: graphStore.getChannels()
+            channels: graphStore.getChannels(),
+            done: false
         }
         this.update = this.update.bind(this);
     }
 
     componentDidMount(){
-        this.setReady();
+        setTimeout(() => {
+            this.setState({done: true});
+        }, 200);  //delay this to allow React to actually render the initial state.
     }
 
     render(){
@@ -36,24 +39,11 @@ class GraphPage extends React.Component {
                     <InputList modal={false} descTitle='Channels' hideDesc={false} multiple={true} type={["name1","input1","unit1","input2","unit2"]} save={this.saveList} list={this.state.channels} />
                 </div>
                 <div className="item column-3" id="graphColumn">
-                    {this.state.loading? <img src={loadingIcon}/> : false}
-                    {this.state.print? <Print channels={this.state.channels} readyToRender={this.readyRender.bind(this)}/> : false}
+                    {!this.state.done ? <div id="loading"><i className="fa fa-spinner fa-spin fa-5x fa-fw" aria-hidden="true"></i></div> : false}
+                    {this.state.done ? <Print channels={this.state.channels} /> : false}
                 </div>
             </Page>
         )
-    }
-
-    readyRender(){
-        this.setState({
-            loading: false
-        })
-    }
-
-    setReady(){
-        setTimeout(function() {
-            this.setState({print: new Print()})
-        }.bind(this), 100);
-
     }
 
     componentWillMount(){

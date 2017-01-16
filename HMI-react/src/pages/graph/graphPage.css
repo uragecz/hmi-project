@@ -10,3 +10,9 @@
     height:100%;
     float:right;
 }
+
+#loading{
+    top: 20%;
+    position: absolute;
+    left: 60%;
+}
