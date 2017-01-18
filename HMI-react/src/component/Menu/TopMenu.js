@@ -2,14 +2,16 @@
  * Created by urunzl on 17.10.2016.
  */
 //components/stores/actions
-import React,{Component} from 'react';
-import {Link} from 'react-router';
+import React,{ Component } from 'react';
+import { Link, browserHistory } from 'react-router';
 import routes from '../../route/routes';
 import Toolbar from '../Toolbar/Toolbar';
 
 //styles/icons
 import './Menu.css';
 import arrowDown from '../../../assets/arrow-down.png'
+
+/* eslint-disable */
 
 class TopMenu extends Component{
     constructor(props){
@@ -24,12 +26,19 @@ class TopMenu extends Component{
         const {visitedItems, pathArray, obj} = this.props;
         let counter = -1;
         let counterA = -1;
+        let mainItemActive = false;
         return(
             <div id="header">
             <div className={"topMenu level-" + visitedItems.length }>
                 {visitedItems.map(function (item){
                     let model = item;
-                    let activeItem = pathArray[pathArray.length-1] === model.name;
+                    let activeItem;
+                    if(pathArray[pathArray.length-1] === model.name){
+                        mainItemActive = true;
+                        activeItem = true;
+                    }
+                    else
+                        activeItem = false;
                     counter++;
                     if (model.name !== pathArray[pathArray-1]){
                         return(
@@ -52,7 +61,7 @@ class TopMenu extends Component{
                                 <div className={"menuIcon " + (this.state.activeItem === model)}>
 
                                 </div>
-                                {this.state.activeItem === model ?
+                                {this.state.activeItem === model  ?
                                     <div className="subTop">
                                         <div id="arrowDown">
                                            <img src={arrowDown} height={23} width={23}/>
@@ -61,7 +70,7 @@ class TopMenu extends Component{
                                             {Object.keys(this.state.showedObject).map(function(item){
                                             let model = this.state.showedObject[item];
                                             return(
-                                                <div className="subTopMenuItem">
+                                                <div key={item} className="subTopMenuItem">
                                                     <Link key={item} to={model.hash} className="menuLink">
                                                         <img src={model.icon} className="topIcons" height="40px" width="40px"/>
                                                         {model.name.toUpperCase()}
@@ -71,7 +80,8 @@ class TopMenu extends Component{
                                         },this)}
                                         </div>
                                     </div>
-                                    :false}
+                                    :false
+                                }
                             </div>
                         )
                     }
@@ -85,7 +95,7 @@ class TopMenu extends Component{
                             {counterA === 0 && counter !== -1 ? <div className="arrowLeft">
                                 <svg width={20} height={70}>
                                     <polygon className={"topMenuPolygon level-"+counter} fill="white" stroke="none" strokeWidth="1" points="0,0 20,35 0,70"/>
-                                    {counterA === 0 && !activeItem ?<polygon className={"smallPolygon"} fill="#e2ea66" stroke="none" strokeWidth="1" points="0,70 0,62 4.5,62"/> : false}
+                                    {counterA === 0 && mainItemActive ?<polygon className={"smallPolygon"} fill="#e2ea66" stroke="none" strokeWidth="1" points="0,70 0,62 4.5,62"/> : false}
                                 </svg>
                             </div> : false}
                             <div className="topMenuIcon">
@@ -118,6 +128,10 @@ class TopMenu extends Component{
             }
         });
 
+        if(Object.keys(showSub).length < 2){
+            browserHistory.push(i.hash);
+            return;
+        }
         if(showSub === this.state.showedObject)
             this.setState({showedObject: null, activeItem: null});
         else

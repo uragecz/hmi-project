@@ -5,6 +5,8 @@ import Dispatcher from '../dispatcher/Dispatcher';
 import graphConstants from '../constants/graphConstants';
 import http from 'superagent';
 
+/* eslint-disable */
+
 var timer;
 var graphActions = {
   ///GRAPH ACTIONS

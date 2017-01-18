@@ -1,54 +1,66 @@
 [
   {
     "lang": "EN",
+    "icon": "../../../assets/eng.png",
     "page": {
-      "header": {
-        "title": "Title",
-        "subtitle": "subTitle"
-      },
-      "menu":{
-        "favourite": "FAVOURITE",
-        "history": "HISTORY",
-        "current": "CURRENT"
-      },
-      "content":{
-        "title": "Home Page"
-      },
-      "graph":{
-        "rotation": "Rotation",
-        "machine": "Machine"
-      },
-      "option":{
-        "group": "Group",
-        "shift": "Shift",
-        "unit": "Unit"
-      }
+        "footer":{
+            "title": "Home Page"
+        },
+        "option":{
+            "group": "Group",
+            "shift": "Shift",
+            "unit": "Unit"
+        },
+        "homePage":{
+            "rotation": "Rotation",
+            "machine": "Machine"
+        },
+        "productSettings":{
+            "speed": "Speed",
+            "air": "Air",
+            "package": "Package",
+            "rotor": "Rotor"
+        },
+        "piecing":{
+            "amispin": "AMISpin - Sequence",
+            "silverFeedLength": "Silver feed length",
+            "silverFeedSpeed": "Silver feed speed"
+        },
+        "graphPage":{
+            "channels": "Channels"
+        }
     }
   },
   {
     "lang": "CZ",
+    "icon": "../../../assets/cze.png",
     "page": {
-      "header": {
-        "title": "Nadpis",
-        "subtitle": "Pod nadpis"
-      },
-      "menu":{
-        "favourite": "OBLÍBENÉ",
-        "history": "HISTORIE",
-        "current": "AKTUÁLNÍ"
-      },
-      "content":{
-        "title": "Domovská stránka"
-      },
-      "graph":{
-        "rotation": "Rotace",
-        "machine": "Stroj"
-      },
-      "option":{
-        "group": "Skupina",
-        "shift": "Směna",
-        "unit": "Jednotka"
-      }
+        "footer":{
+            "title": "Home Page"
+        },
+        "option":{
+            "group": "Skupina",
+            "shift": "Směna",
+            "unit": "Jednotka"
+        },
+        "homePage":{
+            "rotation": "Rotace",
+            "machine": "Stroj"
+        },
+        "productSettings":{
+            "speed": "Rychlost",
+            "air": "Vzduch",
+            "package": "Balíček",
+            "rotor": "Rotor"
+        },
+        "piecing":{
+            "amispin": "AMISpin - Sekvence",
+            "silverFeedLength": "Silver přívod délka",
+            "silverFeedSpeed": "Silver přívod rychlost"
+        },
+        "graphPage":{
+            "channels": "Kanály"
+        }
     }
   }
 ]

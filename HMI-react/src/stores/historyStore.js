@@ -11,10 +11,11 @@ var objectAssign = require('object-assign');
 var EventEmitter = require('events').EventEmitter;
 var CHANGE_EVENT = 'change';
 
+/* eslint-disable */
+
 var _store = {
     visitedLinks: []
 };
-
 
 var addVisitedLink = function(link){
     _store.visitedLinks.map(function(item){

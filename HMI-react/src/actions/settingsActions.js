@@ -6,7 +6,7 @@
  */
 import Dispatcher from '../dispatcher/Dispatcher';
 import settingsConstants from '../constants/settingsConstants';
-import http from 'superagent';
+//import http from 'superagent';
 
 var settingsActions = {
     setProductPackage: function(group){

@@ -227,16 +227,15 @@ class Columns extends React.Component {
     return(
       <div>
           {Object.keys(this.state.channels).map(function (item) {
-            let model = this.state.channels[item];
-            i++;
-            let shape = [];
-            Object.keys(model).map(function(it){
-              shape.push(model[it].value);
-            });
-            console.log('rect - ',this.getX(shape[1]),this.getY(shape[0]),this.getWidth(i));
-            return (
-                <Column x={this.getX(shape[1])} height={this.getY(shape[0])} canvas={this.state.canvas} color={'rgba(255,0,0,0.5)'} width={this.getWidth(i)}/>
-            )
+              let model = this.state.channels[item];
+              i++;
+              let shape = [];
+              Object.keys(model).map(function(it){
+                  shape.push(model[it].value);
+              });
+              return (
+                  <Column key={item} x={this.getX(shape[1])} height={this.getY(shape[0])} canvas={this.state.canvas} color={'rgba(255,0,0,0.5)'} width={this.getWidth(i)}/>
+              )
           },this)}
       </div>
     )
@@ -475,7 +474,6 @@ Axis.propTypes = {
 class Graph extends React.Component {
   render(){
     const {canvas} = this.props;
-    canvas.getContext()
     return (
       <div>
         <Grid canvas={canvas}/>
@@ -514,27 +512,26 @@ class Print extends React.Component {
     this.setState({
       canvas: new fabric.Canvas(this.refs.canvas),
     });
-
+    /*
     let context  = document.getElementById("contextCanvas").getContext('2d');
     context.webkitImageSmoothingEnabled = false;
     context.mozImageSmoothingEnabled = false;
     context.imageSmoothingEnabled = false;
+    */
   }
 
   componentWillMount(){
       const graphContainer = document.getElementById('graphColumn');
-      canWidth= ''+(graphContainer.offsetWidth/CANVAS_WIDTH) * 100 ;
+      let canWidth= ''+(graphContainer.offsetWidth/CANVAS_WIDTH) * 100 ;
       if (canWidth < 100){
           canWidth= parseFloat('0.' + graphContainer.offsetWidth);
-          canWidth += 0.08;
       }
       else{
           canWidth = canWidth.slice( 1 );
           canWidth= parseFloat('1.' + canWidth);
-          canWidth += 0.08;
       }
+      canWidth += 0.08;
       canWidth.toFixed(3);
-      console.log(canWidth);
       canvasStyle = {
           transform : 'scale('+canWidth+')',
           transformOrigin : 'top right'
@@ -544,7 +541,7 @@ class Print extends React.Component {
   render() {
     return (
         <div id="graph-container">
-          <canvas style={canvasStyle} id="contextCanvas" className="canvas" ref="canvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT}></canvas>
+          <canvas style={canvasStyle} className="canvas" ref="canvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT}></canvas>
           <div>
             {this.state.canvas !== null ? <Graph canvas={this.state.canvas} channels={this.props.channels} /> : false}
           </div>
@@ -555,8 +552,9 @@ class Print extends React.Component {
 
 const CANVAS_WIDTH = 895;
 const CANVAS_HEIGHT = 560;
-var canWidth;
+
 var canvasStyle = {};
+
 export default Print;
 
 

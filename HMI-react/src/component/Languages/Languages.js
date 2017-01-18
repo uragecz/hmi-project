@@ -2,48 +2,51 @@
  * Created by urunzl on 13.10.2016.
  */
 import React,{Component} from 'react';
+
 import './Languages.css';
+import cz from '../../../assets/cze.png';
+import eng from '../../../assets/eng.png';
 
 class Languages extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            actualLanguage: "EN",
-            openMenu: false
-        }
+        this.pageClick = this.pageClick.bind(this);
     }
 
     render(){
         return(
-            <div className="info-button">
-                <button onClick={this.openLanguages.bind(this)} className={this.state.openMenu ? 'infoButton open' : 'infoButton'}>{this.state.actualLanguage}</button>
-                {this.state.openMenu ?
-                    <div id="languageMenu">
-                        <div className="languageMenuItem">
-                            <button onClick={this.changeLanguage.bind(this,'EN')} className={'languageButton'}>EN</button>
-                        </div>
-                        <div className="languageMenuItem">
-                            <button onClick={this.changeLanguage.bind(this,'CZ')} className={'languageButton'}>CZ</button>
-                        </div>
+            <div id="languagePage" className="opacityBoxMenu">
+                <div id="languageMenu">
+                    <div className="languageIcon">
+                        <img src={cz} width={100} height={100} onClick={this.changeLanguage.bind(this,'CZ')}/>
                     </div>
-                :false}
+                    <div className="languageIcon">
+                        <img src={eng} width={100} height={100} onClick={this.changeLanguage.bind(this,'EN')}/>
+                    </div>
+                </div>
             </div>
         )
-    }
-
-    openLanguages(){
-        this.setState({
-            openMenu: !this.state.openMenu
-        })
     }
 
     changeLanguage(lang){
         this.setState({
             actualLanguage: lang,
-            openMenu: !this.state.openMenu
         });
         this.props.switchLanguage(lang);
+        this.props.openLanguages();
+    }
 
+    componentDidMount() {
+        window.addEventListener('click', this.pageClick, false);
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener('click', this.pageClick, false);
+    }
+
+    pageClick(e) {
+        if (e.target.id === 'languagePage')
+            this.props.openLanguages();
     }
 }
 

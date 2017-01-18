@@ -20,19 +20,20 @@ class ProductSettings extends React.Component {
         this.update = this.update.bind(this);
     }
     render(){
-        var {...other} = this.props;
+        const { data } = this.props;
+        const text = data.productSettings;
         return(
             <Page>
                 <div className="item size-3">
-                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} descTitle={"Speed"}/>
-                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} descTitle={"Air"}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} descTitle={text.speed}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} descTitle={text.air}/>
                 </div>
                 <div className="item size-3">
                     <div id="rotor-image"></div>
                 </div>
                 <div className="item size-3">
-                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} descTitle={'Package'}/>
-                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} descTitle={"Rotor"}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} descTitle={text.package}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} descTitle={text.rotor}/>
                 </div>
                 <div className="item column-4">
                     <div id="switch">

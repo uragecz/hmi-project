@@ -63,7 +63,7 @@ class Footer extends Component{
                         </div>
                     </div>
                 </div>
-                {this.state.openHelp ? <Help pathName={this.props.pathName} closeHelpPage={this.handleLogoClick.bind(this)}/>: false}
+                {this.state.openHelp ? <Help closeHelpPage={this.handleLogoClick.bind(this)} {...this.props} />: false}
             </div>
         )
     }

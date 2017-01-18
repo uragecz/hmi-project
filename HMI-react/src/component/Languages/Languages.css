@@ -1,16 +1,27 @@
-.languageButton{
-    width: 85px;
-    height: 70px;
-    background-color: rgb(36,76,90);
-    border-radius: 5px;
-    border: none;
-    color: white;
-    margin: 3px;
-    border-right: 3px solid #11303a;
-    border-bottom: 3px solid #11303a;
+#languageMenu{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
 }
 
-#languageMenu{
-    background-color: rgba(80, 112, 123, 0.55);
-    border-radius: 5px;
+.language-item{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+    float: left;
+}
+
+.languageIcon{
+    width: 25%;
+    height: 50%;
+    float: left;
+    display: flex;
+    justify-content: center;
 }

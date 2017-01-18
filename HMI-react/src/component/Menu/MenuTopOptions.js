@@ -10,9 +10,6 @@ import FavouriteHistory from './FavouriteHistory';
 
 //styles and images
 import './Menu.css';
-import openMenu from '../../../assets/openMenu.svg';
-import goFavourite from '../../../assets/star.svg';
-import goHistory from '../../../assets/history.svg';
 
 class MenuTopOptions extends Component{
     constructor(props) {
@@ -24,8 +21,7 @@ class MenuTopOptions extends Component{
     }
 
     render(){
-
-        const {show,data, ...others} = this.props;
+        const {show, ...others} = this.props;
         return(
             <div id="menuOpen" className={show? "opacityBoxMenu" : "opacityBoxMenu close"} >
                 <div className={show? "option" : "option close"}>

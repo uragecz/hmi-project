@@ -4,7 +4,6 @@
 
 import Dispatcher from '../dispatcher/Dispatcher';
 import selectionConstants from '../constants/selectionConstants';
-import http from 'superagent';
 
 var selectionActions = {
     switchUnit: function(unit){

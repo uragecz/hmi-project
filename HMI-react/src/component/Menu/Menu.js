@@ -13,6 +13,8 @@ import MenuTopOptions from './MenuTopOptions';
 import './Menu.css';
 import openMenu from '../../../assets/openMenu.png';
 
+/* eslint-disable */
+
 class Menu extends Component{
     constructor(props){
         super(props);

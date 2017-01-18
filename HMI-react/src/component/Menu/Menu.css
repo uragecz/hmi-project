@@ -218,12 +218,11 @@ h4.itemValue{
 }
 
 .topMenuItem.finalItem{
-    padding: 0 10px 0 0;
-    margin-right: 10px;
+    padding: 0 10px 0 10px;
 }
 .topMenuItem.active{
     font-weight: 700;
-    padding-right: 10px;
+    padding: 0 10px 0 10px;
 }
 
 .topMenuIcon{
@@ -280,7 +279,8 @@ h4.itemValue{
 }
 
 .subTopMenu {
-    top: 23px;
+    top: 24px;
+    left: -10px;
     padding: 0 10px 0 10px;
     position: absolute;
 }
@@ -330,13 +330,14 @@ h4.itemValue{
 .arrowLeft{
     width: 25px;
     float: left;
+    margin-left: -10px;
 }
 
 #arrowDown{
     top: 0;
     width: 100%;
     position: absolute;
-    left: 50%;
+    left: calc(50% - 11.5px);
 }
 
 .topMenuItem.actual{

@@ -69,7 +69,7 @@ class CircleMenu extends Component {
                                     + " A225,225 0 0,1 " + x +", " + y + " L" + (((x-width)/1.5)+width) + "," + (((y-width)/1.5)+width) + " A150,150 0 0,0 " +  (((previousX-width)/1.5)+width) + "," + (((previousY-width)/1.5)+width) }>
                                     </path>
                                     <image href={model.icon} x={xPosition[from[counter]]} y={yPosition[from[counter]]} height="40px" width="40px"/>
-                                    <text textAnchor="end" x={xPosition[from[counter]]+40} y={yPosition[from[counter]]+55} fontFamily="sans-serif" fontSize="16px" fill={activeItem ? "white" : "black"}>{model.value}
+                                    <text textAnchor="end" x={xPosition[from[counter]]+40} y={yPosition[from[counter]]+53} fontFamily="sans-serif" fontSize="16px" fill={activeItem ? "white" : "black"}>{model.value}
                                     </text>
                                 </Link>
                             )
@@ -92,6 +92,10 @@ class CircleMenu extends Component {
         let arr = [];
         let half = len/2;
         let num = numbs[from];
+        if ( half === 1){
+            num -= 1;
+        }
+        //num = num === 1 ? 0 : num;
         for (let i = 0; i < Math.round(half)-1; i++){
             num = num === 0? size-1: num-1;
         }

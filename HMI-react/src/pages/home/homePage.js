@@ -6,10 +6,7 @@ import Page from '../../component/Page/Page'
 
 
 class HomePage extends React.Component {
-
-
     render(){
-        var {...other} = this.props;
         return(
             <Page>
                 <div className="layout horizontal-big start">

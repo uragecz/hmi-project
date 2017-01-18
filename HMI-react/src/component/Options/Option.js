@@ -11,7 +11,7 @@ class Option extends Component{
         return this.props.previousX !== null;
     }
     render(){
-        const { posAngle, previousX, previousY, x, y, xPos, yPos, xRot, yRot, type, value, activeItem} = this.props;
+        const { posAngle, previousX, previousY, x, y, xPos, yPos, xRot, yRot, type,  activeItem} = this.props;
         return(
             <g transform={"rotate("+ posAngle +",125 125)"} onClick={this.handleClick.bind(this)}>
                 <path fill={activeItem ? "rgb(36,76,90)" : "white"} stroke="rgba(0,0,0,0.1)" strokeWidth="2"

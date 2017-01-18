@@ -10,7 +10,7 @@ const content = require('../data/content.json');
 var CHANGE_EVENT = 'change';
 
 var _store = {
-  data: content.filter(obj => obj.lang === 'EN')[0].page
+  data: content.filter(obj => obj.lang === 'EN')[0]
 };
 
 var setData = function(data){
@@ -35,7 +35,7 @@ Dispatcher.register(function(payload){
   var action = payload.action;
   switch(action.actionType){
     case languageConstants.SWITCH_LANGUAGE:
-      setData(action.data.page);
+      setData(action.data);
       languageStore.emit(CHANGE_EVENT);
       break;
     default:

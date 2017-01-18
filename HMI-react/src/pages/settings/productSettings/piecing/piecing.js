@@ -19,11 +19,13 @@ class Piecing extends Component{
         this.saveList = this.saveList.bind(this);
     }
     render(){
+        const { data }= this.props;
+        const text = data.piecing;
         return(
             <Page>
                 <div className="item column-4">
                     <div className="inputs-description">
-                        AMISpin - Sequence
+                        {text.amispin}
                     </div>
                     <div className="item column-2">
                         <InputList modal={false} descTitle='AMISpin - Sequence' hideDesc={true} multiple={false} type={["name1","input1","unit1"]} save={this.saveList} list={this.state.amiSpin} />
@@ -35,10 +37,10 @@ class Piecing extends Component{
                 <div className="item column-4">
                     <div className="inputs-description">
                         <div className="firstDesc">
-                            Silver feed length
+                            {text.silverFeedLength}
                         </div>
                         <div id="silverFeedSpeed-desc">
-                            Silver feed speed
+                            {text.silverFeedSpeed}
                         </div>
                     </div>
                     <div className="item column-2">

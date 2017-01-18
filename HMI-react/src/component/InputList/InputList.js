@@ -6,6 +6,8 @@ import Input from './Input';
 import ModalWin from '../ModalWindow/ModalWin';
 import './InputList.css';
 
+/* eslint-disable */
+
 class InputList extends Component{
     constructor(props) {
         super(props);

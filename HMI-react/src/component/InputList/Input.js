@@ -5,6 +5,8 @@ import React,{Component} from 'react';
 import NumpadModal from '../ModalWindow/NumpadModal';
 import './InputList.css';
 
+/* eslint-disable */
+
 class Input extends Component{
     constructor(props) {
         super(props);
@@ -26,27 +28,31 @@ class Input extends Component{
                 {type.map(function(item){
                     switch(item){
                         case "name1":
-                            return <td className="table-cell caption"><label key={item} className={'captionLabel'}>{name}</label></td>;
+                            return <td key={item} className="table-cell caption"><label key={item} className={'captionLabel'}>{name}</label></td>;
                         case "name2":
-                            return <td className="table-cell caption"><label key={item} className={'captionLabel2'}>{name1}</label></td>;
+                            return <td key={item} className="table-cell caption"><label key={item} className={'captionLabel2'}>{name1}</label></td>;
                         case "unit1":
-                            return <td className="table-cell unit"><label key={item} className={'unitLabel'}>{unit}</label></td>;
+                            return <td key={item} className="table-cell unit"><label key={item} className={'unitLabel'}>{unit}</label></td>;
                         case "unit2":
-                            return <td className="table-cell unit"><label key={item} className={'unitLabel'}>{unit1}</label></td>;
+                            return <td key={item} className="table-cell unit"><label key={item} className={'unitLabel'}>{unit1}</label></td>;
                         case "input1":
-                            return <td className="table-cell input"><input key={item} disabled={!this.state.enable} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
+                            return <td key={item} className="table-cell input"><input key={item} disabled={!this.state.enable} onChange={this.handleChange.bind(this)} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
                                               value={this.state.value} type="text"/></td>;
                         case "input2":
-                            return <td className="table-cell input"><input key={item} disabled={!this.state.enable} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
+                            return <td key={item} className="table-cell input"><input key={item} disabled={!this.state.enable} onChange={this.handleChange.bind(this)} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
                                               value={this.state.value1} type="text"/></td>;
                         case "box":
-                            return <td className="table-cell box"><input key={item} className={'boxInput'} onChange={this.toggleChange.bind(this)} checked={this.state.enable}  type="checkbox"  ref="box"/></td>;
+                            return <td key={item} className="table-cell box"><input key={item} className={'boxInput'} onChange={this.toggleChange.bind(this)} checked={this.state.enable}  type="checkbox"  ref="box"/></td>;
                         default:
                             break;
                         }
                     },this)}
             </tr>
         )
+    }
+
+    handleChange(){
+
     }
 
     componentWillReceiveProps (nextProps){
