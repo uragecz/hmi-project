@@ -80,3 +80,23 @@ input.modalTextInput{
 .hidden{
     display: none;
 }
+
+.title{
+    width: 50%;
+    text-align: left;
+    padding: 6px;
+    height: 10px;
+}
+
+.title.one{
+    width: 100%;
+}
+
+.title.two{
+    width: 50%;
+}
+
+.head-row{
+    background-color: #e2ea66;
+    height: 30px !important;
+}

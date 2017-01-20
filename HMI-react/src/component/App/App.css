@@ -25,3 +25,9 @@
   display: table;
   z-index: 10;
 }
+
+.yellow-row{
+  width: 100%;
+  background-color: #e2ea66;
+  height: 30px;
+}

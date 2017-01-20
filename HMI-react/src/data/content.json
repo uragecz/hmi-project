@@ -3,6 +3,12 @@
     "lang": "EN",
     "icon": "../../../assets/eng.png",
     "page": {
+        "menuItem":{
+            "menu": "MENU",
+            "favourite": "FAVOURITE",
+            "history": "HISTORY",
+            "current": "CURRENT"
+        },
         "footer":{
             "title": "Home Page"
         },
@@ -35,6 +41,12 @@
     "lang": "CZ",
     "icon": "../../../assets/cze.png",
     "page": {
+        "menuItem":{
+            "menu": "MENU",
+            "favourite": "OBLÍBENÉ",
+            "history": "HISTORIE",
+            "current": "AKTUÁLNÍ"
+        },
         "footer":{
             "title": "Home Page"
         },

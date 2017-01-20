@@ -25,15 +25,15 @@ class ProductSettings extends React.Component {
         return(
             <Page>
                 <div className="item size-3">
-                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} descTitle={text.speed}/>
-                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} descTitle={text.air}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} firstTitle={text.speed}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} firstTitle={text.air}/>
                 </div>
                 <div className="item size-3">
                     <div id="rotor-image"></div>
                 </div>
                 <div className="item size-3">
-                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} descTitle={text.package}/>
-                    <InputList modal={false} type={["name1","input1","unit1"]} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} descTitle={text.rotor}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} firstTitle={text.package}/>
+                    <InputList modal={false} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} firstTitle={text.rotor}/>
                 </div>
                 <div className="item column-4">
                     <div id="switch">

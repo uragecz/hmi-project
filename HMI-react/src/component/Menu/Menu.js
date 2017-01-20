@@ -8,6 +8,7 @@ import historyActions from '../../actions/historyActions'
 import TopMenu from './TopMenu';
 import Options from '../Options/Options';
 import MenuTopOptions from './MenuTopOptions';
+import helpStore from '../../stores/helpStore';
 
 //styles/icons
 import './Menu.css';
@@ -45,7 +46,7 @@ class Menu extends Component{
         }
 
         //push to history if its finall page AND it isnt first page
-        Object.keys(history).length !== 0 && this.props.saveToHistory ? historyActions.pushHistory(history) : false;
+        Object.keys(history).length !== 0 && this.props.saveToHistory &&  !helpStore.getIsRendering() ? historyActions.pushHistory(history) : false;
 
         return(
             <div className="entirePage">

@@ -21,7 +21,7 @@ class MenuTopOptions extends Component{
     }
 
     render(){
-        const {show, ...others} = this.props;
+        const {show, data, ...others} = this.props;
         return(
             <div id="menuOpen" className={show? "opacityBoxMenu" : "opacityBoxMenu close"} >
                 <div className={show? "option" : "option close"}>
@@ -30,28 +30,28 @@ class MenuTopOptions extends Component{
                             <div className="topIconImage menu">
                             </div>
                             <div className="topIconText" >
-                                MENU
+                                {data.menuItem.menu}
                             </div>
                         </div>
                         <div className={"topIcon " + (this.state.type === "history")} onClick={this.handleClick.bind(this,true,"history")}>
                             <div className="topIconImage history">
                             </div>
                             <div className={"topIconText"}>
-                                HISTORY
+                                {data.menuItem.history}
                             </div>
                         </div>
                         <div className={"topIcon " + (this.state.type === "favourite")} onClick={this.handleClick.bind(this,true,"favourite")}>
                             <div className="topIconImage favourite">
                             </div>
                             <div className="topIconText">
-                                FAVOURITE
+                                {data.menuItem.favourite}
                             </div>
                         </div>
                     </div>
                     <div id="menuContent">
                         <div id={"menu"} >
                             {this.state.type === "menu" ? <CircleMenu arr={[90,0,270,180]} xPosition={[170,230,230,170]} yPosition={[170,170,230,230]} from={[0,1,2,3]} index={0} firstItem={180} width={75} {...others} /> :
-                                this.state.type === "favourite" ? <FavouriteHistory label={this.props.data.menu.favourite} list={favourite} /> : <FavouriteHistory current={this.props.data.menu.current} label={this.props.data.menu.history} list={historyStore.getVisitedLinks()} />}
+                                this.state.type === "favourite" ? <FavouriteHistory label={data.menuItem.favourite} list={favourite} /> : <FavouriteHistory current={data.menuItem.current} label={data.menuItem.history} list={historyStore.getVisitedLinks()} />}
                         </div>
                     </div>
                 </div>

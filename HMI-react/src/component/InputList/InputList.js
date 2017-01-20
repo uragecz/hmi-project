@@ -17,20 +17,30 @@ class InputList extends Component{
     }
 
     render(){
-        const{modal, list, descTitle, hideDesc, type, multiple, ...others} = this.props;
+        const{modal, list, firstTitle, secondTitle, type, multiple} = this.props;
         let even = true;
+        let firstScale = !secondTitle ? type.length : type.length /2;
+        const passProps = Object.assign({}, this.props, {modal: true})
+
         return(
             <div className={this.props.modal? 'modalInputs-root': 'inputs-root'}>
                 <div className={'inputs-container'} onClick={!modal ? this.handleClick.bind(this,true) : false} >
-                    { modal || !hideDesc ? <div className="inputs-description">
-                        <div className="descTitle first">{descTitle}</div>
-                        <div className="descTitle second">{this.props.descUnit}</div>
-                    </div> : false }
                     <div className={ modal ? "inputList" : "inputList disable"}>
                         <table cellSpacing="0" className="table-list">
                             <thead>
+                                <tr className="head-row">
+                                    <th colSpan={firstScale.toString().length > 1 ? firstScale - 0.5 : firstScale} className={"title first " + (secondTitle ? "two"  : "one")}>
+                                        {firstTitle}
+                                    </th>
+                                    {secondTitle ?
+                                        <th colSpan={firstScale.toString().length > 1 ? firstScale + 0.5 : firstScale} className={"title second " + secondTitle ? "two" : "one"}>
+                                            {secondTitle}
+                                        </th>
+                                    : false}
+                                </tr>
                             </thead>
                             <tbody>
+
                                 {Object.keys(list).map(function (item) {
                                     even = !even;
                                     let model = list[item];
@@ -60,7 +70,7 @@ class InputList extends Component{
                 </div>
                 {this.state.clicked ?
                     <ModalWin save={this.saveValues.bind(this)} update={this.handleClick.bind(this)}>
-                        <InputList multiple={multiple} modal={true} type={type} list={list} descTitle={descTitle} {...others} />
+                        <InputList {...passProps} />
                     </ModalWin>
                     : false
                 }
@@ -85,7 +95,6 @@ class InputList extends Component{
 
     changeValue(name,value,enable,key) {
         let oldStates = this.cloneObject(this.props.list);
-        console.log(name,value,key,oldStates,this.props.multiple);
         if (this.props.multiple) {
             Object.keys(oldStates).map(function (item) {
                 let model = oldStates[item];

@@ -3,45 +3,30 @@
  */
 import Dispatcher from '../dispatcher/Dispatcher';
 import graphConstants from '../constants/graphConstants';
-import http from 'superagent';
+import serverActions from '../actions/serverActions';
+
 
 /* eslint-disable */
 
 var timer;
 var graphActions = {
-  ///GRAPH ACTIONS
-  setChannels: async function(list){/*
-    try {
-      let obj = await graphActions.sendData(list);
+  setChannels: async function(list){
+      let obj = await serverActions.sendData(list);
       if (obj) {
         Dispatcher.handleAction({
           actionType: graphConstants.CHANGE_VALUES,
           data: list
         });
       }
-    }
-    catch(err){
-      console.log(err);
-    }
-    */
-      Dispatcher.handleAction({
-          actionType: graphConstants.CHANGE_VALUES,
-          data: list
-      });
   },
 
-  getValueFromMachine: async function(){
-    try{
-      let obj = await graphActions.getData();
+    getValueFromMachine: async function(){
+      let obj = await serverActions.getData();
       Dispatcher.handleAction({
         actionType: graphConstants.GET_VALUES,
         data: obj
       });
-    }
-    catch(err){
-      console.log('chyba');
-    }
-  },
+    },
  
   loadValue: async function(){/*
     try {
@@ -62,35 +47,6 @@ var graphActions = {
 
   stopLoadValue: function(){
     clearInterval(timer);
-  },
-
-  ///COMMUNICATION WITH SERVER
-  getData: function(){
-    return new Promise(function(resolve, reject) {
-    http.get("http://localhost:59297/api/qm")
-      .accept("application/json")
-      .end(function(err, res) {
-        if (err == null && res.ok)
-          resolve(res.body);
-        else
-          reject(false);
-      })
-    })
-  },
-
-  sendData: function(obj){
-    console.log(obj);
-    return new Promise(function(resolve, reject) {
-      http.post("http://localhost:59297/api/qm/postqm")
-        .set('Content-Type', 'application/json')
-        .send('lol')
-        .end(function (err, res){
-          if (err == null && res.ok)
-            resolve(true);
-          else
-            reject(false);
-        })
-    })
   },
 };
 

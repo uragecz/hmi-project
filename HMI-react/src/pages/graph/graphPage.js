@@ -35,7 +35,7 @@ class GraphPage extends React.Component {
         return(
             <Page>
                 <div className="item column-1">
-                    <InputList modal={false} descTitle={text.channels} hideDesc={false} multiple={true} type={["name1","input1","unit1","input2","unit2"]} save={this.saveList} list={this.state.channels} />
+                    <InputList modal={false} firstTitle={text.channels} multiple={true} type={["name1","input1","unit1","input2","unit2"]} save={this.saveList} list={this.state.channels} />
                 </div>
                 <div className="item column-3" id="graphColumn">
                     {!this.state.done ? <div id="loading"><i className="fa fa-spinner fa-spin fa-5x fa-fw" aria-hidden="true"></i></div> : false}

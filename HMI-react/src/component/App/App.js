@@ -5,6 +5,7 @@ import languageActions from '../../actions/languageActions'
 import languageStore from '../../stores/languageStore';
 import routes from '../../route/routes';
 import Menu from '../Menu/Menu';
+import Message from '../Message/Message';
 
 
 global.Perf = require('react-addons-perf');
@@ -25,12 +26,15 @@ class App extends Component {
     render() {
         return (
             <div id="appContainer">
+                <Header />
+
                 <Menu goBack={this.goBack.bind(this)} saveToHistory={this.props.children !== null} data={this.state.data.page} routes={routes}
                             pathName={this.state.goBack ? this.state.pathname : this.props.location.pathname}/>
                 <div id="content">
                     {React.cloneElement(this.state.children, { data: this.state.data.page})}
                 </div>
                 <Footer switchLanguage={this.switchLanguage} languageActiveIcon={this.state.data.icon} pathName={this.props.location.pathname}/>
+                <Message/>
             </div>
         );
     }
