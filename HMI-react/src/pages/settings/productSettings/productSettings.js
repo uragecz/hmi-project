@@ -25,15 +25,15 @@ class ProductSettings extends React.Component {
         return(
             <Page>
                 <div className="item size-3">
-                    <InputList modal={false} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} firstTitle={text.speed}/>
-                    <InputList modal={false} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} firstTitle={text.air}/>
+                    <InputList modal={false} name="PS" type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed} firstTitle={text.speed}/>
+                    <InputList modal={false} name="PA" type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR} firstTitle={text.air}/>
                 </div>
                 <div className="item size-3">
                     <div id="rotor-image"></div>
                 </div>
                 <div className="item size-3">
-                    <InputList modal={false} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} firstTitle={text.package}/>
-                    <InputList modal={false} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} firstTitle={text.rotor}/>
+                    <InputList modal={false} name="PP" type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage} firstTitle={text.package}/>
+                    <InputList modal={false} name="PR" type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR} firstTitle={text.rotor}/>
                 </div>
                 <div className="item column-4">
                     <div id="switch">
@@ -77,13 +77,13 @@ class ProductSettings extends React.Component {
     }
 
     saveList(list,type){
-        if(type === 'Speed')
+        if(type === 'PS')
             actionSettings.setProductSpeed(list);
-        else if(type === "Package")
+        else if(type === "PP")
             actionSettings.setProductPackage(list);
-        else if(type === "Air")
+        else if(type === "PA")
             actionSettings.setAir(list);
-        else if(type === "Rotor")
+        else if(type === "PR")
             actionSettings.setRotor(list);
     }
 }

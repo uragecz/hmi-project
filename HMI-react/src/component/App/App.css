@@ -31,3 +31,11 @@
   background-color: #e2ea66;
   height: 30px;
 }
+
+.opacityBoxMenu {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  z-index: 12;
+  position: fixed;
+}

@@ -10,7 +10,7 @@ const content = require('../data/content.json');
 var CHANGE_EVENT = 'change';
 
 var _store = {
-  data: content.filter(obj => obj.lang === 'EN')[0]
+  data: content.filter(obj => obj.lang === 'eng')[0]
 };
 
 var setData = function(data){

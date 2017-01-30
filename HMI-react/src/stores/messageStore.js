@@ -1,7 +1,7 @@
 /**
  * Created by urunzl on 20.1.2017.
  */
-var serverConstants = require('../constants/serverConstants');
+var messageConstants = require('../constants/messageConstants');
 var Dispatcher = require('../dispatcher/Dispatcher');
 var objectAssign = require('object-assign');
 var EventEmitter = require('events').EventEmitter;
@@ -46,7 +46,7 @@ var serverStore = objectAssign({}, EventEmitter.prototype, {
 Dispatcher.register(function(payload){
     var action = payload.action;
     switch(action.actionType){
-        case serverConstants.SHOW_MESSAGE:
+        case messageConstants.SHOW_MESSAGE:
             showMessage(action.data,action.error);
             serverStore.emit(CHANGE_EVENT);
             break;

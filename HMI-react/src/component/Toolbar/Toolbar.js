@@ -16,7 +16,7 @@ class Toolbar extends Component{
         super(props);
         this.state={
             openTabs : tabsStore.getOpenTabs(),
-            activeTab: tabsStore.getActiveTab()
+            activeTab: tabsStore.getActiveTab(),
         };
         this.update = this.update.bind(this);
     }
@@ -33,7 +33,7 @@ class Toolbar extends Component{
         //pokud se renderuje nova stranka a otevreny tab zustava(pri meneni obsahu aktualniho tabu) mussim zmenit obsah tabu
         if((nextProps.actualPage !== this.props.actualPage) && (nextState.activeTab === this.state.activeTab)) {
             const item = nextProps.actualPage;
-            tabsActions.changeTab([item.value + " " + item.page,item.hash]);
+            tabsActions.changeTab([item.value + " " + item.names[this.props.lang],item.hash]);
         }
         return true;
     }
@@ -48,7 +48,6 @@ class Toolbar extends Component{
     render(){
         let counter = -1;
         const actualPage = this.props.actualPage;
-
         return(
         <div id="toolbar">
             {this.state.openTabs.map(function(item){
@@ -59,7 +58,7 @@ class Toolbar extends Component{
                         <div className="toolbarArrowLeft"></div>
                         <div className="toolbarText">
                             <Link key={item[0]} to={active? actualPage.hash : item[1]} className="toolbarLink">
-                                {active? actualPage.value + " " + actualPage.page : item[0]}
+                                {active? actualPage.value + " " + actualPage.names[this.props.lang] : item[0]}
                             </Link>
                             <div className="closeTab" onClick={this.handleCloseTab.bind(this,counter)}>x</div>
                         </div>
@@ -80,7 +79,7 @@ class Toolbar extends Component{
 
     handleAddNewTab(){
         const item = this.props.actualPage;
-        tabsActions.addTab([item.value + " " + item.page,item.hash]);
+        tabsActions.addTab([item.value + " " + item.names[this.props.lang],item.hash]);
     }
 
     handleCloseTab(index,e){

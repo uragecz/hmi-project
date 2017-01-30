@@ -11,36 +11,36 @@ import FavouriteHistory from './FavouriteHistory';
 //styles and images
 import './Menu.css';
 
-class MenuTopOptions extends Component{
+class MainMenu extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            clicked: false,
             type: "menu"
-        }
+        };
+        this.pageClick = this.pageClick.bind(this);
     }
 
     render(){
-        const {show, data, ...others} = this.props;
+        const { data, pathName, routes } = this.props;
         return(
-            <div id="menuOpen" className={show? "opacityBoxMenu" : "opacityBoxMenu close"} >
-                <div className={show? "option" : "option close"}>
+            <div id="menuOpen" className="opacityBoxMenu" >
+                <div className="option">
                     <div id="topOption">
-                        <div className={"topIcon " + (this.state.type === 'menu')} onClick={this.handleClick.bind(this,true,"menu")} >
+                        <div className={"topIcon " + (this.state.type === 'menu')} onClick={this.handleClick.bind(this,"menu")} >
                             <div className="topIconImage menu">
                             </div>
                             <div className="topIconText" >
                                 {data.menuItem.menu}
                             </div>
                         </div>
-                        <div className={"topIcon " + (this.state.type === "history")} onClick={this.handleClick.bind(this,true,"history")}>
+                        <div className={"topIcon " + (this.state.type === "history")} onClick={this.handleClick.bind(this,"history")}>
                             <div className="topIconImage history">
                             </div>
                             <div className={"topIconText"}>
                                 {data.menuItem.history}
                             </div>
                         </div>
-                        <div className={"topIcon " + (this.state.type === "favourite")} onClick={this.handleClick.bind(this,true,"favourite")}>
+                        <div className={"topIcon " + (this.state.type === "favourite")} onClick={this.handleClick.bind(this,"favourite")}>
                             <div className="topIconImage favourite">
                             </div>
                             <div className="topIconText">
@@ -50,7 +50,7 @@ class MenuTopOptions extends Component{
                     </div>
                     <div id="menuContent">
                         <div id={"menu"} >
-                            {this.state.type === "menu" ? <CircleMenu arr={[90,0,270,180]} xPosition={[170,230,230,170]} yPosition={[170,170,230,230]} from={[0,1,2,3]} index={0} firstItem={180} width={75} {...others} /> :
+                            {this.state.type === "menu" ? <CircleMenu routes={routes} arr={[90,0,270,180]} xPosition={[170,230,230,170]} yPosition={[170,170,230,230]} from={[0,1,2,3]} index={0} firstItem={180} width={75} data={data} pathName={pathName} /> :
                                 this.state.type === "favourite" ? <FavouriteHistory label={data.menuItem.favourite} list={favourite} /> : <FavouriteHistory current={data.menuItem.current} label={data.menuItem.history} list={historyStore.getVisitedLinks()} />}
                         </div>
                     </div>
@@ -59,24 +59,25 @@ class MenuTopOptions extends Component{
         );
     }
 
-    handleClick(show,type){
-        if(show === false )
-            this.props.update();
+    handleClick(type){
         this.setState({
-            clicked : show,
             type : type
         });
     }
 
     componentDidMount(){
-        window.addEventListener('mousedown', this.pageClick.bind(this), false);
+        window.addEventListener('click', this.pageClick, false);
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener('click', this.pageClick, false);
     }
 
     pageClick(e) {
-        if(this.props.show && e.target.id === 'menuOpen'){
-            this.handleClick(false,this.state.type);
+        if(e.target.id === 'menuOpen'){
+            this.props.update();
         }
     }
 }
 
-export default  MenuTopOptions;
+export default  MainMenu;

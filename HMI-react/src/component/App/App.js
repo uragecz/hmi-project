@@ -1,54 +1,44 @@
 import React, { Component } from 'react';
 import './App.css';
 import Footer from '../Footer/Footer';
-import languageActions from '../../actions/languageActions'
 import languageStore from '../../stores/languageStore';
-import routes from '../../route/routes';
-import Menu from '../Menu/Menu';
-import Message from '../Message/Message';
+import loginStore from '../../stores/loginStore';
+import Header from '../Header/Header';
+import InfoPage from '../InfoPage/InfoPage';
 
-
-global.Perf = require('react-addons-perf');
-
+//global.Perf = require('react-addons-perf');
 
 class App extends Component {
     constructor(props){
         super(props);
         this.state= {
             data: languageStore.getData(),
-            children: this.props.children,
-            pathname: this.props.location.pathname,
-            goBack: false
+            user: loginStore.getLoggedUser(),
+            infoPage: false
         };
-        this.changeLanguage= this.changeLanguage.bind(this);
+        this.changeLanguage = this.changeLanguage.bind(this);
+        this.getLoggedUser = this.getLoggedUser.bind(this);
     };
 
     render() {
+        const data = this.state.data;
         return (
             <div id="appContainer">
-                <Header />
-
-                <Menu goBack={this.goBack.bind(this)} saveToHistory={this.props.children !== null} data={this.state.data.page} routes={routes}
-                            pathName={this.state.goBack ? this.state.pathname : this.props.location.pathname}/>
+                <Header data={data.page} closeInfoPage={this.closeInfoPage.bind(this)} logged={this.state.user} lang={data.lang} pathName={this.props.location.pathname}/>
                 <div id="content">
-                    {React.cloneElement(this.state.children, { data: this.state.data.page})}
+                    {React.cloneElement(this.props.children, { data: data.page.content})}
                 </div>
-                <Footer switchLanguage={this.switchLanguage} languageActiveIcon={this.state.data.icon} pathName={this.props.location.pathname}/>
-                <Message/>
+                <Footer languageActiveIcon={data.languageIcon} lang={data.lang} />
+                {this.state.infoPage ? <InfoPage closeInfoPage={this.closeInfoPage.bind(this)}/> : false}
             </div>
         );
     }
 
-    componentWillReceiveProps(nextProps){
-        if (nextProps.children !== null) {
-            this.setState({
-                children: nextProps.children,
-                pathname: nextProps.location.pathname
-            })
-        }
-        else
-            history.pushState({}, null, this.state.pathname);
-        this.setState({goBack: false})
+    closeInfoPage(close){
+
+        this.setState({
+            infoPage : close ? close : !this.state.infoPage
+        })
     }
 
     changeLanguage(){
@@ -57,22 +47,20 @@ class App extends Component {
         })
     }
 
-    goBack(e){
+    getLoggedUser(){
         this.setState({
-            goBack: true
+            user: loginStore.getLoggedUser()
         })
-    }
-
-    switchLanguage(language){
-        languageActions.switchLanguage(language);
     }
 
     componentWillMount() {
         languageStore.addChangeListener(this.changeLanguage);
+        loginStore.addChangeListener(this.getLoggedUser);
     }
 
     componentWillUnmount(){
         languageStore.removeChangeListener(this.changeLanguage);
+        loginStore.removeChangeListener(this.getLoggedUser)
     }
 }
 

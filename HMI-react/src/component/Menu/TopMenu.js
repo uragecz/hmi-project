@@ -23,7 +23,7 @@ class TopMenu extends Component{
     }
 
     render(){
-        const {visitedItems, pathArray, obj} = this.props;
+        const {visitedItems, pathArray, obj, ...others} = this.props;
         let counter = -1;
         let counterA = -1;
         let mainItemActive = false;
@@ -54,7 +54,7 @@ class TopMenu extends Component{
                                 <div className="topMenuIcon">
                                     <Link key={item} to={model.hash} onClick={e => e.preventDefault()} className="menuLink">
                                         <img src={model.icon} className="topIcons" height="40px" width="40px"/>
-                                        {model.name.toUpperCase()}
+                                        {model.names[this.props.lang].toUpperCase()}
                                     </Link>
                                 </div>
 
@@ -73,7 +73,7 @@ class TopMenu extends Component{
                                                 <div key={item} className="subTopMenuItem">
                                                     <Link key={item} to={model.hash} className="menuLink">
                                                         <img src={model.icon} className="topIcons" height="40px" width="40px"/>
-                                                        {model.name.toUpperCase()}
+                                                        {model.names[this.props.lang].toUpperCase()}
                                                     </Link>
                                                 </div>
                                             )
@@ -102,7 +102,7 @@ class TopMenu extends Component{
                                 <Link key={item} to={model.hash} className="menuLink">
                                     <img src={model.icon} height="40px" className="topIcons" width="40px"/>
                                     <div className="topMenuText">
-                                        {model.name.toUpperCase()}
+                                        {model.names[this.props.lang].toUpperCase()}
                                     </div>
                                 </Link>
                             </div>
@@ -110,7 +110,7 @@ class TopMenu extends Component{
                     )
                 },this)}
             </div>
-                <Toolbar actualPage={this.props.actualPage}/>
+                <Toolbar {...others} />
             </div>
         )
     }

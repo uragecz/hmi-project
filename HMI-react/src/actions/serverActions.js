@@ -2,9 +2,9 @@
  * Created by urunzl on 20.1.2017.
  */
 import Dispatcher from '../dispatcher/Dispatcher';
-import serverConstants from '../constants/serverConstants';
+import messageConstants from '../constants/messageConstants';
 import http from 'superagent';
-
+import request from 'superagent';
 const okMessage = 'DATA WERE SENT SUCCESSFULLY ';
 const errMessage = 'ERROR DURING DATA SENDING';
 
@@ -17,7 +17,7 @@ var serverActions = {
                 .end(function (err, res) {
                     if (err == null && res.ok) {
                         Dispatcher.handleAction({
-                            actionType: serverConstants.SHOW_MESSAGE,
+                            actionType: messageConstants.SHOW_MESSAGE,
                             data: okMessage,
                             error: false
                         });
@@ -25,7 +25,7 @@ var serverActions = {
                     }
                     else {
                         Dispatcher.handleAction({
-                            actionType: serverConstants.SHOW_MESSAGE,
+                            actionType: messageConstants.SHOW_MESSAGE,
                             data: err == null && res.ok ? okMessage : errMessage,
                             error: true
                         });
@@ -35,28 +35,27 @@ var serverActions = {
         })
     },
 
-    getData: function (index) {
+    getData: function (url) {
         return new Promise(function (resolve, reject) {
-            http.get("http://localhost:59297/api/qm")
-                .accept("application/json")
+            http.get(url)
                 .end(function (err, res) {
                     if (err == null && res.ok) {
-                        Dispatcher.handleAction({
-                            actionType: serverConstants.SHOW_MESSAGE,
-                            data: okMessage
-                        });
+                        console.log('ok');
                         resolve(true);
                     }
                     else {
+                        console.log('bad',err);
                         Dispatcher.handleAction({
-                            actionType: serverConstants.SHOW_MESSAGE,
-                            data: errMessage
+                            actionType: messageConstants.SHOW_MESSAGE,
+                            data: errMessage,
+                            error: true
                         });
                         reject(false);
                     }
                 })
         });
     }
+
 };
 
 export default serverActions;

@@ -70,14 +70,12 @@ class Help extends Component {
 
     printOnePage(){
         this.props.closeHelpPage();
-        helpActions.printOnePage();
+        helpActions.printOnePage(this.props.lang);
     }
 
     printAllPages(){
-        let item = tabStore.getActiveTab();
-        let tabs = tabStore.getOpenTabs();
         this.props.closeHelpPage();
-        helpActions.printAllPages(tabs[item][1]);
+        helpActions.printAllPages(this.props.lang);
     }
 }
 

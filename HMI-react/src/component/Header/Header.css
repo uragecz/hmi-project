@@ -3,3 +3,61 @@
     height: 116px;
     width: 100%;
 }
+
+#keyButton{
+    width: 125px;
+    position: fixed;
+    right: 0;
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    background-color: #7c949c;
+    border-left: 2px solid #d3dbde;
+}
+
+#menuOpenButton{
+    width: 102px;
+    height: 70px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #244c5a;
+    margin-right: 2px;
+    z-index: 2;
+}
+
+#loginIcon{
+    position: absolute;
+    width: 100%;
+    top: 5px;
+    left: calc(50% - 30px);
+}
+
+#loginPoints{
+    position: absolute;
+    left: calc(50% - 11px);
+    bottom: 3px;
+}
+
+#info{
+    position: absolute;
+    right: 125px;
+    text-align: right;
+    top: 74px;
+    height: 42px;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+}
+
+.toolbarArrowLeft.info{
+    border-bottom: 42px solid #244c5a;
+    margin: 0;
+}
+
+#infoName{
+    background-color: #244c5a;
+    padding: 10px;
+    height: 100%;
+}

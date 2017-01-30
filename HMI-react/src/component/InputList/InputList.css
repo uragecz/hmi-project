@@ -48,10 +48,8 @@ input.modalTextInput{
     width: 25%;
     height: 25px;
     text-align: right;
-    border-style: solid;
     border-radius: 5px;
-    border-color: #9da0a4;
-    border-width: 1px;
+    border: 1px solid #9da0a4;
     float: left;
     font-size: 18px;
 }

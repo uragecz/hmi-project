@@ -81,19 +81,6 @@ a.menuLink{
     height:50px;
 }
 
-.opacityBoxMenu{
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    z-index: 12;
-    position: absolute;
-}
-
-.opacityBoxMenu.close{
-    background-color: transparent;
-    z-index: 0;
-}
-
 #svgMenuOpen{
     left: 50%;
     bottom: 0;
@@ -229,18 +216,6 @@ h4.itemValue{
     height:100%;
     float: left;
     max-width: 120px;
-}
-
-#menuOpenButton{
-    width: 102px;
-    height: 70px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #244c5a;
-    margin-right: 2px;
-    z-index:2;
 }
 
 .topIconImage{

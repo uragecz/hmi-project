@@ -6,63 +6,90 @@
  */
 import Dispatcher from '../dispatcher/Dispatcher';
 import settingsConstants from '../constants/settingsConstants';
+import serverActions from '../actions/serverActions';
 //import http from 'superagent';
 
 var settingsActions = {
-    setProductPackage: function(group){
-        Dispatcher.handleAction({
-            actionType: settingsConstants.SET_PRODUCT_PACKAGE,
-            data: group
-        });
+    setProductPackage: async function(list){
+        let obj = await serverActions.sendData(list);
+        if (obj) {
+            Dispatcher.handleAction({
+                actionType: settingsConstants.SET_PRODUCT_PACKAGE,
+                data: list
+            });
+        }
     },
-    setProductSpeed: function(group){
-        console.log('setSpeed');
-        Dispatcher.handleAction({
-            actionType: settingsConstants.SET_PRODUCT_SPEED,
-            data: group
-        });
+    setProductSpeed: async function(list){
+        let obj = await serverActions.sendData(list);
+        if (obj) {
+            Dispatcher.handleAction({
+                actionType: settingsConstants.SET_PRODUCT_SPEED,
+                data: list
+            });
+        }
     },
-    setQSI: function(group){
-        Dispatcher.handleAction({
-            actionType: settingsConstants.SET_PRODUCT_QSI,
-            data: group
-        });
+    setQSI: async function(list){
+        let obj = await serverActions.sendData(list);
+        if (obj) {
+            Dispatcher.handleAction({
+                actionType: settingsConstants.SET_PRODUCT_QSI,
+                data: list
+            });
+        }
     },
-    setFSI: function(group){
-        Dispatcher.handleAction({
-            actionType: settingsConstants.SET_PRODUCT_FSI,
-            data: group
-        });
+    setFSI: async function(list){
+        let obj = await serverActions.sendData(list);
+        if (obj) {
+            Dispatcher.handleAction({
+                actionType: settingsConstants.SET_PRODUCT_FSI,
+                data: list
+            });
+        }
     },
-    setASI: function(group){
-        Dispatcher.handleAction({
-            actionType: settingsConstants.SET_PRODUCT_ASI,
-            data: group
-        });
+    setASI: async function(list){
+        let obj = await serverActions.sendData(list);
+        if (obj) {
+            Dispatcher.handleAction({
+                actionType: settingsConstants.SET_PRODUCT_ASI,
+                data: list
+            });
+        }
     },
-    setAMISpin: function(group){
-        Dispatcher.handleAction({
-            actionType: settingsConstants.SET_PRODUCT_AMISpin,
-            data: group
-        });
+    setAMISpin: async function(list){
+        let obj = await serverActions.sendData(list);
+        if (obj) {
+            Dispatcher.handleAction({
+                actionType: settingsConstants.SET_PRODUCT_AMISpin,
+                data: list
+            });
+        }
     },
-    setAir: function(group){
-        Dispatcher.handleAction({
-            actionType: settingsConstants.SET_PRODUCT_AIR,
-            data: group
-        });
+    setAir: async function(list){
+        let obj = await serverActions.sendData(list);
+        if (obj) {
+            Dispatcher.handleAction({
+                actionType: settingsConstants.SET_PRODUCT_AIR,
+                data: list
+            });
+        }
     },
-    setRotor: function(group){
-        Dispatcher.handleAction({
-            actionType: settingsConstants.SET_PRODUCT_ROTOR,
-            data: group
-        });
+    setRotor: async function(list){
+        let obj = await serverActions.sendData(list);
+        if (obj) {
+            Dispatcher.handleAction({
+                actionType: settingsConstants.SET_PRODUCT_ROTOR,
+                data: list
+            });
+        }
     },
-    setSilverFeedLength: function(group){
-        Dispatcher.handleAction({
-            actionType: settingsConstants.SET_PRODUCT_SVL,
-            data: group
-        });
+    setSilverFeedLength: async function(list){
+        let obj = await serverActions.sendData(list);
+        if (obj) {
+            Dispatcher.handleAction({
+                actionType: settingsConstants.SET_PRODUCT_SVL,
+                data: list
+            });
+        }
     }
 };
 

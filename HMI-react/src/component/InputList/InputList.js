@@ -20,8 +20,7 @@ class InputList extends Component{
         const{modal, list, firstTitle, secondTitle, type, multiple} = this.props;
         let even = true;
         let firstScale = !secondTitle ? type.length : type.length /2;
-        const passProps = Object.assign({}, this.props, {modal: true})
-
+        const passProps = Object.assign({}, this.props, {modal: true});
         return(
             <div className={this.props.modal? 'modalInputs-root': 'inputs-root'}>
                 <div className={'inputs-container'} onClick={!modal ? this.handleClick.bind(this,true) : false} >
@@ -33,14 +32,13 @@ class InputList extends Component{
                                         {firstTitle}
                                     </th>
                                     {secondTitle ?
-                                        <th colSpan={firstScale.toString().length > 1 ? firstScale + 0.5 : firstScale} className={"title second " + secondTitle ? "two" : "one"}>
+                                        <th colSpan={firstScale.toString().length > 1 ? firstScale + 0.5 : firstScale} className={"title second " + (secondTitle ? "two" : "one")}>
                                             {secondTitle}
                                         </th>
                                     : false}
                                 </tr>
                             </thead>
                             <tbody>
-
                                 {Object.keys(list).map(function (item) {
                                     even = !even;
                                     let model = list[item];
@@ -110,13 +108,11 @@ class InputList extends Component{
     }
 
     saveValues(list){
-        console.log(list);
-        let type = this.props.descTitle;
         this.setState({
             clicked: !this.state.clicked,
         });
         if (list)
-            this.props.save(list,type);
+            this.props.save(list,this.props.name);
     }
 }
 

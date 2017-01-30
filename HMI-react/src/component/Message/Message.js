@@ -2,9 +2,8 @@
  * Created by urunzl on 20.1.2017.
  */
 //components
-import { Component } from 'react';
-import serverStore from '../../stores/serverStore';
-import serverActions from '../../actions/serverActions';
+import React,{ Component } from 'react';
+import serverStore from '../../stores/messageStore';
 
 //styles and images
 import './Message.css';

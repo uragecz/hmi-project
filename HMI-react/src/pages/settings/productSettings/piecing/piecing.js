@@ -25,7 +25,7 @@ class Piecing extends Component{
             <Page>
                 <div className="item column-4">
                     <div className="item column-2">
-                        <InputList modal={false} firstTitle='AMISpin - Sequence' hideDesc={true} multiple={false}
+                        <InputList modal={false} name="AS" firstTitle={text.amispin} hideDesc={true} multiple={false}
                                    type={["name1","input1","unit1"]} save={this.saveList} list={this.state.amiSpin} />
                     </div>
                     <div className="item column-2">
@@ -35,7 +35,7 @@ class Piecing extends Component{
                 </div>
                 <div className="item column-4">
                     <div className="item column-2">
-                        <InputList modal={false} firstTitle='Silver feed length' secondTitle="Silver feed speed" hideDesc={true} multiple={true}
+                        <InputList modal={false} name="SFL" firstTitle={text.silverFeedLength} secondTitle={text.silverFeedSpeed} hideDesc={true} multiple={true}
                                    type={["name1","input1","unit1","name2","input2","unit2","box"]} save={this.saveList} list={this.state.silverFeedLength} />
                     </div>
                     <div className="item column-2">
@@ -57,8 +57,6 @@ class Piecing extends Component{
     }
 
     update(){
-        console.log('updatePiecing')
-
         this.setState({
             amiSpin: productSettingsStore.getAMISpin(),
             silverFeedLength: productSettingsStore.getSVL()
@@ -67,9 +65,9 @@ class Piecing extends Component{
 
     saveList(list,type){
         console.log('saveList',list,type);
-        if(type === 'AMISpin - Sequence')
+        if(type === 'AS')
             actionSettings.setAMISpin(list);
-        else if(type === "Silver feed length")
+        else if(type === "SFL")
             actionSettings.setSilverFeedLength(list);
     }
 

@@ -5,7 +5,8 @@
 import React, { Component } from 'react';
 import StartButton from '../StartButton/StartButton';
 import Help from '../Help/Help';
-
+import Message from '../Message/Message';
+import Clock from '../Clock/Clock';
 //css,images
 import './Footer.css'
 import warningMark from '../../../assets/warningMark.png';
@@ -32,8 +33,6 @@ class Footer extends Component{
         super(props);
         this.state = {
             openHelp: false,
-            timeHM: null,
-            timeYM: null
         }
     }
     render(){
@@ -45,8 +44,7 @@ class Footer extends Component{
                             <img id="logo" src='../../assets/rieter.png'/>
                         </div>
                         <div className="bottom-item date">
-                            {this.state.timeHM}<br/>
-                            {this.state.timeYM}
+                            <Clock time={true} date={true}/>
                         </div>
                         <div className="bottom-item warning-input">
                             <img src={warningMark} height={20}/>
@@ -64,6 +62,7 @@ class Footer extends Component{
                     </div>
                 </div>
                 {this.state.openHelp ? <Help closeHelpPage={this.handleLogoClick.bind(this)} {...this.props} />: false}
+                <Message />
             </div>
         )
     }
@@ -75,33 +74,6 @@ class Footer extends Component{
         this.setState({
             openHelp: !this.state.openHelp
         })
-    }
-
-    componentDidMount() {
-        this.tick();
-        this.interval = setInterval(() => this.tick(), 60000);
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
-
-    tick() {
-        const currentDate = new Date();
-        let dd = currentDate.getDate();
-        let mm = currentDate.getMonth()+1;
-        let yy = currentDate.getFullYear();
-        let min = currentDate.getMinutes();
-        if(min < 10)
-            min = '0' + min;
-        if(dd < 10)
-            dd= '0' + dd;
-        if(mm < 10)
-            mm= '0' + mm;
-        this.setState((prevState) => ({
-            timeHM: currentDate.getHours() + ":" +min,
-            timeYM: dd+ "." + mm + "." + yy
-        }));
     }
 }
 

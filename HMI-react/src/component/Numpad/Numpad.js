@@ -25,6 +25,14 @@ class Numpad extends React.Component {
   }
 
   render() {
+    let item = '';
+    if(this.props.password){
+      for(let i = 0; i< this.state.value.length; i++){
+          item += '*';
+      }
+    }
+    else
+      item = this.state.value;
     return (
       <div className={'root'}>
         <div className={'modalContainer'}>
@@ -33,10 +41,10 @@ class Numpad extends React.Component {
 
             </div>
             <div id="maxLimit">
-              {this.props.min}.. {this.props.max}
+                {this.props.min ? (this.props.min + ".. " + this.props.max) : false}
             </div>
           </div>
-          <input className={'numpadInput'} onChange={this.handleChange} value={this.state.value} ref="Input" type="text"/><br/>
+          <input className={'numpadInput'} onChange={this.handleChange} value={item} ref="Input" type="text"/><br/>
           <Button className={'row1 column1'} update={this.addValue} value={'1'}/>
           <Button className={'row1 column2'} update={this.addValue} value={'2'}/>
           <Button className={'row1 column3'} update={this.addValue} value={'3'}/><br/>

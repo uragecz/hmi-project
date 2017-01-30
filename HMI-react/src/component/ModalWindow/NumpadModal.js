@@ -18,7 +18,7 @@ var customStyles = {
     },
     content : {
         top                   : '50%',
-        left                  : '85%',
+        left                  : '80%',
         width                 : 'auto',
         height                : 'auto',
         right                 : 'auto',

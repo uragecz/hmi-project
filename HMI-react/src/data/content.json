@@ -1,7 +1,7 @@
 [
   {
-    "lang": "EN",
-    "icon": "../../../assets/eng.png",
+    "lang": "eng",
+    "languageIcon": "../../../assets/eng.png",
     "page": {
         "menuItem":{
             "menu": "MENU",
@@ -17,29 +17,31 @@
             "shift": "Shift",
             "unit": "Unit"
         },
-        "homePage":{
-            "rotation": "Rotation",
-            "machine": "Machine"
-        },
-        "productSettings":{
-            "speed": "Speed",
-            "air": "Air",
-            "package": "Package",
-            "rotor": "Rotor"
-        },
-        "piecing":{
-            "amispin": "AMISpin - Sequence",
-            "silverFeedLength": "Silver feed length",
-            "silverFeedSpeed": "Silver feed speed"
-        },
-        "graphPage":{
-            "channels": "Channels"
+        "content":{
+            "homePage":{
+                "rotation": "Rotation",
+                "machine": "Machine"
+            },
+            "productSettings":{
+                "speed": "Speed",
+                "air": "Air",
+                "package": "Package",
+                "rotor": "Rotor"
+            },
+            "piecing":{
+                "amispin": "AMISpin - Sequence",
+                "silverFeedLength": "Silver feed length",
+                "silverFeedSpeed": "Silver feed speed"
+            },
+            "graphPage":{
+                "channels": "Channels"
+            }
         }
     }
   },
   {
-    "lang": "CZ",
-    "icon": "../../../assets/cze.png",
+    "lang": "cz",
+    "languageIcon": "../../../assets/cze.png",
     "page": {
         "menuItem":{
             "menu": "MENU",
@@ -55,24 +57,27 @@
             "shift": "Směna",
             "unit": "Jednotka"
         },
-        "homePage":{
-            "rotation": "Rotace",
-            "machine": "Stroj"
-        },
-        "productSettings":{
-            "speed": "Rychlost",
-            "air": "Vzduch",
-            "package": "Balíček",
-            "rotor": "Rotor"
-        },
-        "piecing":{
-            "amispin": "AMISpin - Sekvence",
-            "silverFeedLength": "Silver přívod délka",
-            "silverFeedSpeed": "Silver přívod rychlost"
-        },
-        "graphPage":{
-            "channels": "Kanály"
+        "content":{
+            "homePage":{
+                "rotation": "Rotace",
+                "machine": "Stroj"
+            },
+            "productSettings":{
+                "speed": "Rychlost",
+                "air": "Vzduch",
+                "package": "Balíček",
+                "rotor": "Rotor"
+            },
+            "piecing":{
+                "amispin": "AMISpin - Sekvence",
+                "silverFeedLength": "Silver přívod délka",
+                "silverFeedSpeed": "Silver přívod rychlost"
+            },
+            "graphPage":{
+                "channels": "Kanály"
+            }
         }
+
     }
   }
 ]
