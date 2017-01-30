@@ -9,7 +9,20 @@ var EventEmitter = require('events').EventEmitter;
 var CHANGE_EVENT = 'change';
 
 var _store = {
-    openTabs: ["Home"],
+    openTabs: [
+        {
+            hash: "/home",
+            names: {
+                cz: "Doma",
+                eng:"Home"
+            },
+            name: "home",
+            page: null,
+            value: "1",
+            icon: "../../assets/Articles.png",
+            children: {}
+        },
+    ],
     activeTab: 0
 };
 

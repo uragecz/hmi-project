@@ -13,10 +13,11 @@ class Clock extends Component{
     }
 
     render(){
+        const { time, date } = this.props;
         return(
             <div id="time">
-                {this.props.time ? <div className="time HM"> {this.state.timeHM}</div> : false}
-                {this.props.date ? <div className="time YM"> {this.state.timeYM}</div> : false}
+                {time ? <div className="time HM"> {this.state.timeHM}</div> : false}
+                {date ? <div className="time YM"> {this.state.timeYM}</div> : false}
             </div>
         )
     }

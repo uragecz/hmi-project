@@ -56,7 +56,7 @@
     float: left;
     overflow: hidden;
     white-space: nowrap;
-    width: 150px;
+    max-width: 150px;
     border-top: 1px solid rgb(101, 123, 132);
     display: flex;
     position: relative;
@@ -71,7 +71,6 @@
 
 .toolbarItem.true .toolbarText{
     background-color: #bdc9ce;
-    width: 100%;
 }
 .toolbarItem.true .toolbarLink{
     margin-right: 25px;
