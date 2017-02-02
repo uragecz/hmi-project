@@ -28,11 +28,10 @@ class Header extends Component{
             showMenu : false,
             showLogin: false
         };
-        this.logout = this.logout.bind(this);
         this.pageClick = this.pageClick.bind(this);
     }
+
     render(){
-        console.log('render');
         const { pathName, data } = this.props;
         const pathArray = pathName.split("/").filter(e => e.length);
         let obj = routes;
@@ -65,7 +64,7 @@ class Header extends Component{
                 {pathArray.length !== 0 && history.setting ?
                     <Options data={data} options={setting} />
                 : false }
-                <div id="keyButton" onClick={this.props.logged ? this.logout : this.showLoginNumpad.bind(this)} >
+                <div id="keyButton" onClick={this.props.logged ? this.logout.bind(this,false) : this.showLoginNumpad.bind(this)} >
                     <div id="loginIcon">
                         <img src={this.props.logged ? logout : login} width={60} height={42} />
                     </div>
@@ -83,8 +82,10 @@ class Header extends Component{
 
                 <div id="info">
                     <div id="label">Article</div>
-                    <div className="toolbarArrowLeft info"></div>
-                    <div id="infoName">26 XL. 44</div>
+                    <svg width={20} height={42} >
+                        <polygon fill="#244c5a" points="20,0 0,42 20,42" />
+                    </svg>
+                    <div id="infoName">Perla a.s. CZ, Bavlna, 22Text, 5,5Tex</div>
                 </div>
             </div>
         )
@@ -96,15 +97,15 @@ class Header extends Component{
         })
     }
 
-
     showLoginNumpad(){
         this.setState({
             showLogin: !this.state.showLogin
         })
     }
 
-    logout(){
-        this.props.closeInfoPage(true);
+    logout(item){
+        console.log(item);
+        this.props.closeInfoPage(item);
         loginActions.logout();
 
     }
@@ -118,8 +119,8 @@ class Header extends Component{
 
     componentDidMount() {
         this.myTimer = setTimeout(()=>{
-            this.logout();
-        },60000);
+            this.logout(true);
+        },120000);
         window.addEventListener('click', this.pageClick, false);
     }
 
@@ -127,12 +128,11 @@ class Header extends Component{
         window.removeEventListener('click', this.pageClick, false);
     }
 
-
     pageClick(){
         clearTimeout(this.myTimer);
         this.myTimer = setTimeout(()=>{
-            this.logout();
-        },60000);
+            this.logout(true);
+        },120000);
     }
 }
 

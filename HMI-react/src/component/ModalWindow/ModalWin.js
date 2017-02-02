@@ -5,8 +5,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import './ModalWindow.css'
 
-import close from '../../../assets/cancel-button.png';
-import open from '../../../assets/ok-button.png';
+import cancel from '../../../assets/cancel-button.png';
+import confirm from '../../../assets/ok-button.png';
 
 var customStyles = {
     content : {
@@ -41,8 +41,8 @@ class ModalWin extends React.Component {
                             {React.cloneElement(children, { changeValue: this.changeValue.bind(this),list: this.state.list})}
                         </div>
                         <div className="bottom-buttons">
-                            <img className="close-modal" onClick={update.bind(this)} src={close}/>
-                            <img className="save-modal" onClick={this.sendToParent.bind(this)} src={open}/>
+                            <img className="close-modal" onClick={update.bind(this)} src={cancel}/>
+                            <img className="save-modal" onClick={this.sendToParent.bind(this)} src={confirm}/>
                         </div>
                     </div>
                 </Modal>

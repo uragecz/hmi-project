@@ -30,7 +30,6 @@ var loginActions = {
         }
     },
     logout: function(){
-        console.log('logOut');
         Dispatcher.handleAction({
             actionType: loginConstants.LOGOUT
         })

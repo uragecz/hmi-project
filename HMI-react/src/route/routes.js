@@ -10,7 +10,7 @@ var routes = {
             eng:"Home"
         },
         name: "home",
-        page: null,
+        page: "Home",
         value: "1",
         icon: "../../assets/Articles.png",
         children: {}

@@ -19,7 +19,6 @@ var helpActions = {
     printPage: async function (lang){
         let tabs = tabStore.getOpenTabs();
         let name = tabs[tabStore.getActiveTab()][0];
-        console.log(tabStore.getActiveTab(),tabStore.getOpenTabs(),name);
         await serverActions.getData(url + "?name=" +name + "&lang=" + lang);
     },
 

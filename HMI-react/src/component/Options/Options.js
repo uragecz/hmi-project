@@ -20,7 +20,7 @@ class Options extends Component{
             yPos : [100, 160, 165, 180],
             xRot : [0, 72, 90, 90],
             yRot : [0, 180, 186, 207],
-            width: 100,
+            width: 110,
             prevAngleInRadians: null,
             previousX: null,
             previousY: null,

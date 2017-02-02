@@ -7,6 +7,9 @@ import Modal from 'react-modal';
 import Numpad from '../Numpad/Numpad';
 import './ModalWindow.css'
 
+import cancel from '../../../assets/cancel-button.png';
+import confirm from '../../../assets/ok-button.png';
+
 var customStyles = {
     overlay : {
         position          : 'fixed',
@@ -18,7 +21,7 @@ var customStyles = {
     },
     content : {
         top                   : '50%',
-        left                  : '80%',
+        left                  : '75%',
         width                 : 'auto',
         height                : 'auto',
         right                 : 'auto',
@@ -49,8 +52,8 @@ class NumpadModal extends React.Component {
                             <Numpad  {...others} updateValues={this.getValueFromNumpad.bind(this)}/>
                         </div>
                         <div className="bottom-buttons">
-                            <img className="close-modal" onClick={this.closeModal.bind(this)} src="../../assets/cancel-button.png"/>
-                            <img className="save-modal" onClick={this.saveToInput.bind(this)} src="../../assets/ok-button.png"/>
+                            <img className="close-modal" onClick={this.closeModal.bind(this)} src={cancel}/>
+                            <img className="save-modal" onClick={this.saveToInput.bind(this)} src={confirm}/>
                         </div>
                     </div>
                 </Modal>

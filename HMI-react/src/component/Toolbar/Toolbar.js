@@ -30,7 +30,7 @@ class Toolbar extends Component{
     }
 
     shouldComponentUpdate(nextProps, nextState){
-        //pokud se renderuje nova stranka a otevreny tab zustava(pri meneni obsahu aktualniho tabu) mussim zmenit obsah tabu
+        //pokud se renderuje nova stranka a otevreny tab zustava(pri meneni obsahu aktualniho tabu) musim zmenit obsah tabu
         if((nextProps.actualPage !== this.props.actualPage) && (nextState.activeTab === this.state.activeTab)) {
             const item = nextProps.actualPage;
             tabsActions.changeTab(item);
@@ -57,7 +57,7 @@ class Toolbar extends Component{
                         <div onClick={this.handleChangeActiveTab.bind(this,counter)} key={counter} className={"toolbarItem " + (active ? "true" : false)}>
 
                             <svg width={20} height={42} >
-                                <polygon fill={!active ? "#97a6ac" : "#bdc9ce"} className="left" points="20,0 0,42 20,42" />
+                                <polygon fill={!active ? "#97a6ac" : "#bdc9ce"} points="20,0 0,42 20,42" />
                                 <path stroke="rgb(101, 123, 132)" d="M20 0 L0 42"></path>
                             </svg>
                             <div className="toolbarText">
@@ -67,14 +67,18 @@ class Toolbar extends Component{
                                 <div className="closeTab" onClick={this.handleCloseTab.bind(this,counter)}>x</div>
                             </div>
                             <svg width={20} height={42}>
-                                <polygon fill={!active ? "#97a6ac" : "#bdc9ce"} className="right" points="0,0 20,42 0,42" />
+                                <polygon fill={!active ? "#97a6ac" : "#bdc9ce"} points="0,0 20,42 0,42" />
                                 <path stroke="rgb(101, 123, 132)" d="M0 0 L20 42"></path>
                             </svg>
                         </div>
                     );
                 },this)}
                 <div id="toolbarAdd" onClick={this.handleAddNewTab.bind(this)}>
-                    <div className="addToolButton">+</div>
+                    <svg width={30} height={30} >
+                        <circle cx="15" cy="15" r="14" stroke="rgb(101, 123, 132)" strokeWidth="1" fill="#bdc9ce" />
+                        <text x="15" y="18" fontFamily="Verdana" fontSize="12" textAnchor="middle">x</text>
+                    </svg>
+
                 </div>
             </div>
         )

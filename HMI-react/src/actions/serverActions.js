@@ -4,7 +4,6 @@
 import Dispatcher from '../dispatcher/Dispatcher';
 import messageConstants from '../constants/messageConstants';
 import http from 'superagent';
-import request from 'superagent';
 const okMessage = 'DATA WERE SENT SUCCESSFULLY ';
 const errMessage = 'ERROR DURING DATA SENDING';
 

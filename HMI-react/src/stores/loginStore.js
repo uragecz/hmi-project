@@ -58,6 +58,7 @@ Dispatcher.register(function(payload){
         case loginConstants.LOGOUT:
             logout();
             loginStore.emit(CHANGE_EVENT);
+            break;
         default:
             return true;
     }

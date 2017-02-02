@@ -3,7 +3,6 @@
  */
 //components
 import React,{Component} from 'react';
-import tabStore from '../../stores/tabsStore';
 import helpActions from '../../actions/helpActions';
 import Language from '../Languages/Languages';
 

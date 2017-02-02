@@ -35,9 +35,8 @@ class App extends Component {
     }
 
     closeInfoPage(close){
-
         this.setState({
-            infoPage : close ? close : !this.state.infoPage
+            infoPage : close
         })
     }
 

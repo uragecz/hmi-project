@@ -11,14 +11,17 @@ class Option extends Component{
         return this.props.previousX !== null;
     }
     render(){
-        const { posAngle, previousX, previousY, x, y, xPos, yPos, xRot, yRot, type,  activeItem} = this.props;
+        const { posAngle, previousX, previousY, x, y, xPos, yPos, xRot, yRot, type,  activeItem, value } = this.props;
         return(
             <g transform={"rotate("+ posAngle +",125 125)"} onClick={this.handleClick.bind(this)}>
                 <path fill={activeItem ? "rgb(36,76,90)" : "white"} stroke="rgba(0,0,0,0.1)" strokeWidth="2"
-                      d={"M125,125 L" +previousX+ ", " +previousY+ " A100,100 0 0,1 " +x+ ", " +y+ " z"} >
+                      d={"M125,125 L" +previousX+ ", " +previousY+ " A110,110 0 0,1 " +x+ ", " +y+ " z"} >
                 </path>
-                <image transform={"rotate(-"+posAngle+" "+ xRot + " " + yRot + ")"}
-                       href={type === 'shift' ? setShift : type === 'group' ? setGroup : setUnit} x={xPos} y={yPos}  height="35px" width="35px"/>
+                <image transform={"rotate(-"+posAngle+", "+ xRot + " " + yRot + ")"}
+                       href={type === 'shift' ? setShift : type === 'group' ? setGroup : setUnit} x={xPos} y={yPos-5}  height="35px" width="35px"/>
+                <text transform={"rotate(-"+posAngle+", "+ xRot + " " + yRot + ")"} x={xPos+15} y={yPos + 42} fontFamily="Arial" fontSize="16" strokeWidth="0.5" textAnchor="middle" stroke={activeItem? "white" : "black"} fill={activeItem? "white" : "black"}>
+                    {type !== "shift" ? value : false}
+                </text>
             </g>
         )
     }

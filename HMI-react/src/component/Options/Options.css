@@ -8,7 +8,7 @@
     position: absolute;
     width: 252px;
     height: 330px;
-    top: 50%;
+    top: 45%;
     transform: translate(0,-50%);
 }
 
@@ -27,10 +27,6 @@
     justify-content: center;
 }
 
-.optionIcon.up{
-
-}
-
 .optionIcon.down{
     bottom: 0;
 }
@@ -41,6 +37,7 @@
     text-align: center;
     background-color: rgb(36,76,90);
     margin: auto auto;
+    display: none;
 }
 
 #bottomOptionInfo{
@@ -52,6 +49,7 @@
     bottom: 5px;
     position: absolute;
     right: 12px;
+    display: none;
 }
 
 #bottomOptionInfo .optionValue{
