@@ -8,7 +8,7 @@ class Page extends React.Component {
     render(){
         var {children, ...others} = this.props;
         return(
-            <div className="page" {...others}>
+            <div id="page" {...others}>
                 {children}
             </div>
         )

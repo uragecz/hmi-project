@@ -2,8 +2,8 @@
  * Created by Lukáš on 6/13/2016.
  */
 import React from 'react';
-import graphStore from '../../stores/graphStore';
-import graphActions from '../../actions/graphActions'
+import graphActions from '../../actions/qmSettingsAction';
+import qmSettingsStore from '../../stores/qmSettingsStore';
 import './Graph.css';
 
 /* eslint-disable */
@@ -327,8 +327,8 @@ class Grid extends React.Component {
     super(props);
     this.state = {
       canvas: {},
-      QM_detected: graphStore.getQmDec(),
-      QM_removed: graphStore.getQmRem()
+      QM_detected: qmSettingsStore.getQmDec(),
+      QM_removed: qmSettingsStore.getQmRem()
     };
     this.update = this.update.bind(this);
   }
@@ -390,7 +390,7 @@ class Grid extends React.Component {
   }
 
   componentWillMount(){
-    graphStore.addChangeListener(this.update);
+      qmSettingsStore.addChangeListener(this.update);
     this.setState({
       canvas: this.props.canvas
     })
@@ -398,14 +398,14 @@ class Grid extends React.Component {
 
   update(){
     this.setState({
-      QM_detected: graphStore.getQmDec(),
-      QM_removed: graphStore.getQmRem()
+      QM_detected: qmSettingsStore.getQmDec(),
+      QM_removed: qmSettingsStore.getQmRem()
     });
 
   }
 
   componentWillUnmount(){
-    graphStore.removeChangeListener(this.update);
+      qmSettingsStore.removeChangeListener(this.update);
   }
 }
 Grid.propTypes = {
@@ -512,12 +512,6 @@ class Print extends React.Component {
     this.setState({
       canvas: new fabric.Canvas(this.refs.canvas),
     });
-    /*
-    let context  = document.getElementById("contextCanvas").getContext('2d');
-    context.webkitImageSmoothingEnabled = false;
-    context.mozImageSmoothingEnabled = false;
-    context.imageSmoothingEnabled = false;
-    */
   }
 
   componentWillMount(){
@@ -530,7 +524,7 @@ class Print extends React.Component {
           canWidth = canWidth.slice( 1 );
           canWidth= parseFloat('1.' + canWidth);
       }
-      canWidth += 0.08;
+      canWidth += 0.05;
       canWidth.toFixed(3);
       canvasStyle = {
           transform : 'scale('+canWidth+')',
@@ -541,7 +535,7 @@ class Print extends React.Component {
   render() {
     return (
         <div id="graph-container">
-          <canvas style={canvasStyle} className="canvas" ref="canvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT}></canvas>
+          <canvas style={canvasStyle} className="canvas" ref="canvas" id="contextCanvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT}></canvas>
           <div>
             {this.state.canvas !== null ? <Graph canvas={this.state.canvas} channels={this.props.channels} /> : false}
           </div>

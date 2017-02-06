@@ -2,7 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/HMI-react/src/stores/productSettingsStore.js" line="144" />
-    <bookmark url="file://$PROJECT_DIR$/HMI-react/src/pages/graph/graphPage.js" line="30" />
+    <bookmark url="file://$PROJECT_DIR$/HMI-react/src/pages/settings/qmSettings/qmSettings.js" line="35" />
     <bookmark url="file://$PROJECT_DIR$/HMI-react/src/component/Menu/MainMenu.js" line="58" />
     <bookmark url="file://$PROJECT_DIR$/HMI-react/src/data/content.json" />
     <bookmark url="file://$PROJECT_DIR$/HMI-react/src/component/Message/Message.js" line="35" />
@@ -10,6 +10,7 @@
     <bookmark url="file://$PROJECT_DIR$/HMI-react/src/component/Header/Header.css" line="18" />
     <bookmark url="file://$PROJECT_DIR$/HMI-react/src/stores/tabsStore.js" line="31" />
     <bookmark url="file://$PROJECT_DIR$/HMI-react/src/component/ModalWindow/ModalWin.js" line="58" />
+    <bookmark url="file://$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.css" line="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78f0b7d5-4953-4583-91b6-b0f396274333" name="Default" comment="" />
@@ -34,85 +35,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Header/Header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-272">
-              <caret line="72" column="92" lean-forward="false" selection-start-line="72" selection-start-column="92" selection-end-line="72" selection-end-column="92" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loginActions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HMI-react/src/actions/loginActions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="serverActions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HMI-react/src/actions/serverActions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-              <folding>
-                <element signature="e#43#93#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loginStore.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/loginStore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="helpActions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HMI-react/src/actions/helpActions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-              <folding>
-                <element signature="e#43#88#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messageStore.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/messageStore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-31">
-              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="InputList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="62" column="20" lean-forward="true" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+            <state relative-caret-position="397">
+              <caret line="70" column="52" lean-forward="true" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Help.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Help/Help.js">
+      <file leaf-file-name="Input.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InputList/Input.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            <state relative-caret-position="317">
+              <caret line="79" column="27" lean-forward="true" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qmSettingsStore.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/qmSettingsStore.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="88" column="38" lean-forward="true" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -121,22 +68,75 @@
       <file leaf-file-name="ModalWin.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HMI-react/src/component/ModalWindow/ModalWin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+            <state relative-caret-position="663">
+              <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qmSettings.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/settings/qmSettings/qmSettings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="613">
+              <caret line="105" column="49" lean-forward="false" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
                 <element signature="e#42#68#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Input.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InputList/Input.js">
+      <file leaf-file-name="qmSettingsAction.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HMI-react/src/actions/qmSettingsAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="17" column="77" lean-forward="true" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
+            <state relative-caret-position="776">
+              <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Header/Header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1717">
+              <caret line="114" column="11" lean-forward="false" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputList.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="147" column="18" lean-forward="false" selection-start-line="147" selection-start-column="18" selection-end-line="147" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FavouriteHistory.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Menu/FavouriteHistory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Graph.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Graph/Graph.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="522" column="11" lean-forward="false" selection-start-line="522" selection-start-column="11" selection-end-line="522" selection-end-column="11" />
+              <folding>
+                <element signature="e#42#68#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,20 +154,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>entirePage</find>
-      <find>render</find>
-      <find>id</find>
-      <find>this.props.changeValue</find>
-      <find>checkbox</find>
-      <find>closeT</find>
-      <find>descUnit</find>
       <find>column</find>
       <find>getX</find>
-      <find>console</find>
       <find>==</find>
       <find>readyToRender</find>
       <find>topMenuItem.fina</find>
-      <find>console.log</find>
       <find>subTopMenu</find>
       <find>react</find>
       <find>conso</find>
@@ -184,6 +175,15 @@
       <find>item</find>
       <find>width</find>
       <find>*</find>
+      <find>store</find>
+      <find>header-</find>
+      <find>.boxInput</find>
+      <find>table-cell</find>
+      <find>table-row</find>
+      <find>caption</find>
+      <find>console.log</find>
+      <find>inputKey</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,21 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/HMI-react/src/component/Menu/MenuTopOptions.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/pages/graph/graphPage.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/constants/helpConstants.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/stores/helpStore.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/constants/serverConstants.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/actions/graphActions.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/stores/serverStore.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/component/Message/Message.css" />
-        <option value="$PROJECT_DIR$/HMI-react/src/component/Menu/Menu.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/component/Message/Message.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/component/App/App.css" />
-        <option value="$PROJECT_DIR$/HMI-react/src/component/Menu/MainMenu.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/pages/settings/Settings.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/pages/pages.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/data/content.json" />
         <option value="$PROJECT_DIR$/HMI-react/src/stores/languageStore.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Languages/Languages.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Menu/TopMenu.js" />
@@ -214,11 +199,7 @@
         <option value="$PROJECT_DIR$/HMI-react/src/component/Numpad/Numpad.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/constants/loginConstants.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/actions/settingsActions.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/pages/settings/productSettings/piecing/piecing.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/pages/settings/productSettings/productSettings.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/stores/messageStore.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.css" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/InfoPage.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Timer/Timer.css" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Timer/Timer.js" />
@@ -229,20 +210,39 @@
         <option value="$PROJECT_DIR$/HMI-react/src/stores/tabsStore.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Toolbar/Toolbar.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Toolbar/Toolbar.css" />
-        <option value="$PROJECT_DIR$/HMI-react/src/route/routes.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/component/App/App.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Options/Options.css" />
-        <option value="$PROJECT_DIR$/HMI-react/src/component/Header/Header.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Options/Options.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Options/Option.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Header/Header.css" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/ModalWindow/NumpadModal.js" />
-        <option value="$PROJECT_DIR$/HMI-react/src/component/ModalWindow/ModalWin.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/stores/loginStore.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/component/Help/Help.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/actions/serverActions.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/actions/helpActions.js" />
         <option value="$PROJECT_DIR$/HMI-react/src/actions/loginActions.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/pages/pages.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/constants/graphConstants.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/constants/settingsConstants.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/route/routes.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/App/App.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/stores/productSettingsStore.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/Graph/Graph.css" />
+        <option value="$PROJECT_DIR$/HMI-react/src/pages/settings/productSettings/piecing/piecing.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/pages/settings/productSettings/productSettings.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/pages/settings/productSettings/productSettings.css" />
+        <option value="$PROJECT_DIR$/HMI-react/src/pages/settings/qmSettings/qmSettings.css" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/App/App.css" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/Page/Page.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/Menu/FavouriteHistory.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/Header/Header.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/Graph/Graph.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.css" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/ModalWindow/ModalWin.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/stores/qmSettingsStore.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/InputList/Input.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/actions/qmSettingsAction.js" />
+        <option value="$PROJECT_DIR$/HMI-react/src/pages/settings/qmSettings/qmSettings.js" />
       </list>
     </option>
   </component>
@@ -276,7 +276,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -361,7 +360,93 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="component" />
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hmi-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hmi-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HMI-react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hmi-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hmi-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HMI-react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qmSettings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hmi-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hmi-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HMI-react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="productSettings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -384,10 +469,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="component" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Numpad" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -439,7 +520,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="InputList" />
+              <option name="myItemId" value="Menu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -465,7 +546,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Help" />
+              <option name="myItemId" value="InputList" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -519,6 +600,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -533,16 +615,16 @@
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\urunzl\Desktop\hmi-project\HMI-react\external_js" />
-      <recent name="C:\Users\urunzl\Desktop\hdmi-project\HDMI-react\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\urunzl\Desktop\hmi-project\HMI-react\src\pages\settings" />
       <recent name="C:\Users\urunzl\Desktop\hmi-project\HMI-react\src\component\InfoPage" />
       <recent name="C:\Users\urunzl\Desktop\hmi-project\HMI-react\src\component\Help" />
       <recent name="C:\Users\urunzl\Desktop\hmi-project\HMI-react\src\pages\settings\productSettings" />
       <recent name="C:\Users\urunzl\Desktop\hmi-project\HMI-react\assets" />
-      <recent name="C:\Users\urunzl\Desktop\hdmi-project\HDMI-react\src\component\App" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\urunzl\Desktop\hmi-project\HMI-react\external_js" />
+      <recent name="C:\Users\urunzl\Desktop\hdmi-project\HDMI-react\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -717,20 +799,23 @@
       <workItem from="1485238988397" duration="46584000" />
       <workItem from="1485436549892" duration="1797000" />
       <workItem from="1485499251606" duration="8056000" />
-      <workItem from="1485757331929" duration="57768000" />
+      <workItem from="1485757331929" duration="58962000" />
+      <workItem from="1486103702930" duration="25000" />
+      <workItem from="1486103790035" duration="15015000" />
+      <workItem from="1486124953132" duration="23111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1719753000" />
+    <option name="totallyTimeSpent" value="1759098000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1170" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1170" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.178125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2589372" sideWeight="0.5083333" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28405797" sideWeight="0.5104167" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -742,7 +827,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20289855" sideWeight="0.49166667" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20289855" sideWeight="0.49166667" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -779,140 +864,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Languages/Languages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="9" lean-forward="false" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Menu/Menu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3621">
-          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Numpad/Numpad.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="70" column="27" lean-forward="false" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/actions/languageActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/constants/languageConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/StartButton/StartButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/settings/productSettings/piecing/piecing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="37" column="59" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/graph/graphPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/settings/productSettings/productSettings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/actions/settingsActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="35" lean-forward="true" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/constants/loginConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/productSettingsStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="105" column="22" lean-forward="true" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/languageStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/historyStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/helpStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/graphStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/selectionStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -926,31 +881,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Graph/Graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2414">
-          <caret line="147" column="32" lean-forward="false" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/actions/graphActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InfoPage/InfoPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-          <folding>
-            <element signature="e#56#97#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -958,10 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="52" column="64" lean-forward="false" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
-          <folding>
-            <element signature="e#56#97#0" expanded="false" />
-            <marker date="1485763247725" expanded="true" signature="670:2453" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -969,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357">
           <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,7 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
           <caret line="72" column="26" lean-forward="true" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,7 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-609">
           <caret line="36" column="9" lean-forward="false" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,43 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/pages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/mixin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/route/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/App/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1061,9 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2599">
           <caret line="165" column="21" lean-forward="true" selection-start-line="165" selection-start-column="21" selection-end-line="165" selection-end-column="21" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1071,9 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1089,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,7 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,42 +985,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/ModalWindow/ModalWin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#42#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InputList/Input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="77" lean-forward="true" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="62" column="20" lean-forward="true" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/loginStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="765">
+          <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1154,29 +1005,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HMI-react/src/actions/serverActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="17">
           <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
           <folding>
-            <element signature="e#43#93#0" expanded="true" />
+            <element signature="e#43#93#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HMI-react/src/actions/helpActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="221">
           <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-          <folding>
-            <element signature="e#43#88#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/messageStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1188,11 +1035,216 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/constants/graphConstants.js" />
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/constants/settingsConstants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/mixin.js" />
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/pages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/route/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/route/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/settings/Settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/App/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/productSettingsStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="9" lean-forward="false" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/List/List.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/settings/productSettings/piecing/piecing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="27" column="110" lean-forward="false" selection-start-line="27" selection-start-column="110" selection-end-line="27" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/settings/productSettings/productSettings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="23" column="42" lean-forward="false" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/settings/productSettings/productSettings.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Graph/Graph.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/settings/qmSettings/qmSettings.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/App/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Page/Page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Menu/FavouriteHistory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Header/Header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="72" column="92" lean-forward="false" selection-start-line="72" selection-start-column="92" selection-end-line="72" selection-end-column="92" />
+        <state relative-caret-position="1717">
+          <caret line="114" column="11" lean-forward="false" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/Graph/Graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="522" column="11" lean-forward="false" selection-start-line="522" selection-start-column="11" selection-end-line="522" selection-end-column="11" />
+          <folding>
+            <element signature="e#42#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="147" column="18" lean-forward="false" selection-start-line="147" selection-start-column="18" selection-end-line="147" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/ModalWindow/ModalWin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/stores/qmSettingsStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="88" column="38" lean-forward="true" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InputList/Input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="79" column="27" lean-forward="true" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/component/InputList/InputList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="70" column="52" lean-forward="true" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/actions/qmSettingsAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="776">
+          <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMI-react/src/pages/settings/qmSettings/qmSettings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="105" column="49" lean-forward="false" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
+          <folding>
+            <element signature="e#42#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

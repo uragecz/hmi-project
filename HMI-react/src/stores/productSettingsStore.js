@@ -39,29 +39,29 @@ var _store = {
         yarnLength:             {value: 0, unit: "mm"}
     },
     silverFeedLength: {
-        vpp1:{
-            p1:     {value: 0, unit: "mm"},
-            vp1:    {value: 0, unit: "%"},
+        "VP1":{
+            len:    {value: 0, unit: "mm"},
+            dev:    {value: 0, unit: "%"},
             enable: true
         },
-        vpp2:{
-            p2:     {value: 0, unit: "mm"},
-            vp2:    {value: 0, unit: "%"},
+        "VP2":{
+            len:    {value: 0, unit: "mm"},
+            dev:    {value: 0, unit: "%"},
             enable: true
         },
-        vpp3:{
-            p3:     {value: 0, unit: "mm"},
-            vp3:    {value: 0, unit: "%"},
+        "VP3":{
+            len:    {value: 0, unit: "mm"},
+            dev:    {value: 0, unit: "%"},
             enable: true
         },
-        vpp4:{
-            p4:     {value: 0, unit: "mm"},
-            vp4:    {value: 0, unit: "%"},
+        "VP4":{
+            len:    {value: 0, unit: "mm"},
+            dev:    {value: 0, unit: "%"},
             enable: true
         },
-        vpp5:{
-            p5:     {value: 0, unit: "mm"},
-            vp5:    {value: 0, unit: "%"},
+        "VP5":{
+            len:    {value: 0, unit: "mm"},
+            dev:    {value: 0, unit: "%"},
             enable: true
         }
     },

@@ -57,8 +57,6 @@ class ModalWin extends React.Component {
 
     //save new values to modal window
     changeValue(list){
-        console.log('modal',list);
-        console.log('changeValue',list);
         this.setState({
             list: list
         });

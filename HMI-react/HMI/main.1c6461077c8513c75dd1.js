@@ -7633,7 +7633,7 @@
 	                        children: {}
 	                    },
 	                    "sub-grapha": {
-	                        hash: "/graph/just-graph/sub-grapha",
+	                        hash: "/qmSettings/just-qmSettings/sub-grapha",
 	                        name: "sub-grapha",
 	                        page: "SubGraphA",
 	                        value: "2.1.2",
@@ -7642,7 +7642,7 @@
 	                        children: {}
 	                    },
 	                    "sub-graphb": {
-	                        hash: "/graph/sub-graphb",
+	                        hash: "/qmSettings/sub-graphb",
 	                        name: "sub-graphb",
 	                        page: "SubGraphB",
 	                        value: "2.1.3",
@@ -7653,14 +7653,14 @@
 	                }
 	            },
 	            "sub-grapha": {
-	                hash: "/graph/sub-grapha",
+	                hash: "/qmSettings/sub-grapha",
 	                name: "sub-grapha",
 	                page: null,
 	                value: "2.2",
 	                icon: "../../assets/group.png",
 	                children: {
 	                    "just-graph": {
-	                        hash: "/graph/just-graph",
+	                        hash: "/qmSettings/just-qmSettings",
 	                        name: "just-graph",
 	                        page: "Graph",
 	                        value: "2.2.1",
@@ -7669,7 +7669,7 @@
 	                        children: {}
 	                    },
 	                    "sub-grapha": {
-	                        hash: "/graph/sub-grapha",
+	                        hash: "/qmSettings/sub-grapha",
 	                        name: "sub-grapha",
 	                        page: "SubGraphA",
 	                        value: "2.2.2",
@@ -7678,7 +7678,7 @@
 	                        children: {}
 	                    },
 	                    "sub-graphb": {
-	                        hash: "/graph/sub-graphb",
+	                        hash: "/qmSettings/sub-graphb",
 	                        name: "sub-graphb",
 	                        page: "SubGraphB",
 	                        value: "2.2.3",
@@ -7689,14 +7689,14 @@
 	                }
 	            },
 	            "sub-graphb": {
-	                hash: "/graph/sub-graphb",
+	                hash: "/qmSettings/sub-graphb",
 	                name: "sub-graphb",
 	                page: null,
 	                value: "2.3",
 	                icon: "../../assets/ClearerSettings.png",
 	                children: {
 	                    "just-graph": {
-	                        hash: "/graph/just-graph",
+	                        hash: "/qmSettings/just-qmSettings",
 	                        name: "just-graph",
 	                        page: "Graph",
 	                        value: "2.3.1",
@@ -7705,7 +7705,7 @@
 	                        children: {}
 	                    },
 	                    "sub-grapha": {
-	                        hash: "/graph/sub-grapha",
+	                        hash: "/qmSettings/sub-grapha",
 	                        name: "sub-grapha",
 	                        page: "SubGraphA",
 	                        value: "2.3.2",
@@ -7714,7 +7714,7 @@
 	                        children: {}
 	                    },
 	                    "sub-graphb": {
-	                        hash: "/graph/sub-graphb",
+	                        hash: "/qmSettings/sub-graphb",
 	                        name: "sub-graphb",
 	                        page: "SubGraphB",
 	                        value: "2.3.3",
@@ -7734,14 +7734,14 @@
 	        icon: "../../assets/group.png",
 	        children: {
 	            "just-graph": {
-	                hash: "/graph/just-graph",
+	                hash: "/qmSettings/just-qmSettings",
 	                name: "just-graph",
 	                page: null,
 	                value: "3.1",
 	                icon: "../../assets/config.png",
 	                children: {
 	                    "just-graph": {
-	                        hash: "/graph/just-graph",
+	                        hash: "/qmSettings/just-qmSettings",
 	                        name: "just-graph",
 	                        page: "Graph",
 	                        value: "3.1.1",
@@ -7750,7 +7750,7 @@
 	                        children: {}
 	                    },
 	                    "sub-grapha": {
-	                        hash: "/graph/sub-grapha",
+	                        hash: "/qmSettings/sub-grapha",
 	                        name: "sub-grapha",
 	                        page: "SubGraphA",
 	                        value: "3.1.2",
@@ -7759,7 +7759,7 @@
 	                        children: {}
 	                    },
 	                    "sub-graphb": {
-	                        hash: "/graph/sub-graphb",
+	                        hash: "/qmSettings/sub-graphb",
 	                        name: "sub-graphb",
 	                        page: "SubGraphB",
 	                        value: "3.1.3",
@@ -7770,14 +7770,14 @@
 	                }
 	            },
 	            "sub-grapha": {
-	                hash: "/graph/sub-grapha",
+	                hash: "/qmSettings/sub-grapha",
 	                name: "sub-grapha",
 	                page: null,
 	                value: "3.2",
 	                icon: "../../assets/group.png",
 	                children: {
 	                    "just-graph": {
-	                        hash: "/graph/just-graph",
+	                        hash: "/qmSettings/just-qmSettings",
 	                        name: "just-graph",
 	                        page: "Graph",
 	                        value: "3.2.1",
@@ -7786,7 +7786,7 @@
 	                        children: {}
 	                    },
 	                    "sub-grapha": {
-	                        hash: "/graph/sub-grapha",
+	                        hash: "/qmSettings/sub-grapha",
 	                        name: "sub-grapha",
 	                        page: "SubGraphA",
 	                        value: "3.2.2",
@@ -7795,7 +7795,7 @@
 	                        children: {}
 	                    },
 	                    "sub-graphb": {
-	                        hash: "/graph/sub-graphb",
+	                        hash: "/qmSettings/sub-graphb",
 	                        name: "sub-graphb",
 	                        page: "SubGraphB",
 	                        value: "3.2.3",
@@ -7806,14 +7806,14 @@
 	                }
 	            },
 	            "sub-graphb": {
-	                hash: "/graph/sub-graphb",
+	                hash: "/qmSettings/sub-graphb",
 	                name: "sub-graphb",
 	                page: null,
 	                value: "3.3",
 	                icon: "../../assets/ClearerSettings.png",
 	                children: {
 	                    "just-graph": {
-	                        hash: "/graph/just-graph",
+	                        hash: "/qmSettings/just-qmSettings",
 	                        name: "just-graph",
 	                        page: "Graph",
 	                        value: "3.3.1",
@@ -7822,7 +7822,7 @@
 	                        children: {}
 	                    },
 	                    "sub-grapha": {
-	                        hash: "/graph/sub-grapha",
+	                        hash: "/qmSettings/sub-grapha",
 	                        name: "sub-grapha",
 	                        page: "SubGraphA",
 	                        value: "3.3.2",
@@ -7831,7 +7831,7 @@
 	                        children: {}
 	                    },
 	                    "sub-graphb": {
-	                        hash: "/graph/sub-graphb",
+	                        hash: "/qmSettings/sub-graphb",
 	                        name: "sub-graphb",
 	                        page: "SubGraphB",
 	                        value: "3.3.3",
@@ -28856,7 +28856,7 @@
 	 */
 	var favourite = {
 	    "just-graph": {
-	        hash: "/graph/just-graph",
+	        hash: "/qmSettings/just-qmSettings",
 	        name: "just-graph",
 	        page: "Graph",
 	        value: "3.1.1",
@@ -28865,7 +28865,7 @@
 	        children: {}
 	    },
 	    "sub-grapha": {
-	        hash: "/graph/sub-grapha",
+	        hash: "/qmSettings/sub-grapha",
 	        name: "sub-grapha",
 	        page: "SubGraphA",
 	        value: "3.1.2",
@@ -28874,7 +28874,7 @@
 	        children: {}
 	    },
 	    "sub-graphb": {
-	        hash: "/graph/sub-graphb",
+	        hash: "/qmSettings/sub-graphb",
 	        name: "sub-graphb",
 	        page: "SubGraphB",
 	        value: "3.1.3",

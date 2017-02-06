@@ -104,7 +104,6 @@ class Header extends Component{
     }
 
     logout(item){
-        console.log(item);
         this.props.closeInfoPage(item);
         loginActions.logout();
 

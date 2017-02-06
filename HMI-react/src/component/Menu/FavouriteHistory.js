@@ -47,9 +47,9 @@ class FavouriteHistory extends Component{
                             posAngle += angle;
                             return(
                                 <Link key={item} to={model.hash} transform={"rotate("+ posAngle +","+this.state.center+" "+this.state.center+")"} className="menuLink">
-                                    {length !== 1 ? <path fill={"white"} stroke="rgba(0,0,0,0.1)" strokeWidth="2" d={"M"+this.state.center+","+this.state.center+" L"+this.state.previousX+", "+this.state.previousY+" A"+this.state.width+","+this.state.width+" 0 0,1 "+x+", "+y+" z"}>
+                                    {length !== 1 ? <path fill="white" stroke="rgba(0,0,0,0.1)" strokeWidth="2" d={"M"+this.state.center+","+this.state.center+" L"+this.state.previousX+", "+this.state.previousY+" A"+this.state.width+","+this.state.width+" 0 0,1 "+x+", "+y+" z"}>
                                     </path> : <circle cx={this.state.center} cy={this.state.center} r="150" stroke="rgba(0,0,0,0.1)" strokeWidth="2" fill="white" />}
-                                    <image href={model.icon} transform={"rotate(-" +posAngle + " " +this.state.xRot[length-1] +" " +this.state.yRot[length-1] + ")"} x={this.state.xPos[length-1]} y={this.state.yPos[length-1]} height="50px" width="50px"/>
+                                    <image href={model.icon} transform={"rotate(-" +posAngle + "," +this.state.xRot[length-1] +" " +this.state.yRot[length-1] + ")"} x={this.state.xPos[length-1]} y={this.state.yPos[length-1]} height="50px" width="50px"/>
                                     <text  transform={"rotate(-" +posAngle + " " +this.state.xRot[length-1] +" " +this.state.yRot[length-1] + ")"} x={this.state.xPos[length-1]+50} y={this.state.yPos[length-1]+65} textAnchor="end" fontFamily="sans-serif" fontSize="16px" fill="black">{model.value}
                                     </text>
                                 </Link>
@@ -57,9 +57,9 @@ class FavouriteHistory extends Component{
                         },this)}
                     {this.props.current && length !== 0 ?
                         <g>
-                            <path fill="none" stroke="rgb(226,234,102)" strokeWidth="4"  d="M225,20 L225,30 L225,25 A200,200 0 0,0 55, 130"></path>
-                            <path fill="rgb(226,234,102)"  d="M45,125 A100,100 0 0,0 43,160 A100,100 0 0,1 70 137 A75,75 0 0,1 50,135" ></path>
-                            <text  transform={"rotate(-45deg)"} x={100} y={30} textAnchor="middle" fontFamily="sans-serif" fontSize="18px" fill="rgb(226,234,102)">{this.props.current}
+                            <path fill="none" stroke="rgb(226,234,102)" strokeWidth="4" d="M225,20 L225,30 L225,25 A200,200 0 0,0 55, 130"></path>
+                            <path fill="rgb(226,234,102)" d="M45,125 A100,100 0 0,0 43,160 A100,100 0 0,1 70 137 A75,75 0 0,1 50,135" ></path>
+                            <text  x={100} y={30} textAnchor="middle" fontFamily="sans-serif" fontSize="18px" fill="rgb(226,234,102)">{this.props.current}
                             </text>
                         </g>
                     : false}

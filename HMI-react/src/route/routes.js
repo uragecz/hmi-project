@@ -51,14 +51,14 @@ var routes = {
                         setting: ["shift","unit"],
                         children: {}
                     },
-                    "graph": {
-                        hash: "/settings/product-settings/graph",
+                    "qmSettings": {
+                        hash: "/settings/product-settings/qmSettings",
                         names: {
-                            cz: "Graf",
-                            eng:"Graph"
+                            cz: "QM nastavení",
+                            eng:"QM setting"
                         },
-                        name: "graph",
-                        page: "Graph",
+                        name: "qmSettings",
+                        page: "QmSettings",
                         value: "2.1.2",
                         icon: "../../assets/group.png",
                         setting: ["shift","unit","group"],

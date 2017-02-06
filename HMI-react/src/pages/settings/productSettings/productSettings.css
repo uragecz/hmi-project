@@ -62,7 +62,6 @@
 
 .item{
     float: left;
-    margin-bottom: 7px;
 }
 
 #piecing-graph1{
@@ -109,11 +108,5 @@
     justify-content: center;
 }
 
-.boxInput{
-    width: 25px;
-    height: 25px;
-}
 
-.input-container .boxInput {
-    width: 40px;
-}
+

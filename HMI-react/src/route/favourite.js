@@ -3,7 +3,7 @@
  */
 var favourite = {
     "just-graph": {
-        hash: "/graph/just-graph",
+        hash: "/qmSettings/just-qmSettings",
         name: "just-graph",
         page: "Graph",
         value: "3.1.1",
@@ -12,7 +12,7 @@ var favourite = {
         children: {}
     },
     "sub-grapha": {
-        hash: "/graph/sub-grapha",
+        hash: "/qmSettings/sub-grapha",
         name: "sub-grapha",
         page: "SubGraphA",
         value: "3.1.2",
@@ -21,7 +21,7 @@ var favourite = {
         children: {}
     },
     "sub-graphb": {
-        hash: "/graph/sub-graphb",
+        hash: "/qmSettings/sub-graphb",
         name: "sub-graphb",
         page: "SubGraphB",
         value: "3.1.3",

@@ -22,17 +22,50 @@
     background-color: rgb(167, 183, 189);
 }
 
-.table-cell{
-    padding: 2px 0 2px 2px;
+.table-row{
+    padding: 1px 0 1px 0;
 }
 
 .table-list{
     width: 100%;
 }
 
+.boxInput{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+.input-container .boxInput {
+    width: 40px;
+}
+
+.table-cell.input{
+    width: 25%;
+    padding: 0 3px 0 3px;
+}
+.table-cell.box{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.header-cell.caption{
+    text-align: left;
+    border-left: 3px solid #bdc9ce;
+    padding-left: 5px;
+}
+
+.table-cell.caption{
+    padding-left: 5px;
+}
+
 .table-cell .textInput{
     width: 100%;
     float: right;
+    text-align: right;
+    border: 1px solid #bdc9ce;
+    border-radius: 2px;
 }
 
 .table-cell .captionLabel{
@@ -40,7 +73,7 @@
 }
 
 .table-cell.unit{
-    width: 40px;
+    width: 45px;
     text-align: center;
 }
 
@@ -54,21 +87,8 @@ input.modalTextInput{
     font-size: 18px;
 }
 
-.modalInputs-root.unitLabel{
-    min-width: 60px;
-}
-
 .inputList.disable{
     pointer-events: none;
-}
-
-.modalInputs-root{
-    width: 100%;
-}
-
-.modalInputs-root .textInput{
-    border: 1px solid #9da0a4;
-    border-radius: 1px;
 }
 
 .descTitle{
@@ -98,3 +118,35 @@ input.modalTextInput{
     background-color: #e2ea66;
     height: 30px !important;
 }
+
+/****** MODAL WINDOW ******/
+.modalInputs-root .textInput{
+    border-radius: 3px;
+    height: 30px;
+    background-color: #eaeaea;
+    color: black;
+    border: 1px solid white;
+    padding-right: 2px;
+}
+
+.modalInputs-root.unitLabel{
+    min-width: 60px;
+}
+
+.modalInputs-root .header-cell.caption{
+    border-left: 3px solid #e2ea66;
+}
+
+.modalInputs-root .box{
+    height: 38px;
+}
+
+.modalInputs-root .input{
+    padding: 5px;
+}
+
+.modalInputs-root{
+    width: 100%;
+}
+
+

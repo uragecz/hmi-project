@@ -20,7 +20,7 @@ class Input extends Component{
     }
 
     render(){
-        const{unit, unit1, name, name1, even, modal,type} = this.props;
+        const{unit, unit1, name, even, modal,type} = this.props;
         return(
             <tr className={"table-row " + (!modal ? even : false)}>
                 {this.state.clicked ? <td className="hidden"><NumpadModal value={this.state.active === "input1" ? this.state.value : this.state.value1}
@@ -29,8 +29,6 @@ class Input extends Component{
                     switch(item){
                         case "name1":
                             return <td key={item} className="table-cell caption"><label key={item} className={'captionLabel'}>{name}</label></td>;
-                        case "name2":
-                            return <td key={item} className="table-cell caption"><label key={item} className={'captionLabel2'}>{name1}</label></td>;
                         case "unit1":
                             return <td key={item} className="table-cell unit"><label key={item} className={'unitLabel'}>{unit}</label></td>;
                         case "unit2":
@@ -74,7 +72,7 @@ class Input extends Component{
         this.setState({
             enable: !this.state.enable
         });
-        this.props.changeValue(null,null,!this.state.enable,this.props.inputKey);
+        this.props.changeValue(this.props.name,null,!this.state.enable);
     }
 
     editValue(value) {
@@ -84,7 +82,6 @@ class Input extends Component{
                 clicked: false,
                 active: false
             });
-            this.props.changeValue(this.props.name,value,this.state.enable,this.props.inputKey);
         }
         else {
             this.setState({
@@ -92,8 +89,8 @@ class Input extends Component{
                 clicked: false,
                 active: false
             });
-            this.props.changeValue(this.props.name1,value,this.state.enable,this.props.inputKey);
         }
+        this.props.changeValue(this.props.name,value, this.state.enable, this.state.active === 'input1' ? this.props.firstId : this.props.secondId);
     }
 }
 

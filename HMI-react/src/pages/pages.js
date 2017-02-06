@@ -1,18 +1,21 @@
 /**
  * Created by urunzl on 1.8.2016.
  */
-import GraphPage from './graph/graphPage';
+
 import HomePage from './home/homePage';
 import SubGraphA from './subGraphA/subGraphA';
 import SubGraphB from './subGraphB/subGraphB';
 import SubHomeA from './subHomeA/subHomeA';
 import SubHomeB from './subHomeB/subHomeB';
+
+//settings
+import Settings from './settings/Settings';
+import QmSettings from './settings/qmSettings/qmSettings';
 import ProductSettings from './settings/productSettings/productSettings';
 import Piecing from './settings/productSettings/piecing/piecing';
-import Settings from './settings/Settings';
 
 module.exports = {
-    Graph: GraphPage,
+    QmSettings: QmSettings,
     Home: HomePage,
     SubHomeA: SubHomeA,
     SubHomeB: SubHomeB,
