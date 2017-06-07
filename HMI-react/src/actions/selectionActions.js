@@ -4,6 +4,10 @@
 
 import Dispatcher from '../dispatcher/Dispatcher';
 import selectionConstants from '../constants/selectionConstants';
+import serverActions from './serverActions';
+
+var shiftURL = "";
+var groupURL = "";
 
 var selectionActions = {
     switchUnit: function(unit){
@@ -28,11 +32,36 @@ var selectionActions = {
     },
 
     getShiftList: function(){
-
+        let obj = serverActions.getData(shiftURL);
+        if(obj){
+            Dispatcher.handleAction({
+                actionType: selectionConstants.SET_SHIFTS,
+                data: obj
+            });
+        }
     },
 
     getGroupList: function(){
+        let obj = serverActions.getData(groupURL);
+        if(obj){
+            Dispatcher.handleAction({
+                actionType: selectionConstants.SET_GROUPS,
+                data: obj
+            });
+        }
+    },
 
+    setActiveItem: function(data){
+        Dispatcher.handleAction({
+            actionType: selectionConstants.SET_ACTIVE_ITEM,
+            data: data
+        });
+    },
+
+    setActiveShift: function () {
+        Dispatcher.handleAction({
+            actionType: selectionConstants.SET_ACTIVE_SHIFT,
+        });
     }
 };
 

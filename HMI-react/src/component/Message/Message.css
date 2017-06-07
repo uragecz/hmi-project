@@ -9,6 +9,7 @@
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    z-index: 12;
 
     animation-name: messageMove;
     animation-duration: 5s;
@@ -16,9 +17,9 @@
 
 @keyframes messageMove {
     0%   {right:-200px; bottom:50px;}
-    25%  {right: 10px; bottom:50px;}
-    50%  {right: 10px; bottom:50px;}
-    75%  {right: 10px; bottom:50px;}
+    25%  {right: 10px;  bottom:50px;}
+    50%  {right: 10px;  bottom:50px;}
+    75%  {right: 10px;  bottom:50px;}
     100% {right:-200px; bottom: 50px;}
 }
 

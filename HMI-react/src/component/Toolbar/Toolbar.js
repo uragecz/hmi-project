@@ -55,30 +55,20 @@ class Toolbar extends Component{
                     let active = counter === this.state.activeTab;
                     return(
                         <div onClick={this.handleChangeActiveTab.bind(this,counter)} key={counter} className={"toolbarItem " + (active ? "true" : false)}>
-
-                            <svg width={20} height={42} >
-                                <polygon fill={!active ? "#97a6ac" : "#bdc9ce"} points="20,0 0,42 20,42" />
-                                <path stroke="rgb(101, 123, 132)" d="M20 0 L0 42"></path>
-                            </svg>
                             <div className="toolbarText">
                                 <Link key={item.name} to={active? actualPage.hash : item.hash} className="toolbarLink">
                                     {active? actualPage.value + " " + actualPage.names[this.props.lang] : item.value + " " +item.names[this.props.lang]}
                                 </Link>
                                 <div className="closeTab" onClick={this.handleCloseTab.bind(this,counter)}>x</div>
                             </div>
-                            <svg width={20} height={42}>
-                                <polygon fill={!active ? "#97a6ac" : "#bdc9ce"} points="0,0 20,42 0,42" />
-                                <path stroke="rgb(101, 123, 132)" d="M0 0 L20 42"></path>
-                            </svg>
                         </div>
                     );
                 },this)}
                 <div id="toolbarAdd" onClick={this.handleAddNewTab.bind(this)}>
                     <svg width={30} height={30} >
-                        <circle cx="15" cy="15" r="14" stroke="rgb(101, 123, 132)" strokeWidth="1" fill="#bdc9ce" />
+                        <circle cx="15" cy="15" r="14" stroke="#aebdc2" strokeWidth="1" fill="#bdc9ce" />
                         <text x="15" y="18" fontFamily="Verdana" fontSize="12" textAnchor="middle">x</text>
                     </svg>
-
                 </div>
             </div>
         )
@@ -94,6 +84,7 @@ class Toolbar extends Component{
     }
 
     handleCloseTab(index,e){
+        console.log('handleCloseTAb');
         e.stopPropagation();
         //pokud zaviram otevreny tab a neni posledni, pak musim automaticky rerenderovat stranku na nasledujici tab
         if((index === this.state.activeTab) && (index !== this.state.openTabs.length-1)) {

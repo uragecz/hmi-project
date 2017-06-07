@@ -5,8 +5,10 @@ import languageStore from '../../stores/languageStore';
 import loginStore from '../../stores/loginStore';
 import Header from '../Header/Header';
 import InfoPage from '../InfoPage/InfoPage';
+import Help from '../Help/Help';
+import Message from '../Message/Message';
 
-//global.Perf = require('react-addons-perf');
+global.Perf = require('react-addons-perf');
 
 class App extends Component {
     constructor(props){
@@ -14,7 +16,9 @@ class App extends Component {
         this.state= {
             data: languageStore.getData(),
             user: loginStore.getLoggedUser(),
-            infoPage: false
+            infoPage: false,
+            helpPage: false,
+            mobile: ((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 767
         };
         this.changeLanguage = this.changeLanguage.bind(this);
         this.getLoggedUser = this.getLoggedUser.bind(this);
@@ -24,12 +28,14 @@ class App extends Component {
         const data = this.state.data;
         return (
             <div id="appContainer">
-                <Header data={data.page} closeInfoPage={this.closeInfoPage.bind(this)} logged={this.state.user} lang={data.lang} pathName={this.props.location.pathname}/>
+                <Message />
+                <Header data={data.page} mobile={this.state.mobile} closeInfoPage={this.closeInfoPage.bind(this)} logged={this.state.user} lang={data.lang} pathName={this.props.location.pathname}/>
                 <div id="content">
-                    {React.cloneElement(this.props.children, { data: data.page.content})}
+                    {React.cloneElement(this.props.children, { data: data.page.content, mobile: this.state.mobile})}
                 </div>
-                <Footer languageActiveIcon={data.languageIcon} lang={data.lang} />
+                <Footer languageActiveIcon={data.languageIcon} lang={data.lang} closeHelpPage={this.closeHelpPage.bind(this)}/>
                 {this.state.infoPage ? <InfoPage closeInfoPage={this.closeInfoPage.bind(this)}/> : false}
+                {this.state.helpPage ? <Help closeHelpPage={this.closeHelpPage.bind(this)} languageActiveIcon={data.languageIcon} lang={data.lang} /> : false}
             </div>
         );
     }
@@ -37,6 +43,12 @@ class App extends Component {
     closeInfoPage(close){
         this.setState({
             infoPage : close
+        })
+    }
+
+    closeHelpPage(close){
+        this.setState({
+            helpPage : close
         })
     }
 

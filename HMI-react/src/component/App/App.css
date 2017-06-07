@@ -1,22 +1,27 @@
-.Graph-content {
-  width: 800px;
-  margin: auto auto;
-  padding: 10px;
-}
-
 #appContainer{
   width:100%;
   height:100%;
   background-color: #d3dbde;
+  user-select: none;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+p{
+  margin: 0;
 }
 
 #content {
-  position: fixed;
+  position: absolute;
   float: left;
-  top: 116px;
+  top: 115px;
   width: calc(100% - 125px);
-  height: calc(100% - 156px);
+  height: calc(100% - 154px);
+  border: 1px solid #aebdc2;
   background-color: #bdc9ce;
+  padding: 5px 5px 0 5px;
 }
 
 #navigation{
@@ -38,9 +43,336 @@
   height: 100%;
   z-index: 12;
   position: fixed;
+  left: 0;
+  top: 0;
 }
 
 #page{
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
+
+.column-1{
+  width:  25%;
+}
+
+.column-2{
+  width: 50%;
+}
+
+.column-3{
+  width: 75%;
+}
+
+.column-4{
+  width: 100%;
+}
+
+.size-3{
+  width: 33.333%;
+}
+
+.item{
+  float: left;
+  margin-bottom: 5px;
+  background-color: #a7b7bd;
+}
+
+.column{
+  float: left;
+  position: relative;
+}
+
+.left.up.column{
+  width: 70%;
+}
+
+.right.up.column{
+  width: 30%;
+}
+
+.row-1{
+  width: 100%;
+  height: 25px;
+  display: flex;
+  padding: 5px;
+  background-color: #50707b;
+  color: white;
+  border-radius: 5px;
+}
+
+#optionArrow{
+  display: none;
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.element{
+  float: left;
+}
+
+@media only screen and (max-width: 767px) {
+  .element {
+    width: 100% !important;
+  }
+
+  #article-shift:active {
+    position: absolute;
+    right: 0;
+    z-index: 11;
+  }
+
+  .customRadioButton{
+    display: flex !important;
+  }
+
+  #toolbar{
+    width: auto !important;
+  }
+
+  #content {
+    width: 100%;
+    height: calc(100% - 154px);
+  }
+
+  #page{
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: calc(100% - 11px) !important;
+    height: calc(100% - 160px) !important;
+  }
+
+  #optionArrow {
+    display: inline;
+    top: 50%;
+  }
+
+  .bottom-item.date {
+    display: none;
+  }
+
+  .bottom-item.image {
+    width: 30% !important;
+  }
+
+  .bottom-item.warning-input {
+    width: 70% !important;
+  }
+
+  .topMenu{
+    overflow-y: hidden;
+  }
+
+  .topMenuText {
+    display: none;
+  }
+
+  .topMenuIcon{
+    float: none !important;
+  }
+
+  .subTop{
+    top: -22px !important;
+  }
+
+  .subTopMenu{
+    width: calc(100% + 20px);
+  }
+
+  .topMenuItem{
+    float: none !important;
+    display: inline-block !important;
+  }
+
+  .topMenuItem.finalItem {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .topMenuItem.active {
+      width: 30%;
+    }
+
+  .topMenuItem.active.actual  .subTop{
+    top: -14px !important;
+  }
+
+  .topMenuItem.active.actual  .listMenu{
+    bottom: 0 !important;
+  }
+
+  .arrowLeft {
+    display: none;
+  }
+
+  #toolbarAdd {
+    display: none !important;
+  }
+
+  .toolbarItem.false {
+    display: none;
+  }
+
+  .toolbar {
+    width: auto;
+  }
+
+  .closeTab {
+    display: none !important;
+  }
+
+  .showOf{
+    visibility: hidden;
+  }
+
+  .ReactModal__Content {
+    width: 98% !important;
+  }
+
+  .option {
+    width: 100% !important;
+    transform: translate(-50%, -25%) !important;
+    top: 25% !important;
+  }
+
+  #info {
+    width: 60% !important;
+    right: 0 !important;
+    z-index: 10;
+  }
+
+  #info:active{
+    width: auto !important;
+    z-index: 11;
+  }
+
+  #info:active #article-shift #infoName .scrollAnim{
+    animation: none;
+  }
+  #infoName {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .scrollAnim {
+    animation-name: scroll;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @keyframes scroll {
+    100% {
+      -webkit-transform: translateX(-110%);
+    }
+  }
+
+  .helpItem {
+    margin: 15px !important;
+    width: 25% !important;
+  }
+
+  .toolbarItem.true .toolbarLink{
+    margin: 0 !important;
+  }
+
+  .numpadModal{
+    transform: translate(-50%, -50%) !important;
+    left: 50% !important;
+    position: absolute;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid rgb(204,204,204);
+    width: auto !important;
+    padding: 20px;
+  }
+
+  .modal-menu {
+    position: absolute;
+  }
+
+  @keyframes runLeft {
+    0% { transform: translate(50%,0); }
+    100% { transform: translate(0,0); }
+  }
+
+  #footer{
+    box-shadow: 0 -1px 1px rgba(137, 137, 137, 0.75);
+  }
+
+  #shadowBox-option.opacityBoxMenu{
+    transform: translate3d(0, 0, 0);
+    animation-name: runLeft;
+    animation-duration: 300ms;
+  }
+  
+  #keyButton{
+    display: none !important;
+  }
+
+  .optionSwitch-item{
+    width: 100% !important;
+    border-right: none !important;
+    display: flex !important;
+  }
+
+  #optionPanel{
+    top: 50% !important;
+  }
+  
+  #group-others{
+    display: none;
+  }
+
+  .switch{
+    width: 100%;
+  }
+
+  .right.panel{
+    height: 0;
+    top: 50%;
+  }
+
+  #shadowBox-option.false .panel{
+    width: 0;
+  }
+
+  .hamburger{
+    display: initial !important;
+  }
+/*
+  .optionSwitch{
+     animation-name: runDown;
+     animation-duration: 300ms;
+  }
+*/
+  @keyframes runDown {
+    0% {  transform: translate(0,-100%);}
+    100% {  transform: translate(0,0);}
+  }
+
+   @keyframes runUp {
+    0% {  transform: translate(0, 0);}
+    100% {  transform: translate(0,-100%);}
+  }
+
+  .rollUp{
+    animation-name: runUp;
+    animation-duration: 300ms;
+    transform: translate(0,-100%);
+  }
+
+  .rollDown{
+    animation-name: runDown;
+    animation-duration: 300ms;
+    transform: translate(0,0);
+    }
+}
+
+

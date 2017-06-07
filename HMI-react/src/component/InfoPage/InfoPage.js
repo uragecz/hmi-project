@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import Clock from '../Clock/Clock';
 
-//styles + images
+//styles + images   
 import './InfoPage.css';
 
 class InfoPage extends Component{
@@ -19,7 +19,6 @@ class InfoPage extends Component{
             </div>
         )
     }
-
     closePage(){
         this.props.closeInfoPage();
     }

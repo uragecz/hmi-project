@@ -41,7 +41,7 @@ class FavouriteHistory extends Component{
         let angle = -posAngle;
         return(
             <div className="favouriteHistory">
-                <svg id="favouriteHistorySVG" width={452} height={452} >
+                <svg style={this.props.css} id="menuOpen" className="modal-menu" width={452} height={452} >
                         {Object.keys(list).map(function (item) {
                             let model = list[item];
                             posAngle += angle;
@@ -65,7 +65,7 @@ class FavouriteHistory extends Component{
                     : false}
 
                     <circle cx={this.state.center} cy={this.state.center} r="50" stroke="rgba(0,0,0,0.1)" strokeWidth="2" fill="rgb(226,234,102)" />
-                    <text  textAnchor="middle" x={this.state.center} y={this.state.center} fontFamily="sans-serif" fontSize="12px" fill="black">{this.props.label}
+                    <text  textAnchor="middle" x={this.state.center} y={this.state.center+2} fontFamily="sans-serif" fontSize="12px" fill="black">{this.props.label}
                     </text>
                 </svg>
             </div>

@@ -1,82 +1,23 @@
-.column{
-    float: left;
-    position: relative;
-}
-
-.left.up.column{
-    width: 70%;
-}
-
-.right.up.column{
-    width: 30%;
-}
-
-.boxInputLabel.count-3{
-    width: 33.33%;
-    float: left;
-}
-
 .boxLabel{
     width: 50%;
     float: left;
 }
 
-.row-1{
-    width: 100%;
-    height: 25px;
-    display: flex;
-    padding: 5px;
-    background-color: #50707b;
-    color: white;
-    border-radius: 5px;
-}
-
 #rotor-image{
-    background-image: url('../../../../assets/Spinning1.png');
-    background-repeat: no-repeat;
+    background: url('../../../../assets/Spinning1.png') no-repeat;
     background-size: 100% 100%;
-    width: 290px;
     height:420px;
 }
 
-
-.column-1{
-    width:  25%;
-}
-
-.column-2{
-    width: 50%;
-}
-
-.column-3{
-    width: 75%;
-}
-
-.column-4{
-    width: 100%;
-}
-
-.size-3{
-    width: 33.333%;
-}
-
-.item{
-    float: left;
-}
-
 #piecing-graph1{
-    background: url('../../../../assets/graf-piecing.png') 0 0px;
+    background: url('../../../../assets/graf-piecing.png') 0 0 no-repeat;
     width: 100%;
     height: 220px;
-    background-color: #bdc9ce;
-    background-repeat: no-repeat;
 }
 #piecing-graph2{
-    background: url('../../../../assets/graf-piecing.png') 0 -220px;
+    background: url('../../../../assets/graf-piecing.png') 0 -220px no-repeat;
     width: 100%;
-    height: 220px;
-    background-color: #bdc9ce;
-    background-repeat: no-repeat;
+    height: 160px;
 }
 
 #silverFeedSpeed-desc{
@@ -102,10 +43,14 @@
     float: left;
     width: 33.3%;
     display: flex;
-    background-color: #a7b7bd;
     padding: 10px;
     margin-left: 2px;
     justify-content: center;
+}
+
+.boxInputLabel.count-3{
+    width: 33.33%;
+    float: left;
 }
 
 

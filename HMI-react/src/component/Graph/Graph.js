@@ -21,8 +21,7 @@ class Rect extends React.Component {
   render() {
     if (this.state.clicked) {
       return (<div></div>);
-    }
-    else
+    }else
       return (null);
   }
 
@@ -66,20 +65,16 @@ class Rect extends React.Component {
         lockMovementX: true,
         lockMovementY: true
       });
-
       this.group.on('mouseup', () => {
         this.setState({
           clicked: true
         })
       });
-
       this.state.canvas.add(this.group);
-
       this.state.canvas.forEachObject(function (o) {
         o.hasControls = false;
       });
-    }
-    else{
+    }else{
       this.rect= new fabric.Rect({
         height: this.props.height,
         width: this.props.width,
@@ -126,7 +121,7 @@ class Column extends React.Component {
   }
 
   render() {
-    return (<div></div>)
+    return (null)
   }
 
   componentDidUpdate() {
@@ -179,7 +174,7 @@ class Column extends React.Component {
     }
     else{
       this.column = new fabric.Rect({
-        height: 550-this.props.height,
+        height: 550 - this.props.height,
         width: this.props.width,
         left: this.props.x + 50,
         top: this.props.height,
@@ -248,22 +243,20 @@ class Columns extends React.Component {
   getY(a) {
     if (a===0)
       return 0;
-    let numbers = [300, 200, 120, 100, 80, 60, 40, 20, 0, -20, -30];
+    const numbers= [300, 200, 120, 100, 80, 60, 40, 20, 0, -20, -30];
     let i = 0;
     let number = 0;
     for (;i < numbers.length; i++) {
-      if(numbers[i] <= a){
+      if(numbers[i] <= a)
         break;
-      }
     }
-    if(i>=1){
+    if(i>=1)
         number = ((a-numbers[i-1])/(numbers[i]-numbers[i-1]) *  (i*50 - (i-1)*50) + (i-1)*50);
-    }
     return Math.round(number);
   }
 
   getX(a){
-    let numbers=[2, 10, 20, 30, 50, 80, 160, 320, 5000];
+    const numbers= [2, 10, 20, 30, 50, 80, 160, 320, 5000];
     let i = 0;
     let number = 0;
     for(;i<numbers.length;i++){
@@ -271,7 +264,7 @@ class Columns extends React.Component {
         break;
     }
     if(i>=4)
-        number = ((a-numbers[i-1])/(numbers[i]-numbers[i-1]) *(i*70 -(i-1)*70)+(i-1)*70);
+        number = ((a - numbers[i-1]) / (numbers[i] - numbers[i-1]) *(i*70 -(i-1)*70)+(i-1)*70);
     else
       number =(a/numbers[i])*(i*70);
     return Math.round(number);
@@ -313,7 +306,6 @@ class Columns extends React.Component {
                 break;
             }
         }
-
     }
     return number === 0 ? (840 - actualItemValue) : ((number-actualItemValue) + 0.15);
   }
@@ -340,8 +332,8 @@ class Grid extends React.Component {
   render(){
     let arrayCells = [];
     let arrayCells2 = [];
-    let letters1 = ['a','b','c','d','e'];
-    let letters2 = ['i','j','k'];
+    const letters1 = ['a','b','c','d','e'];
+    const letters2 = ['i','j','k'];
 
     for (let i = 0; i < 8; i++){
       let num1 = 6;
@@ -390,7 +382,7 @@ class Grid extends React.Component {
   }
 
   componentWillMount(){
-      qmSettingsStore.addChangeListener(this.update);
+    qmSettingsStore.addChangeListener(this.update);
     this.setState({
       canvas: this.props.canvas
     })
@@ -401,7 +393,6 @@ class Grid extends React.Component {
       QM_detected: qmSettingsStore.getQmDec(),
       QM_removed: qmSettingsStore.getQmRem()
     });
-
   }
 
   componentWillUnmount(){
@@ -431,8 +422,8 @@ class Axis extends React.Component {
   }
 
   componentDidMount(){
-    var numberPercent=["200%","120%","100%","80%","60%","40%","20%","0%","-20%","-30%"];
-    var numberValue=["2","10","20","30","50","80","160","320"];
+    const numberPercent = ["200%","120%","100%","80%","60%","40%","20%","0%","-20%","-30%"];
+    const numberValue = ["2","10","20","30","50","80","160","320"];
     for (let i = 0; i < numberPercent.length; i++) {
       if (i < numberValue.length) {
         this.axisX = new fabric.Text(numberValue[i], {
@@ -443,7 +434,7 @@ class Axis extends React.Component {
         });
         this.state.canvas.add(this.axisX);
       }
-      this.axisY= new fabric.Text(numberPercent[i],{
+      this.axisY = new fabric.Text(numberPercent[i],{
         fontSize: 15,
         top: (i+0.8)*50,
         left: 0,
@@ -504,7 +495,7 @@ class Print extends React.Component {
   }
 
   shouldComponentUpdate(nextProps,nextState){
-    return this.state.canvas !== nextState.canvas || this.props.channels !== nextProps.channels;
+    return (this.state.canvas !== nextState.canvas) || (this.props.channels !== nextProps.channels);
   }
 
   componentDidMount()
@@ -515,39 +506,38 @@ class Print extends React.Component {
   }
 
   componentWillMount(){
-      const graphContainer = document.getElementById('graphColumn');
-      let canWidth= ''+(graphContainer.offsetWidth/CANVAS_WIDTH) * 100 ;
+      const graphContainer = document.getElementById(this.props.scale);
+      let canWidth = '' + (graphContainer.offsetWidth / CANVAS_WIDTH) * 100 ;
+      let origY = this.props.top  && !this.props.mobile ? this.props.top : '0';
       if (canWidth < 100){
-          canWidth= parseFloat('0.' + graphContainer.offsetWidth);
+          canWidth = parseFloat('0.' + graphContainer.offsetWidth);
+          canWidth+= 0.05;
+      }else{
+          canWidth = canWidth.slice(1);
+          canWidth = parseFloat('1.' + canWidth);
+          canWidth-= 0.05;
       }
-      else{
-          canWidth = canWidth.slice( 1 );
-          canWidth= parseFloat('1.' + canWidth);
-      }
-      canWidth += 0.05;
       canWidth.toFixed(3);
-      canvasStyle = {
-          transform : 'scale('+canWidth+')',
-          transformOrigin : 'top right'
-      };
+      let newHeight = canWidth * 560;
+      graphContainer.style.height = newHeight + 'px';
+      graphContainer.style.transform = 'scale('+canWidth+')';
+      graphContainer.style.transformOrigin = '100% '+origY+'';
   }
 
   render() {
     return (
-        <div id="graph-container">
-          <canvas style={canvasStyle} className="canvas" ref="canvas" id="contextCanvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT}></canvas>
-          <div>
-            {this.state.canvas !== null ? <Graph canvas={this.state.canvas} channels={this.props.channels} /> : false}
-          </div>
+      <div id="graph-container">
+        <canvas className="canvas" ref="canvas" id="contextCanvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT}/>
+        <div>
+          {this.state.canvas !== null ? <Graph canvas={this.state.canvas} channels={this.props.channels}/> : false}
         </div>
+      </div>
     )
   }
 }
 
 const CANVAS_WIDTH = 895;
 const CANVAS_HEIGHT = 560;
-
-var canvasStyle = {};
 
 export default Print;
 

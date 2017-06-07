@@ -11,12 +11,13 @@
 .canvas-container{
     width: 100% !important;
     float: right;
+    height: 100% !important;
 }
 
 .canvas{
     left: auto !important;
-    right: 0;
-    top: 3px !important;
+    right: -2px !important;
+    top: 2px !important;
     image-rendering: optimizeSpeed;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-optimize-contrast;

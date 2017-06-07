@@ -9,24 +9,32 @@ var EventEmitter = require('events').EventEmitter;
 var CHANGE_EVENT = 'change';
 
 var _store = {
-    activeGroup: "A",
-    activeUnit: "1",
-    activeShift: "current",
+    group: "PG1",
+    unit: 1,
+    shift: "current",
     minUnit: 0,
-    maxUnit: 2,
+    maxUnit: 30,
     unitStep: 1,
     shiftList: {},
-    groupList: {}
+    groupList: {},
+    activeItem: 'group',
+    activeShift: true
 };
 
-var setActiveGroup = function(group){
-    _store.activeGroup = group;
+var setActiveItem = function(item){
+    _store.activeItem = item;
 };
-var setActiveUnit = function(unit){
-    _store.activeUnit = unit;
+var setActiveShift = function(){
+    _store.activeShift = !_store.activeShift;
 };
-var setActiveShift = function(current){
-    _store.activeShift = current;
+var setGroup = function(group){
+    _store.group = group;
+};
+var setUnit = function(unit){
+    _store.unit = unit;
+};
+var setShift = function(current){
+    _store.shift = current;
 };
 var setShiftList = function(shiftList){
     _store.shiftList = shiftList;
@@ -51,14 +59,14 @@ var selectionStore = objectAssign({}, EventEmitter.prototype, {
     removeChangeListener: function(cb){
         this.removeListener(CHANGE_EVENT, cb);
     },
-    getActiveGroup: function(){
-        return _store.activeGroup;
+    getGroup: function(){
+        return _store.group;
     },
-    getActiveUnit: function(){
-        return _store.activeUnit;
+    getUnit: function(){
+        return _store.unit;
     },
-    getActiveShift: function(){
-        return _store.activeShift;
+    getShift: function(){
+        return _store.shift;
     },
     getMaxUnit: function(){
         return _store.maxUnit;
@@ -74,6 +82,12 @@ var selectionStore = objectAssign({}, EventEmitter.prototype, {
     },
     getShiftList: function(){
         return _store.shiftList;
+    },
+    getActiveItem: function () {
+        return _store.activeItem;
+    },
+    getActiveShift: function () {
+        return _store.activeShift;
     }
 });
 
@@ -81,15 +95,15 @@ Dispatcher.register(function(payload){
     var action = payload.action;
     switch(action.actionType){
         case selectionConstants.SWITCH_GROUP:
-            setActiveGroup(action.data);
+            setGroup(action.data);
             selectionStore.emit(CHANGE_EVENT);
             break;
         case selectionConstants.SWITCH_SHIFT:
-            setActiveShift(action.data);
+            setShift(action.data);
             selectionStore.emit(CHANGE_EVENT);
             break;
         case selectionConstants.SWITCH_UNIT:
-            setActiveUnit(action.data);
+            setUnit(action.data);
             selectionStore.emit(CHANGE_EVENT);
             break;
         case selectionConstants.SET_GROUPS:
@@ -101,6 +115,14 @@ Dispatcher.register(function(payload){
             break;
         case selectionConstants.SET_SHIFTS:
             setShiftList(action.data.list);
+            selectionStore.emit(CHANGE_EVENT);
+            break;
+        case selectionConstants.SET_ACTIVE_ITEM:
+            setActiveItem(action.data);
+            selectionStore.emit(CHANGE_EVENT);
+            break;
+        case selectionConstants.SET_ACTIVE_SHIFT:
+            setActiveShift();
             selectionStore.emit(CHANGE_EVENT);
             break;
         default:

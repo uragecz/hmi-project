@@ -36,15 +36,15 @@ class Numpad extends React.Component {
     return (
       <div className={'root'}>
         <div className={'modalContainer'}>
-          <div id="limits">
-            <div id="minLimit">
-
+          <div id="top-caption">
+            <div id="label">
+                {this.props.name}
             </div>
-            <div id="maxLimit">
-                {this.props.min ? (this.props.min + ".. " + this.props.max) : false}
+            <div id="limit">
+                {this.props.max ? (this.props.min + ".. " + this.props.max) : false}
             </div>
           </div>
-          <input className={'numpadInput'} onChange={this.handleChange} value={item} ref="Input" type="text"/><br/>
+          <input className={'numpadInput'} readOnly="true" onChange={this.handleChange} value={item} ref="Input" type="text"/><br/>
           <Button className={'row1 column1'} update={this.addValue} value={'1'}/>
           <Button className={'row1 column2'} update={this.addValue} value={'2'}/>
           <Button className={'row1 column3'} update={this.addValue} value={'3'}/><br/>
@@ -64,11 +64,13 @@ class Numpad extends React.Component {
 
   addValue(value){
     let number = this.state.firstRecord ? value : this.state.value + value;
-    this.setState({
-      value: number,
-      firstRecord: false
-    });
-    this.props.updateValues(number);
+    if((this.props.max >= number && this.props.min <= number) || !this.props.max) {
+        this.setState({
+            value: number,
+            firstRecord: false
+        });
+        this.props.updateValues(number);
+    }
   }
 
   handleChange(event){
@@ -91,3 +93,4 @@ Numpad.PropTypes={
 };
 
 export default Numpad;
+

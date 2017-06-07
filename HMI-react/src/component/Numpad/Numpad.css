@@ -34,17 +34,21 @@ button{
   float:left;
 }
 
-#limits{
+#top-caption{
   width: 100%;
-  height: 100%;
+  height: 15px;
+  margin-bottom: 2px;
 }
 
-#minLimit{
+#label{
   height: 100%;
   float:left;
+  width: 60%;
+  font-size: x-small;
+  font-weight: 100 !important;
 }
 
-#maxLimit{
+#limit{
   height:100%;
   float:right;
 }

@@ -2,7 +2,7 @@
  * Created by urunzl on 2.8.2016.
  */
 import React from 'react';
-import { Route, browserHistory } from 'react-router';
+import { Route, browserHistory, Redirect  } from 'react-router';
 import App from '../component/App/App';
 import pages from '../pages/pages';
 import routes from './routes';
@@ -22,7 +22,7 @@ function loopThrough(obj){
 
 export default (
     <Route component={App} history={browserHistory}>
-        <Route path="/" component={pages["Home"]}/>
+        <Redirect from="/" to="/settings/product-settings" component={pages["ProductSettings"]}/>
         {
             loopThrough(routes)
         }

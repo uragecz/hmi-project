@@ -20,24 +20,30 @@ class Input extends Component{
     }
 
     render(){
-        const{unit, unit1, name, even, modal,type} = this.props;
+        const{even, modal, type} = this.props;
         return(
             <tr className={"table-row " + (!modal ? even : false)}>
-                {this.state.clicked ? <td className="hidden"><NumpadModal value={this.state.active === "input1" ? this.state.value : this.state.value1}
-                                                       onUpdate={this.handleClick.bind(this)} editValue={this.editValue.bind(this)}/></td>: false}
+                {this.state.clicked ? <td className="hidden"><NumpadModal left="85%" value={this.state.active === "input1" ? this.state.value : this.state.value1}
+                                                       onUpdate={this.handleClick.bind(this)} editValue={this.editValue.bind(this)} name={this.props.name + "["+ (this.state.active === "input1" ? this.props.unit1 : this.props.unit2) +"]"}/> </td>: false}
                 {type.map(function(item){
                     switch(item){
-                        case "name1":
-                            return <td key={item} className="table-cell caption"><label key={item} className={'captionLabel'}>{name}</label></td>;
+                        case "name":
+                            return <td key={item} className="table-cell caption"><label key={item} className={'captionLabel'}>{this.props.name}</label></td>;
+                        case "number1":
+                            return <td key={item} className="table-cell number"><label key={item} className={'captionLabel'}>{this.props.value}</label></td>;
+                        case "number2":
+                            return <td key={item} className="table-cell number"><label key={item} className={'captionLabel'}>{this.props.value1}</label></td>;
+                        case "number3":
+                            return <td key={item} className="table-cell number"><label key={item} className={'captionLabel'}>{this.props.value2}</label></td>;
                         case "unit1":
-                            return <td key={item} className="table-cell unit"><label key={item} className={'unitLabel'}>{unit}</label></td>;
+                            return <td key={item} className="table-cell unit"><label key={item} className={'unitLabel'}>{this.props.unit1}</label></td>;
                         case "unit2":
-                            return <td key={item} className="table-cell unit"><label key={item} className={'unitLabel'}>{unit1}</label></td>;
+                            return <td key={item} className="table-cell unit"><label key={item} className={'unitLabel'}>{this.props.unit2}</label></td>;
                         case "input1":
-                            return <td key={item} className="table-cell input"><input key={item} disabled={!this.state.enable} onChange={this.handleChange.bind(this)} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
+                            return <td key={item} className={"table-cell input" + (this.state.active === "input1" ? " active" : "")}><input readOnly="true" key={item} disabled={!this.state.enable} onChange={this.handleChange.bind(this)} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
                                               value={this.state.value} type="text"/></td>;
                         case "input2":
-                            return <td key={item} className="table-cell input"><input key={item} disabled={!this.state.enable} onChange={this.handleChange.bind(this)} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
+                            return <td key={item} className={"table-cell input" + (this.state.active === "input2" ? " active" : "") }><input readOnly="true" key={item} disabled={!this.state.enable} onChange={this.handleChange.bind(this)} className={this.state.active === item ? 'textInput active' : 'textInput'} onClick={this.handleClick.bind(this,item)}
                                               value={this.state.value1} type="text"/></td>;
                         case "box":
                             return <td key={item} className="table-cell box"><input key={item} className={'boxInput'} onChange={this.toggleChange.bind(this)} checked={this.state.enable}  type="checkbox"  ref="box"/></td>;

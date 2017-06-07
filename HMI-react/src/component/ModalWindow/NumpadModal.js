@@ -21,7 +21,6 @@ var customStyles = {
     },
     content : {
         top                   : '50%',
-        left                  : '75%',
         width                 : 'auto',
         height                : 'auto',
         right                 : 'auto',
@@ -40,10 +39,12 @@ class NumpadModal extends React.Component {
 
     render() {
         customStyles.content["width"] = this.props.width;
-        var { onUpdate,  ...others } = this.props;
+        customStyles.content["left"] = this.props.left ? this.props.left : "75%";
+        const { onUpdate,  ...others } = this.props;
         return (
             <div>
                 <Modal
+                    className="numpadModal"
                     isOpen={true}
                     onRequestClose={onUpdate.bind(this,false)}
                     style={customStyles}>
@@ -65,7 +66,7 @@ class NumpadModal extends React.Component {
         this.props.onUpdate(false);
     }
 
-    shouldComponentUpdate(nextProps,nextState){
+    shouldComponentUpdate(){
         return false;
     }
 

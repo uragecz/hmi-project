@@ -24,30 +24,41 @@ class ProductSettings extends React.Component {
         const text = data.productSettings;
         return(
             <Page>
-                <div className="item size-3">
-                    <InputList modal={false} name="PS" header={[text.speed,"",""]} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productSpeed}/>
-                    <InputList modal={false} name="PA" header={[text.air,"",""]} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productAIR}/>
-                </div>
-                <div className="item size-3">
-                    <div id="rotor-image"></div>
-                </div>
-                <div className="item size-3">
-                    <InputList modal={false} name="PP" header={[text.package,"",""]} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productPackage}/>
-                    <InputList modal={false} name="PR" header={[text.rotor,"",""]} type={["name1","input1","unit1"]} hideDesc={true} checkBox={false} save={this.saveList.bind(this)} list={this.state.productROTOR}/>
+                <div className="item column-4">
+                    <div className="element size-3">
+                        <InputList data={text.speed} modal={false} name="PS" header={[text.speed.label,"",""]} type={["name","input1","unit1"]} save={this.saveList.bind(this)} list={this.state.productSpeed}/>
+                        <InputList data={text.air} modal={false} name="PA" header={[text.air.label,"",""]} type={["name","input1","unit1"]} save={this.saveList.bind(this)} list={this.state.productAIR}/>
+                    </div>
+                    <div className="element size-3">
+                        <div id="rotor-image"></div>
+                    </div>
+                    <div className="element size-3">
+                        <InputList data={text.package} modal={false} name="PP" header={[text.package.label,"",""]} type={["name","input1","unit1"]} save={this.saveList.bind(this)} list={this.state.productPackage}/>
+                        <InputList data={text.rotor} modal={false} name="PR" header={[text.rotor.label,"",""]} type={["name","input1","unit1"]} save={this.saveList.bind(this)} list={this.state.productROTOR}/>
+                    </div>
                 </div>
                 <div className="item column-4">
                     <div id="switch">
-                        <div className="switchElement">
-                            <label className='captionLabel'>FSI</label>
-                            <input className='boxInput' onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>
+                        <div className="switchElement switch">
+                            <div className="customCheckbox">
+                                <input className='boxInput' onChange={this.toggleChange.bind(this)} type="checkbox" id="fsi" ref="box"/>
+                                <label htmlFor="fsi"/>
+                            </div>
+                            <span><label htmlFor="fsi">FSI</label></span>
                         </div>
-                        <div className="switchElement">
-                            <label className='captionLabel'>QSI</label>
-                            <input className='boxInput' onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>
+                        <div className="switchElement switch">
+                            <div className="customCheckbox">
+                                <input className='boxInput' onChange={this.toggleChange.bind(this)} type="checkbox" id="qsi" ref="box"/>
+                                <label htmlFor="qsi"/>
+                            </div>
+                            <span><label htmlFor="qsi">QSI</label></span>
                         </div>
-                        <div className="switchElement">
-                            <label className='captionLabel'>ASI</label>
-                            <input className='boxInput' onChange={this.toggleChange.bind(this)} type="checkbox"  ref="box"/>
+                        <div className="switchElement switch">
+                            <div className="customCheckbox">
+                                <input className='boxInput' onChange={this.toggleChange.bind(this)} type="checkbox" id="asi" ref="box"/>
+                                <label htmlFor="asi"/>
+                            </div>
+                            <span><label htmlFor="asi">ASI</label></span>
                         </div>
                     </div>
                 </div>

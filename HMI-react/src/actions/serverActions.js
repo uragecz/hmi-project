@@ -8,7 +8,7 @@ const okMessage = 'DATA WERE SENT SUCCESSFULLY ';
 const errMessage = 'ERROR DURING DATA SENDING';
 
 var serverActions = {
-    sendData: function () {
+    sendData: function (data,url) {
         return new Promise(function (resolve, reject) {
             http.post("http://localhost:59297/api/qm/postqm")
                 .set('Content-Type', 'application/json')
@@ -25,7 +25,7 @@ var serverActions = {
                     else {
                         Dispatcher.handleAction({
                             actionType: messageConstants.SHOW_MESSAGE,
-                            data: err == null && res.ok ? okMessage : errMessage,
+                            data: errMessage,
                             error: true
                         });
                         reject(false);
@@ -33,7 +33,6 @@ var serverActions = {
                 })
         })
     },
-
     getData: function (url) {
         return new Promise(function (resolve, reject) {
             http.get(url)
@@ -54,7 +53,6 @@ var serverActions = {
                 })
         });
     }
-
 };
 
 export default serverActions;

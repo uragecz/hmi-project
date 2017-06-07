@@ -18,23 +18,81 @@
             "unit": "Unit"
         },
         "content":{
-            "homePage":{
-                "rotation": "Rotation",
-                "machine": "Machine"
-            },
             "productSettings":{
-                "speed": "Speed",
-                "air": "Air",
-                "package": "Package",
-                "rotor": "Rotor"
+                "speed": {
+                    "label": "Speed"
+                },
+                "air": {
+                    "label": "Air"
+                },
+                "package": {
+                    "label": "Package"
+                },
+                "rotor": {
+                    "label": "Rotor"
+                }
             },
             "piecing":{
-                "amispin": "AMISpin - Sequence",
-                "silverFeedLength": "Silver feed length",
-                "silverFeedSpeed": "Silver feed speed"
+                "amispin": {
+                    "label": "AMISpin - Sequence"
+                },
+                "silverFeedLength": {
+                    "label": "Silver feed length",
+                    "VP1": "VPI1",
+                    "VP2": "VP2",
+                    "VP3": "VP3",
+                    "VP4": "VP4",
+                    "VP5": "VP5"
+                },
+                "silverFeedSpeed": {
+                    "label": "Silver feed speed"
+                }
             },
-            "graphPage":{
-                "channels": "Channels"
+            "qmSettings": {
+                "piecer": {
+                    "label": "Piecer",
+                    "P+": "P+",
+                    "P-": "P-"
+                },
+                "qAlarms":{
+                    "label": "Q-Alarms",
+                    "CVopt-A": "CVopt-A",
+                    "IPI neps-A": "IPI neps-A",
+                    "IPI thick-A": "IPI thick-A",
+                    "IPI thin-A": "IPI thin-A"
+                },
+                "yAlarms":{
+                    "label": "Y-Alarms",
+                    "NSLT-A": "NSLT-A",
+                    "SL-A": "SL-A",
+                    "MO-A": "MO-A"
+                },
+                "techAlarms":{
+                    "label": "Tech. Alarms",
+                    "Ref-A": "Ref-A"
+                },
+                "slcmo":{
+                    "label": "SL-C-MO",
+                    "SL+": "SL+",
+                    "SL-": "SL-",
+                    "C+": "C+",
+                    "C-": "C-",
+                    "MO": "MO"
+                },
+                "nslt": {
+                    "label": "N-S-L-T",
+                    "N": "N",
+                    "S1": "S1",
+                    "S2": "S2",
+                    "S3": "S3",
+                    "S4": "S4",
+                    "L1": "L1",
+                    "L2": "L2",
+                    "L3": "L3",
+                    "T1": "T1",
+                    "T2": "T2",
+                    "T3": "T3"
+                }
             }
         }
     }
@@ -58,26 +116,83 @@
             "unit": "Jednotka"
         },
         "content":{
-            "homePage":{
-                "rotation": "Rotace",
-                "machine": "Stroj"
-            },
             "productSettings":{
-                "speed": "Rychlost",
-                "air": "Vzduch",
-                "package": "Balíček",
-                "rotor": "Rotor"
+                "speed": {
+                    "label": "Rychlost"
+                },
+                "air": {
+                    "label": "Vzduch"
+                },
+                "package": {
+                    "label": "Balíček"
+                },
+                "rotor": {
+                    "label": "Rotor"
+                }
             },
             "piecing":{
-                "amispin": "AMISpin - Sekvence",
-                "silverFeedLength": "Silver přívod délka",
-                "silverFeedSpeed": "Silver přívod rychlost"
+                "amispin": {
+                    "label": "AMISpin - Sekvence"
+                },
+                "silverFeedLength": {
+                    "label": "Silver přívod délky",
+                    "VP1": "VPI1",
+                    "VP2": "VP2",
+                    "VP3": "VP3",
+                    "VP4": "VP4",
+                    "VP5": "VP5"
+                },
+                "silverFeedSpeed": {
+                    "label": "Silver přívod rychlosti"
+                }
             },
-            "graphPage":{
-                "channels": "Kanály"
+            "qmSettings": {
+                "piecer": {
+                    "label": "Piecer",
+                    "P+": "P+",
+                    "P-": "P-"
+                },
+                "qAlarms":{
+                    "label": "Q-Alarmy",
+                    "CVopt-A": "CVopt-A",
+                    "IPI neps-A": "IPI neps-A",
+                    "IPI thick-A": "IPI thick-A",
+                    "IPI thin-A": "IPI thin-A"
+                },
+                "yAlarms":{
+                    "label": "Y-Alarmy",
+                    "NSLT-A": "NSLT-A",
+                    "SL-A": "SL-A",
+                    "MO-A": "MO-A"
+                },
+                "techAlarms":{
+                    "label": "Tech. Alarmy",
+                    "Ref-A": "Ref-A"
+                },
+                "slcmo":{
+                    "label": "SL-C-MO",
+                    "SL+": "SL+",
+                    "SL-": "SL-",
+                    "C+": "C+",
+                    "C-": "C-",
+                    "MO": "MO"
+                },
+                "nslt": {
+                    "label": "N-S-L-T",
+                    "N": "N",
+                    "S1": "S1",
+                    "S2": "S2",
+                    "S3": "S3",
+                    "S4": "S4",
+                    "L1": "L1",
+                    "L2": "L2",
+                    "L3": "L3",
+                    "T1": "T1",
+                    "T2": "T2",
+                    "T3": "T3"
+                }
             }
         }
-
     }
   }
 ]

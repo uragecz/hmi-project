@@ -11,6 +11,7 @@ import historyActions from '../../actions/historyActions';
 import helpStore from '../../stores/helpStore';
 import NumpadModal from '../ModalWindow/NumpadModal';
 import loginActions from '../../actions/loginActions';
+import selectionStore from '../../stores/selectionStore';
 //styles and images
 import './Header.css';
 import openMenu from '../../../assets/openMenu.png';
@@ -26,13 +27,17 @@ class Header extends Component{
         super(props);
         this.state = {
             showMenu : false,
-            showLogin: false
+            showLogin: false,
+            unit: selectionStore.getUnit(),
+            activeItem: selectionStore.getActiveItem(),
+            activeShift: selectionStore.getActiveShift()
         };
         this.pageClick = this.pageClick.bind(this);
+        this.update = this.update.bind(this);
     }
 
     render(){
-        const { pathName, data } = this.props;
+        const { pathName, data, ...others } = this.props;
         const pathArray = pathName.split("/").filter(e => e.length);
         let obj = routes;
         let setting = null;
@@ -60,9 +65,41 @@ class Header extends Component{
                 {this.state.showMenu ?
                     <MainMenu update={this.openMainMenu.bind(this)} routes={routes} data={data} pathName={pathName} />
                  : false}
+                <div id="info">
+                    <div id="article-shift">
+                        <div id="infoName"><p className="scrollAnim">Perla a.s. CZ, Bavlna, 22Text, 5,5Tex</p></div>
+                    </div>
+                    <div id="group-others">
+                        <div className ={"group-item " + (this.state.activeItem === "group" ? "active" : "false" )}>
+                            PG1
+                        </div>
+                        <div className={"group-item " + (this.state.activeItem === "unit" ? "active" : "false")}>
+                            {this.state.unit}
+                        </div>
+                        <div className={"group-item shift " + (this.state.activeShift ? "active" : "false")}>
+                            {!this.state.activeShift ? 
+                                <div id="shift-number">
+                                    current
+                                </div>
+                            :
+                                <div>
+                                    <div className="shift-time from">
+                                        26.3
+                                    </div>
+                                    <div id="shift-number">
+                                        2
+                                    </div>
+                                    <div className="shift-time to">
+                                        6:00 - 14:30
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
                 <TopMenu actualPage={history} obj={obj} visitedItems={visitedItems} pathArray={pathArray} lang={this.props.lang}/>
                 {pathArray.length !== 0 && history.setting ?
-                    <Options data={data} options={setting} />
+                    <Options data={data} options={setting} {...others} />
                 : false }
                 <div id="keyButton" onClick={this.props.logged ? this.logout.bind(this,false) : this.showLoginNumpad.bind(this)} >
                     <div id="loginIcon">
@@ -79,14 +116,6 @@ class Header extends Component{
                     <NumpadModal value="" onUpdate={this.showLoginNumpad.bind(this)} editValue={this.setPassword.bind(this)} password={true}/>
                 :false}
 
-
-                <div id="info">
-                    <div id="label">Article</div>
-                    <svg width={20} height={42} >
-                        <polygon fill="#244c5a" points="20,0 0,42 20,42" />
-                    </svg>
-                    <div id="infoName">Perla a.s. CZ, Bavlna, 22Text, 5,5Tex</div>
-                </div>
             </div>
         )
     }
@@ -123,8 +152,21 @@ class Header extends Component{
         window.addEventListener('click', this.pageClick, false);
     }
 
+    update() {
+        this.setState({
+            unit: selectionStore.getUnit(),
+            activeItem: selectionStore.getActiveItem(),
+            activeShift: selectionStore.getActiveShift()
+        });
+    }
+
+    componentWillMount() {
+        selectionStore.addChangeListener(this.update);
+    }
+
     componentWillUnmount(){
         window.removeEventListener('click', this.pageClick, false);
+        selectionStore.removeChangeListener(this.update);
     }
 
     pageClick(){

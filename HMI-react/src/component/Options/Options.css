@@ -4,11 +4,11 @@
     transform: translate(0,-50%);
 }
 
-.optionPanel{
+#optionPanel{
     position: absolute;
     width: 252px;
-    height: 330px;
-    top: 45%;
+    height: 340px;
+    top: 65%;
     transform: translate(0,-50%);
 }
 
@@ -18,76 +18,44 @@
 }
 
 .optionIcon{
-    width: 60px;
+    width: 125px;
     height:60px;
-    left: 50px;
+    left: 0;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .optionIcon.down{
-    bottom: 0;
+    bottom: 6px;
 }
 
-#topOptionInfo{
-    width: 80%;
-    height: 100px;
-    text-align: center;
-    background-color: rgb(36,76,90);
-    margin: auto auto;
-    display: none;
+.mark.left{
+    left: 22px;
 }
 
-#bottomOptionInfo{
-    width: 80%;
-    height: 100px;
-    text-align: center;
-    background-color: rgb(36,76,90);
-    margin: auto auto;
-    bottom: 5px;
+.mark.right{
+    right: 15px;
+}
+
+.mark.top.left{
+    bottom: -18px;
+}
+
+.mark.bottom.left{
+    top: -18px;
+}
+
+.mark{
     position: absolute;
-    right: 12px;
-    display: none;
 }
 
-#bottomOptionInfo .optionValue{
-    font-size: small;
-    margin: 0 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    box-sizing: border-box;
-    width: 100%;
-    display: inline-block;
+#group-unit-line{
+    position: absolute;
+    top: calc(50% - 3px);
+    transform: translate(0, -50%);
 }
 
-.animationText{
-    display: inline-block;
-    text-indent: 0;
-    animation: animationText 20s linear infinite;
-    padding-left: 100%;
-    padding-top: 12px;
-}
 
-@keyframes animationText {
-    0%   { transform: translate(0, 0); }
-    100% { transform: translate(-100%, 0); }
-}
-
-.optionLabel{
-    background-color: #e2ea66;
-    color: black;
-    height: 30%;
-    padding: 5px;
-    font-weight: 600;
-}
-
-.optionValue{
-    color: white;
-    font-size: xx-large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70%;
-}

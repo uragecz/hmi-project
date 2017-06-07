@@ -7,7 +7,7 @@ var routes = {
         hash: "/home",
         names: {
             cz: "Doma",
-            eng:"Home"
+            eng: "Home"
         },
         name: "home",
         page: "Home",
@@ -19,7 +19,7 @@ var routes = {
         hash: "/settings",
         names: {
             cz: "Nastavení",
-            eng:"Settings"
+            eng: "Settings"
         },
         name: "settings",
         page: "Settings",
@@ -42,20 +42,20 @@ var routes = {
                         hash: "/settings/product-settings/piecing",
                         names: {
                             cz: "Sestavení",
-                            eng:"Piecing"
+                            eng: "Piecing"
                         },
                         name: "piecing",
                         page: "Piecing",
                         value: "2.1.1",
                         icon: "../../assets/config.png",
-                        setting: ["shift","unit"],
+                        setting: ["shift","unit","group"],
                         children: {}
                     },
                     "qmSettings": {
                         hash: "/settings/product-settings/qmSettings",
                         names: {
                             cz: "QM nastavení",
-                            eng:"QM setting"
+                            eng: "QM setting"
                         },
                         name: "qmSettings",
                         page: "QmSettings",
@@ -68,24 +68,50 @@ var routes = {
             }
         }
     },
-    "graph1": {
-        hash: "/graph1",
+    "graphs": {
+        hash: "/graphs",
         names: {
-            cz: "Graf",
-            eng:"Graph"
+            cz: "Grafy",
+            eng: "Graphs"
         },
-        name: "graph1",
-        page: null,
+        name: "graphs",
+        page: "Graphs",
         value: "3",
         icon: "../../assets/group.png",
-        children: {}
-
+        children: {
+            "faultReport": {
+                hash: "/graphs/faultReport",
+                names: {
+                    cz: "Chybové hlášení",
+                    eng: "Fault report"
+                },
+                name: "faultReport",
+                page: "FaultReport",
+                value: "3.1",
+                icon: "../../assets/group.png",
+                setting: ["shift","unit","group"],
+                children: {}
+            },
+            "qualityMatrix": {
+                hash: "/graphs/qualityMatrix",
+                names: {
+                    cz: "Graf kvality",
+                    eng: "Quality matrix"
+                },
+                name: "qualityMatrix",
+                page: "QualityMatrix",
+                value: "3.2",
+                icon: "../../assets/config.png",
+                setting: ["shift","unit","group"],
+                children: {}
+            }
+        }
     },
     "homeA": {
         hash: "/homeA",
         names: {
             cz: "Doma",
-            eng:"Home"
+            eng: "Home"
         },
         name: "homeA",
         page: null,

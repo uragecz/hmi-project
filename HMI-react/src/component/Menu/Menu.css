@@ -31,9 +31,8 @@ a.menuLink{
 
 .panel{
     position: fixed;
-    height: calc(100% - 155px);
     width: 125px;
-    top: 116px;
+    height: 100%;
 }
 
 .panel.left{
@@ -91,7 +90,6 @@ a.menuLink{
 }
 
 .favouriteHistory{
-    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -161,7 +159,6 @@ h4.itemValue{
     height: 100%;
     display: flex;
     justify-content: center;
-
     background-color: #dce0e2;
     border-left: 1px solid #d8d8d8;
     border-top: 1px solid #d8d8d8;
@@ -171,7 +168,7 @@ h4.itemValue{
 .topIcon.true{
     background-color: lightgrey;
     border-bottom: none;
-    border-top: 3px solid rgb(80, 112, 123);
+    border-top: 5px solid #244c5a;
 }
 
 .topIconImage{
@@ -180,10 +177,11 @@ h4.itemValue{
 
 .topIconText{
     color: #7B7B7B;
+    margin-left: 10px;
 }
 
 .topIcon.true .topIconText{
-    color: rgb(80, 112, 123);
+    color: #244c5a;
 }
 
 .optionIcon img {
@@ -202,6 +200,12 @@ h4.itemValue{
     float: left;
     font-size: smaller;
     position: relative;
+    white-space: initial;
+}
+
+.listMenu{
+    position: absolute;
+    bottom: 5px;
 }
 
 .topMenuItem.finalItem{
@@ -222,30 +226,6 @@ h4.itemValue{
     width:35px;
     height:35px;
 
-}
-
-.topIconImage.menu{
-    background: url('../../../assets/menuOptions.png') 0 0;
-}
-
-.topIconImage.history{
-    background: url('../../../assets/menuOptions.png') 35px 0;
-}
-
-.topIconImage.favourite{
-    background: url('../../../assets/menuOptions.png') 70px 0;
-}
-
-.topIcon.true .topIconImage.menu{
-    background: url('../../../assets/menuOptions.png') 0 -35px;
-}
-
-.topIcon.true .topIconImage.history{
-    background: url('../../../assets/menuOptions.png') 35px -35px;
-}
-
-.topIcon.true .topIconImage.favourite{
-    background: url('../../../assets/menuOptions.png') 70px -35px;
 }
 
 .subTopMenuItem{
@@ -327,4 +307,9 @@ h4.itemValue{
     position: absolute;
     width: 100%;
     height: 70px;
+}
+
+.x-scroll{
+    height: 100%;
+    white-space: nowrap;
 }

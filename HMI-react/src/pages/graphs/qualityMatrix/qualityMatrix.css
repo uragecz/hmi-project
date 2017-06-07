@@ -1,0 +1,180 @@
+#qmGraph{
+    float: right;
+    position: relative;
+}
+
+.switchLabel{
+    margin-right: 20px;
+}
+
+.center{
+    float: left;
+    display: flex;
+}
+
+.optionCaption{
+    font-weight: 600;
+    padding-left: 5px;
+    height: 30px;
+    display: flex;
+    width: 100%;
+    background-color: #e2ea66;
+    color: black;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.optionSwitch-item{
+    float: left;
+    padding: 5px 5px 5px 10px;
+    display: flex;
+    color: white;
+    border-top: 1px solid #bdc9ce;
+    width: 100%
+}
+
+.optionSwitch-item.radioButtons{
+    display: grid;
+}
+
+.customRadioButton{
+    display: grid;
+}
+
+.optionSwitch{
+    width: 100%;
+    background-color: #7c949c;
+    float: left;
+}
+
+.radioInput-label{
+    height: 50px;
+    display: flex;
+}
+
+.item-caption{
+    margin: 0 30px 0 5px;
+    float: left;
+}
+
+.optionName{
+    background-color: #bdc9ce;
+    color: black;
+    padding-left: 5px;
+    border-right: 1px solid #7c949c;
+    height: 30px;
+    display: flex;
+}
+
+.switch{
+    margin: 0;
+    overflow: hidden;
+    margin-bottom: 5px;
+    height: 60px;
+}
+
+.hamburger{
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    right: 5px;
+    display: none
+}
+
+.blackScreen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:99;
+    background-color: black;
+}
+
+.customCheckbox input[type="checkbox"]{
+    visibility: hidden;
+}
+
+.customCheckbox label{
+    height: 28px;
+    width: 28px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    background-color: white;
+}
+
+.customCheckbox label:before{
+    content: '';
+    width: 12px;
+    height: 6px;
+    border: 4px solid #244c5a;
+    position: absolute;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    left: 7px;
+    top: 8px;
+    opacity: 0;
+}
+
+.customCheckbox input[type="checkbox"]:checked + label:before{
+    opacity: 1;
+}
+.customCheckbox input[type="checkbox"]:checked + label{
+    background-color: white;
+}
+
+.customCheckbox{
+    height: 30px;
+    width: 30px;
+    background-color: #ddd;
+    position: relative;
+}
+
+.switch span{
+    margin-left: 10px;
+}
+
+.radioInput{
+    height: 18px;
+    width: 18px;
+    margin: 0;
+}
+
+.option-item-caption{
+    margin: 0 10px 0 10px;
+}
+
+.customRadioButton input[type="radio"]{
+    display: none;
+}
+
+.customRadioButton input[type="radio"] + label{
+    position: relative;
+    padding-left: 35px;
+    padding-right: 15px;
+    line-height: 25px;
+}
+
+.customRadioButton input[type="radio"] + label:before{
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+}
+
+.customRadioButton input[type="radio"]:checked + label:after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #244c5a;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 17px;
+}

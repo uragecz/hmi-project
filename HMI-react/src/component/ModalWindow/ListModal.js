@@ -19,7 +19,7 @@ var customStyles = {
     },
     content : {
         top                   : '50%',
-        left                  : '80%',
+        left                  : '50%',
         width                 : 'auto',
         height                : 'auto',
         right                 : 'auto',
@@ -42,7 +42,7 @@ class ListModal extends React.Component {
             <div>
                 <Modal
                     isOpen={true}
-                    onRequestClose={onUpdate.bind(this,false)}
+                    onRequestClose={this.closeModal.bind(this)}
                     style={customStyles}>
                     <div className="modal">
                         <div className="modal-content">
@@ -70,6 +70,10 @@ class ListModal extends React.Component {
 
     saveToInput(){
         this.props.editValue(this.state.item);
+    }
+
+    closeModal(e){
+        this.props.onUpdate(false);
     }
 }
 

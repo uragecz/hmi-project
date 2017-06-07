@@ -25,23 +25,24 @@ class Help extends Component {
     render() {
         return (
             <div id="helpPage" className="opacityBoxMenu">
-                <div className="helpItem" id="printOne" onClick={this.printOnePage.bind(this)}>
-                    <img src={printOne} width={100} height={100}/>
+                <div id="helpItems">
+                    <div className="helpItem" id="printOne" onClick={this.printOnePage.bind(this)}>
+                        <img src={printOne} width={'100%'} height={'100%'}/>
+                    </div>
+                    <div className="helpItem" onClick={this.printAllPages.bind(this)}>
+                        <img src={printAll} width={'100%'} height={'100%'}/>
+                    </div>
+                    <div className="helpItem" onClick={this.openManual.bind(this)}>
+                        <img src={information} width={'100%'} height={'100%'}/>
+                    </div>
+                    <div className="helpItem" onClick={this.openLanguages.bind(this)}>
+                        <img src={this.props.languageActiveIcon} width={'100%'} height={'100%'}/>
+                    </div>
+                    {this.state.openLanguages ? <Language openLanguages={this.openLanguages.bind(this)} {...this.props}/> : false }
                 </div>
-                <div className="helpItem" onClick={this.printAllPages.bind(this)}>
-                    <img src={printAll} width={100} height={100}/>
-                </div>
-                <div className="helpItem" onClick={this.openManual.bind(this)}>
-                    <img src={information} width={100} height={100}/>
-                </div>
-                <div className="helpItem" onClick={this.openLanguages.bind(this)}>
-                    <img src={this.props.languageActiveIcon} width={100} height={100}/>
-                </div>
-                {this.state.openLanguages ? <Language openLanguages={this.openLanguages.bind(this)} {...this.props}/> : false }
             </div>
         )
     }
-
     componentDidMount() {
         window.addEventListener('click', this.pageClick, false);
     }
@@ -63,8 +64,8 @@ class Help extends Component {
     }
 
     pageClick(e) {
-        if (e.target.id === 'helpPage')
-            this.props.closeHelpPage();
+        if (e.target.id === 'helpPage' || e.target.id === 'helpItems')
+            this.props.closeHelpPage(false);
     }
 
     printOnePage(){

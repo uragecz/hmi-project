@@ -24,26 +24,24 @@ class Piecing extends Component{
         return(
             <Page>
                 <div className="item column-4">
-                    <div className="item column-2">
-                        <InputList modal={false} name="AS" header={[text.amispin,"",""]} hideDesc={true} multiple={false}
-                                   type={["name1","input1","unit1"]} save={this.saveList} list={this.state.amiSpin} />
+                    <div className="element column-2">
+                        <InputList data={text.amispin} modal={false} name="AS" header={[text.amispin.label,"",""]} multiple={false} type={["name","input1","unit1"]} save={this.saveList} list={this.state.amiSpin} />
                     </div>
-                    <div className="item column-2">
+                    <div className="element column-2">
                         <div className="yellow-row"></div>
                         <div id="piecing-graph1"></div>
                     </div>
                 </div>
                 <div className="item column-4">
-                    <div className="item column-2">
-                        <InputList modal={false} name="SFL" header={[text.silverFeedLength,"","",text.silverFeedSpeed,"",""]} hideDesc={true} multiple={true}
-                                   type={["name1","input1","unit1","input2","unit2","box"]} save={this.saveList} list={this.state.silverFeedLength} />
+                    <div className="element column-2">
+                        <InputList data={text.silverFeedLength} modal={false} name="SFL" header={[text.silverFeedLength.label,"","",text.silverFeedSpeed.label,"",""]} multiple={true}
+                                   type={["name","input1","unit1","input2","unit2","box"]} save={this.saveList} list={this.state.silverFeedLength} />
                     </div>
-                    <div className="item column-2">
+                    <div className="element column-2">
                         <div className="yellow-row"></div>
                         <div id="piecing-graph2"></div>
                     </div>
                 </div>
-
             </Page>
         )
     }

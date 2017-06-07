@@ -1,7 +1,7 @@
 #header{
-    position: absolute;
-    height: 116px;
+    position: fixed;
     width: 100%;
+    z-index: 10;
 }
 
 #keyButton{
@@ -13,6 +13,7 @@
     justify-content: center;
     background-color: #50707b;
     border-left: 2px solid #d3dbde;
+    z-index: 10;
 }
 
 #menuOpenButton{
@@ -24,7 +25,7 @@
     justify-content: center;
     background-color: #244c5a;
     margin-right: 2px;
-    z-index: 2;
+    z-index: 11;
 }
 
 #loginIcon{
@@ -42,18 +43,60 @@
 
 #info{
     position: absolute;
-    right: 125px;
+    right: 0;
     text-align: right;
     top: 74px;
-    height: 42px;
-    display: flex;
-    justify-content: flex-end;
     color: white;
+    z-index: 9;
+    height: 0;
 }
 
 .toolbarArrowLeft.info{
     border-bottom: 42px solid #244c5a;
     margin: 0;
+}
+
+#article-shift{
+    display: -webkit-inline-box;
+    margin-right: 2px;
+    float: left;
+    user-select: none;
+}
+
+#group-others{
+    width: 122px;
+    float: left;
+}
+
+.group-item{
+    height: 39px;
+    background-color: white;
+    color: black;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+
+.group-item.active{
+    background-color: #244c5a;
+    color: white;
+}
+
+.group-item.shift{
+    display: block;
+    height: auto;
+    text-align: center;
+}
+
+.shift-time{
+    width: 100%;
+    font-size: initial;
+}
+
+.shift-time.number{
+    font-size: xx-large;
 }
 
 #infoName{
@@ -66,3 +109,4 @@
     color: black;
     font-weight: 600;
 }
+

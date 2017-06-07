@@ -1,153 +1,142 @@
-/**
- * Created by urunzl on 29.9.2016.
- */
 import React,{Component} from 'react';
-import './Options.css';
-import goBack from '../../../assets/plus.png';
-import goForward from '../../../assets/minus.png';
-import openMenu from '../../../assets/menu.png';
 import NumpadModal from '../ModalWindow/NumpadModal';
 import ListModal from '../ModalWindow/ListModal';
-import selectionStore from '../../stores/selectionStore'
+import selectionStore from '../../stores/selectionStore';
 import selectionActions from '../../actions/selectionActions';
 import Option from './Option';
 
-class Options extends Component{
-    constructor(props){
+//styles and images
+import './Options.css';
+import openMenu from '../../../assets/menu.png';
+
+class Options extends Component {
+    constructor(props) {
         super(props);
         this.state = {
-            xPos : [16, 60, 75, 65],
-            yPos : [100, 160, 165, 180],
-            xRot : [0, 72, 90, 90],
-            yRot : [0, 180, 186, 207],
-            width: 110,
-            prevAngleInRadians: null,
-            previousX: null,
-            previousY: null,
-            unit: parseInt(selectionStore.getActiveUnit(),10),
-            group: selectionStore.getActiveGroup(),
+            unit: parseInt(selectionStore.getUnit(), 10),
+            group: selectionStore.getGroup(),
             shift: selectionStore.getActiveShift(),
             step: selectionStore.getUnitStep(),
             minUnit: selectionStore.getMinUnit(),
             maxUnit: selectionStore.getMaxUnit(),
             shiftList: selectionStore.getShiftList(),
             groupList: selectionStore.getGroupList(),
-            activeType: this.props.options[this.props.options.length - 1],
-            showList: false
+            activeItem: selectionStore.getActiveItem(),
+            showList: false,
+            showOption: false,
+            activeShift: selectionStore.getActiveShift(),
+            openItem: null
         };
         this.handleOpenList = this.handleOpenList.bind(this);
         this.changeValue = this.changeValue.bind(this);
         this.changeActiveOption = this.changeActiveOption.bind(this);
         this.update = this.update.bind(this);
+        this.pageClick = this.pageClick.bind(this);
+        this.openOptions = this.openOptions.bind(this);
+        this.handleChangeValueByOne = this.handleChangeValueByOne.bind(this);
     }
 
-    componentWillReceiveProps(nextProps){
-        this.setState({
-            activeType : nextProps.options[[nextProps.options.length - 1]]
-        })
-    }
-
-    componentWillMount(){
+    componentWillMount() {
         selectionStore.addChangeListener(this.update);
-        let prevAngle = -270 * (Math.PI / 180.0);
-        let prevX = 125 + (this.state.width * Math.cos(prevAngle));
-        let prevY = 125 + (this.state.width * Math.sin(prevAngle));
-        this.setState({
-            prevAngleInRadians : prevAngle,
-            previousX: prevX,
-            previousY: prevY
-        })
     }
 
-    update(){
+    update() {
         this.setState({
-            unit: selectionStore.getActiveUnit(),
-            shift: selectionStore.getActiveShift(),
-            group: selectionStore.getActiveGroup(),
+            unit: selectionStore.getUnit(),
+            shift: selectionStore.getShift(),
+            group: selectionStore.getGroup(),
             shiftList: selectionStore.getShiftList(),
             groupList: selectionStore.getGroupList(),
             step: selectionStore.getUnitStep(),
             minUnit: selectionStore.getMinUnit(),
-            maxUnit: selectionStore.getMaxUnit()
+            maxUnit: selectionStore.getMaxUnit(),
+            activeShift: selectionStore.getActiveShift(),
+            activeItem: selectionStore.getActiveItem()
         });
-
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         selectionStore.removeChangeListener(this.update);
     }
 
-    render(){
-        const {options, data} = this.props;
-        let posAngle = -(180/options.length);
-        let angleInRadians = -(270 + posAngle) * (Math.PI / 180.0);
-        let x = 125 + (this.state.width * Math.cos(angleInRadians));
-        let y = 125 + (this.state.width * Math.sin(angleInRadians));
-        let angle = -posAngle;
-        return(
-            <div className="right panel">
-                <div id="topOptionInfo">
-                    <div className="optionLabel">
-                        GROUP
-                    </div>
-                    <div className="optionValue">
-                        PG1
-                    </div>
-                </div>
-                <div className="optionPanel">
-                    <div className="optionIcon up">
-                        <img className="rightOptionIcons" onClick={this.handleChangeValueByOne.bind(this,'+')} src={goBack}/>
-                    </div>
-                    <div className="optionIcon down">
-                        <img className="rightOptionIcons" onClick={this.handleChangeValueByOne.bind(this,'-')} src={goForward}/>
-                    </div>
-                    <div className="optionCircle">
-                        <svg id="svgOption" className="rightOption" width={252} height={252} >
-                            {options.map(function(item){
-                                posAngle += angle;
-                                return(
-                                    <Option key={item} posAngle={posAngle} width={this.state.width} previousX={this.state.previousX} previousY={this.state.previousY}
-                                        x={x} y={y} xRot={this.state.xRot[options.length-1]} yRot={this.state.yRot[options.length-1]}  xPos={this.state.xPos[options.length-1]}
-                                            yPos={this.state.yPos[options.length-1]} update={this.changeActiveOption} type={item} activeItem={this.state.activeType === item}
-                                            value={item === 'shift' ? this.state.shift : item === 'group' ? this.state.group : this.state.unit}/>
-                                )
-                            },this)}
-                            <g onClick={this.handleOpenList} >
-                                <circle cx="125" cy="125" r="45" stroke="rgba(0,0,0,0.1)" strokeWidth="2" fill="white" />
-                                <image href={openMenu} id="menuButton"  x="100" y="100" height="50px" width="50px"/>
-                            </g>
-                        </svg>
-                    </div>
-                    {this.state.showList ?
-                        (() => {
-                            switch (this.state.activeType) {
-                                case "unit":
-                                    return <NumpadModal onUpdate={this.handleOpenList} min={this.state.minUnit} max={this.state.maxUnit} value={this.state.unit} editValue={this.changeValue}/>;
-                                case "group":
-                                    return <ListModal title={data.option.group} list={this.state.groupList} onUpdate={this.handleOpenList} />;
-                                case "shift":
-                                    return <ListModal title={data.option.shift} list={this.state.shiftList} onUpdate={this.handleOpenList} />;
-                                case "something":
-                                    return false;
-                                default:
-                                    return false;
+    render() {
+        const {options, data, mobile} = this.props;
+        let angle = 270;
+        let optionSize = 180/options.length;
+        return (
+            <div id="shadowBox-option" className={(mobile && this.state.showOption ? "opacityBoxMenu" : false)}>
+                <div className="right panel">
+                    {this.state.showOption  || !mobile ? 
+                        <div id="optionPanel">
+                            {this.state.activeShift ?
+                                <div className="optionIcon down" >
+                                    <svg className="mark bottom left" height="30" width="30" fill="rgba(36, 76, 90, 0.7)" stroke={mobile ? "white" : "rgb(36,76,90)"} strokeWidth="2" onClick={this.handleChangeValueByOne.bind(this, '+',"shift-article")}>
+                                        <path d="M7 15 L23 15" />
+                                        <path d="M15 7 L15 23" />
+                                    </svg>
+                                    <svg className="mark bottom right" height="30" width="30" fill="rgba(36, 76, 90, 0.7)" stroke={mobile ? "white" : "rgb(36,76,90)"} strokeWidth="2" onClick={this.handleChangeValueByOne.bind(this, '-',"shift-article")}>
+                                        <path d="M7 15 L23 15" />
+                                    </svg>
+                                </div>
+                            : false}
+                            <div className="optionCircle">
+                                <svg id="svgOption" className="rightOption" width={252} height={252}>
+                                    {options.map(function (item) {
+                                        let prevAngle = angle;
+                                        angle -= item === this.state.activeItem  ? optionSize + (optionSize / 3) : optionSize - (optionSize / 6);
+                                        return (
+                                            <Option key={item}
+                                                    count={options.length} 
+                                                    changeActive={this.changeActiveOption} type={item}
+                                                    openItem={this.handleOpenList} mobile={mobile}
+                                                    activeItem={item === 'shift' ? this.state.activeShift : item === this.state.activeItem }
+                                                    value={item === 'shift' ? this.state.shift : item === 'group' ? this.state.group : this.state.unit}
+                                                    fromAngle={prevAngle} angle={angle} outerSize={115} center={125}
+                                                    changeValue={this.handleChangeValueByOne}
+                                                    />
+                                        )
+                                    }, this)}
+                                    <circle cx="125" cy="125" r="35" strokeWidth="0" fill={mobile ? "#d7e165" : "#d3dbde"} />
+                                </svg>
+                            </div>
+                            {this.state.showList ?
+                                (() => {
+                                    switch (this.state.openItem) {
+                                        case "unit":
+                                            return <NumpadModal onUpdate={this.handleOpenList} min={this.state.minUnit}
+                                                                max={this.state.maxUnit} value={this.state.unit}
+                                                                editValue={this.changeValue}/>;
+                                        case "group":
+                                            return <ListModal title={data.option.group} list={this.state.groupList}
+                                                              onUpdate={this.handleOpenList}/>;
+                                        case "shift":
+                                            return <ListModal title={data.option.shift} list={this.state.shiftList} 
+                                                              onUpdate={this.handleOpenList}/>;
+                                        case "something":
+                                            return false;
+                                        default:
+                                            return false;
+                                    }
+                                })()
+                                : false
                             }
-                        })()
-                        : false
+                        </div> :
+                        <div id="optionArrow" onClick={this.openOptions.bind(this)}>
+                            <svg width="60px" height="60px">
+                                <circle cx="30" cy="30" r="30" fill="rgba(0, 0, 0, 0.59)"/>
+                                <path d="M40,10 L15,30 L40,50" stroke="white" fill="none" strokeWidth="5"/>
+                            </svg>
+                        </div>
                     }
-                </div>
-                <div id="bottomOptionInfo">
-                    <div className="optionLabel">
-                        ARTICLE
-                    </div>
-                    <div className="optionValue">
-                        <p className="animationText">
-                            Perla a.s. CZ, Bavlna, 22Text, 5,5Tex
-                        </p>
-                    </div>
                 </div>
             </div>
         )
+    }
+
+    openOptions() {
+        this.setState({
+            showOption: true
+        })
     }
 
     changeValue(value){
@@ -158,27 +147,47 @@ class Options extends Component{
     }
 
     changeActiveOption(type) {
+        if(type === "shift")
+            selectionActions.setActiveShift();
+        else
+            selectionActions.setActiveItem(type);
+    }
+
+    handleOpenList(type){
         this.setState({
-            activeType: type,
+            showList: !this.state.showList,
+            openItem: type
         })
     }
 
-    handleOpenList(){
-        this.setState({
-            showList: !this.state.showList
-        })
-    }
-
-    handleChangeValueByOne(operation){
-        if (this.state.activeType === "unit"){
-            let number = operation === '+' ? this.state.unit + this.state.step : this.state.unit - this.state.step;
-            if (number <= this.state.maxUnit && number >= this.state.minUnit)
-                selectionActions.switchUnit(number);
+    handleChangeValueByOne(operation,item){
+        if(item === "group" || item === "unit"){
+            if (this.state.activeItem === "unit"){
+                let number = operation === '+' ? this.state.unit + this.state.step : this.state.unit - this.state.step;
+                if (number <= this.state.maxUnit && number >= this.state.minUnit)
+                    selectionActions.switchUnit(number);
+            }
+            else if (this.state.activeItem === "group")
+                selectionActions.switchGroup();
         }
-        else if (this.state.type === "group")
-            selectionActions.switchGroup();
         else
             selectionActions.switchShift();
+    }
+
+    componentDidMount() {
+        this.props.mobile ? window.addEventListener('click', this.pageClick, false) : false;
+    }
+
+    componentWillUnmount(){
+        this.props.mobile ? window.removeEventListener('click', this.pageClick, false) : false;
+    }
+    
+    pageClick(e) {
+        if (e.target.id === 'shadowBox-option') {
+            this.setState({
+                showOption : false
+            })
+        }
     }
 }
 

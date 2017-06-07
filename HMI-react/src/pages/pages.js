@@ -14,6 +14,12 @@ import QmSettings from './settings/qmSettings/qmSettings';
 import ProductSettings from './settings/productSettings/productSettings';
 import Piecing from './settings/productSettings/piecing/piecing';
 
+//graphs
+import Graphs from './graphs/graph';
+import FaultReport from './graphs/faultReport/faultReport';
+import QualityMatrix from './graphs/qualityMatrix/qualityMatrix';
+
+
 module.exports = {
     QmSettings: QmSettings,
     Home: HomePage,
@@ -23,5 +29,8 @@ module.exports = {
     SubGraphB: SubGraphB,
     ProductSettings: ProductSettings,
     Piecing: Piecing,
-    Settings: Settings
+    Settings: Settings,
+    FaultReport: FaultReport,
+    QualityMatrix: QualityMatrix,
+    Graphs: Graphs
 };

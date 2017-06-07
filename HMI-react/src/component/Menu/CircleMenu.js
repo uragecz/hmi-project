@@ -26,9 +26,8 @@ class CircleMenu extends Component {
                 numberOfChild = (Object.keys(routes[item].children).length);
             }
         });
-
         return (
-                <svg id="menuOpen" className={"menuLevel " + index} width={452} height={452} >
+                <svg style={this.props.css} id="menuOpen" className={"modal-menu menuLevel-" + index} width={452} height={452} >
                     {Object.keys(routes).map(function (item) {
                         counter++;
                         let model = routes[item];
@@ -40,7 +39,6 @@ class CircleMenu extends Component {
                         let previousY = y;
                         x = 225 + width * Math.cos(angleInRadians);
                         y = 225 + width * Math.sin(angleInRadians);
-
                         if (index === 0){
                             return(
                                 <Link key={item} to={model.hash} className="menuLink">
@@ -88,11 +86,15 @@ class CircleMenu extends Component {
         )
     }
 
+    componentWillMount(){
+
+    }
+
     getPositions(len,from,numbs,size){
         let arr = [];
         let half = len/2;
         let num = numbs[from];
-        if ( half === 1){
+        if (half === 1){
             num -= 1;
         }
         //num = num === 1 ? 0 : num;

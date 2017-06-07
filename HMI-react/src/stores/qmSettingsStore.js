@@ -28,53 +28,53 @@ var _store = {
           enable: true
       },
       "S1": {
-          dev:   {value: 50, unit: "%"},
-          len:   {value: 60, unit: "mm"},
+          dev:    {value: 50, unit: "%"},
+          len:    {value: 60, unit: "mm"},
           enable: true
       },
       "S2": {
-          dev:   {value: 55, unit: "%"},
-          len:   {value: 81, unit: "mm"},
+          dev:    {value: 55, unit: "%"},
+          len:    {value: 81, unit: "mm"},
           enable: true
       },
       "S3": {
-          dev:   {value: 150, unit: "%"},
-          len:   {value: 180, unit: "mm"},
+          dev:    {value: 150, unit: "%"},
+          len:    {value: 180, unit: "mm"},
           enable: true
       },
       "S4": {
-          dev:   {value: 190, unit: "%"},
-          len:   {value: 256, unit: "mm"},
+          dev:    {value: 190, unit: "%"},
+          len:    {value: 256, unit: "mm"},
           enable: true
       },
       "L1": {
-          dev:   {value: 100, unit: "%"},
-          len:   {value : 290, unit : "mm"},
+          dev:    {value: 100, unit: "%"},
+          len:    {value : 290, unit : "mm"},
           enable: true
       },
       "L2": {
-          dev:   {value: 96, unit: "%"},
-          len:   {value: 301, unit: "mm"},
+          dev:    {value: 96, unit: "%"},
+          len:    {value: 301, unit: "mm"},
           enable: true
       },
       "L3": {
-          dev:   {value: 60, unit: "%"},
-          len:   {value: 319, unit : "mm"},
+          dev:    {value: 60, unit: "%"},
+          len:    {value: 319, unit : "mm"},
           enable: true
       },
       "T1": {
-          dev:   {value: -15, unit: "%"},
-          len:   {value: 81, unit: "mm"},
+          dev:    {value: -15, unit: "%"},
+          len:    {value: 81, unit: "mm"},
           enable: true
       },
       "T2": {
-          dev:   {value: -26, unit: "%"},
-          len:   {value: 99, unit: "mm"},
+          dev:    {value: -26, unit: "%"},
+          len:    {value: 99, unit: "mm"},
           enable: true
       },
       "T3": {
-          dev:   {value: -29, unit: "%"},
-          len:   {value: 569, unit: "mm"},
+          dev:    {value: -29, unit: "%"},
+          len:    {value: 569, unit: "mm"},
           enable: true
       }
   },
@@ -86,23 +86,23 @@ var _store = {
   },
   y_alarms: {
       "A-NSLT": {
-          count: {value: 0, unit: ""},
-          len: {value: 0, unit: ""},
-          enable: true
+          count:    {value: 0, unit: ""},
+          len:      {value: 0, unit: ""},
+          enable:   true
       },
       "A-SL":{
-          count: {value: 0, unit: ""},
-          len: {value: 0, unit: ""},
-          enable: true
+          count:    {value: 0, unit: ""},
+          len:      {value: 0, unit: ""},
+          enable:   true
       },
       "A-MO":{
-          count: {value: 0, unit: ""},
-          len: {value: 0, unit: ""},
-          enable: true
+          count:    {value: 0, unit: ""},
+          len:      {value: 0, unit: ""},
+          enable:   true
       }
   },
   tech_alarms: {
-      "Ref-A":        {value: 0, unit: "", enable: true}
+      "Ref-A":      {value: 0, unit: "", enable: true}
   },
   sl_c_mo_settings: {
       "SL+": {
