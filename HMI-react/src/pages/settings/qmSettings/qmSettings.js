@@ -3,12 +3,12 @@
  */
 //components
 import React, {Component} from 'react';
-import Print from '../../../component/Graph/Graph';
 import qmSettingsStore from '../../../stores/qmSettingsStore';
 import qmSettingsAction from '../../../actions/qmSettingsAction';
 import Page from '../../../component/Page/Page';
 import InputList from '../../../component/InputList/InputList';
 import LoadingModal from '../../../component/ModalWindow/LoadingModal';
+import Matrix from '../../../component/Matrix/Matrix';
 
 //styles and images
 import './qmSettings.css';
@@ -44,9 +44,9 @@ class QmSettings extends Component {
                         <InputList data={text.nslt} modal={false} name="CHAN" header={["N-S-L-T","%","mm",""]} multiple={true} type={["name","input1","input2","box"]} save={this.saveList} list={this.state.channels} />
                         <InputList data={text.slcmo} modal={false} name="SL" header={["SL-C-MO","%","m",""]} multiple={true} type={["name","input1","input2","box"]} save={this.saveList} list={this.state.SLCMOSettings} />
                     </div>
-                    <div className="element column-3" id="qsGraph" >
+                    <div className={"element column-3" + (this.props.mobile ? "" : " matrix-center")} id="heightMatrix" >
                         {!this.state.done ? <LoadingModal/> : false}
-                        {this.state.done ? <Print scale="qsGraph" channels={this.state.channels} /> : false}
+                        {this.state.done ? <Matrix scale="heightMatrix" mobile={this.props.mobile} channels={this.state.channels} /> : false}
                     </div>
                     <div className="item column-4" >
                         <div className="element column-1">

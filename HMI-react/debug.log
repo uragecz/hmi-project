@@ -1,8 +1,0 @@
-[0402/200757.577:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
-[0402/200757.577:ERROR:exception_snapshot_win.cc(87)] thread ID 10352 not found in process
-[0402/200757.577:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
-[0402/200757.577:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
-[0531/115112.174:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
-[0531/115112.174:ERROR:exception_snapshot_win.cc(87)] thread ID 8468 not found in process
-[0531/115112.174:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
-[0531/115112.174:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)

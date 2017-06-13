@@ -43,7 +43,7 @@
 
 #info{
     position: absolute;
-    right: 0;
+    right: 123px;
     text-align: right;
     top: 74px;
     color: white;
@@ -59,44 +59,7 @@
 #article-shift{
     display: -webkit-inline-box;
     margin-right: 2px;
-    float: left;
     user-select: none;
-}
-
-#group-others{
-    width: 122px;
-    float: left;
-}
-
-.group-item{
-    height: 39px;
-    background-color: white;
-    color: black;
-    margin-bottom: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: xx-large;
-}
-
-.group-item.active{
-    background-color: #244c5a;
-    color: white;
-}
-
-.group-item.shift{
-    display: block;
-    height: auto;
-    text-align: center;
-}
-
-.shift-time{
-    width: 100%;
-    font-size: initial;
-}
-
-.shift-time.number{
-    font-size: xx-large;
 }
 
 #infoName{
@@ -108,5 +71,17 @@
 #label{
     color: black;
     font-weight: 600;
+}
+
+#shift-hamburger{
+    width: 39px;
+    height: 39px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: white
 }
 

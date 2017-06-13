@@ -114,9 +114,13 @@ p{
   float: left;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 720px) {
   .element {
     width: 100% !important;
+  }
+
+  #shift-hamburger{
+    display: none !important;
   }
 
   #article-shift:active {
@@ -192,11 +196,13 @@ p{
     width: 30%;
     display: flex;
     justify-content: center;
+    max-width: 120px;
 
   }
 
   .topMenuItem.active {
       width: 30%;
+      max-width: 120px;
     }
 
   .topMenuItem.active.actual  .subTop{
@@ -228,7 +234,7 @@ p{
   }
 
   .showOf{
-    visibility: hidden;
+    display: none;
   }
 
   .ReactModal__Content {
@@ -345,34 +351,24 @@ p{
 
   .hamburger{
     display: initial !important;
-  }
-/*
-  .optionSwitch{
-     animation-name: runDown;
-     animation-duration: 300ms;
-  }
-*/
-  @keyframes runDown {
-    0% {  transform: translate(0,-100%);}
-    100% {  transform: translate(0,0);}
-  }
-
-   @keyframes runUp {
-    0% {  transform: translate(0, 0);}
-    100% {  transform: translate(0,-100%);}
-  }
-
-  .rollUp{
-    animation-name: runUp;
-    animation-duration: 300ms;
+  } 
+ .rollUp{
     transform: translate(0,-100%);
   }
-
+  .rollUp.settings{
+    display: none;
+  }
   .rollDown{
-    animation-name: runDown;
-    animation-duration: 300ms;
     transform: translate(0,0);
     }
+
+ #matrix{
+        transform-origin: 0px 0px 0px;
+  }
+
+  #option-time{
+    color: white !important;
+  }
 }
 
 

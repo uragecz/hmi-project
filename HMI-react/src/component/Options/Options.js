@@ -7,7 +7,6 @@ import Option from './Option';
 
 //styles and images
 import './Options.css';
-import openMenu from '../../../assets/menu.png';
 
 class Options extends Component {
     constructor(props) {
@@ -15,7 +14,7 @@ class Options extends Component {
         this.state = {
             unit: parseInt(selectionStore.getUnit(), 10),
             group: selectionStore.getGroup(),
-            shift: selectionStore.getActiveShift(),
+            shift: selectionStore.getShift(),
             step: selectionStore.getUnitStep(),
             minUnit: selectionStore.getMinUnit(),
             maxUnit: selectionStore.getMaxUnit(),
@@ -24,7 +23,7 @@ class Options extends Component {
             activeItem: selectionStore.getActiveItem(),
             showList: false,
             showOption: false,
-            activeShift: selectionStore.getActiveShift(),
+            activeShift: selectionStore.isShiftActive(),
             openItem: null
         };
         this.handleOpenList = this.handleOpenList.bind(this);
@@ -50,7 +49,7 @@ class Options extends Component {
             step: selectionStore.getUnitStep(),
             minUnit: selectionStore.getMinUnit(),
             maxUnit: selectionStore.getMaxUnit(),
-            activeShift: selectionStore.getActiveShift(),
+            activeShift: selectionStore.isShiftActive(),
             activeItem: selectionStore.getActiveItem()
         });
     }
@@ -90,7 +89,7 @@ class Options extends Component {
                                                     changeActive={this.changeActiveOption} type={item}
                                                     openItem={this.handleOpenList} mobile={mobile}
                                                     activeItem={item === 'shift' ? this.state.activeShift : item === this.state.activeItem }
-                                                    value={item === 'shift' ? this.state.shift : item === 'group' ? this.state.group : this.state.unit}
+                                                    value={item === 'shift' ? this.state.shiftList[this.state.shift] : item === 'group' ? this.state.groupList[this.state.group] : this.state.unit}
                                                     fromAngle={prevAngle} angle={angle} outerSize={115} center={125}
                                                     changeValue={this.handleChangeValueByOne}
                                                     />
@@ -107,11 +106,11 @@ class Options extends Component {
                                                                 max={this.state.maxUnit} value={this.state.unit}
                                                                 editValue={this.changeValue}/>;
                                         case "group":
-                                            return <ListModal title={data.option.group} list={this.state.groupList}
-                                                              onUpdate={this.handleOpenList}/>;
+                                            return <ListModal type="group" title={data.option.group} list={this.state.groupList}
+                                                              onUpdate={this.handleOpenList} item={this.state.group}/>;
                                         case "shift":
-                                            return <ListModal title={data.option.shift} list={this.state.shiftList} 
-                                                              onUpdate={this.handleOpenList}/>;
+                                            return <ListModal type="shift" title={data.option.shift} list={this.state.shiftList} 
+                                                              onUpdate={this.handleOpenList} item={this.state.shift}/>;
                                         case "something":
                                             return false;
                                         default:
@@ -127,7 +126,12 @@ class Options extends Component {
                                 <path d="M40,10 L15,30 L40,50" stroke="white" fill="none" strokeWidth="5"/>
                             </svg>
                         </div>
-                    }
+                    }{this.state.activeShift ?
+                    <div id="option-time">
+                        {this.state.shiftList[this.state.shift][2]} - {this.state.shiftList[this.state.shift][3]} <br />
+                        {this.state.shiftList[this.state.shift][4]}
+                    </div>
+                    : null}
                 </div>
             </div>
         )
@@ -148,7 +152,7 @@ class Options extends Component {
 
     changeActiveOption(type) {
         if(type === "shift")
-            selectionActions.setActiveShift();
+            selectionActions.setShiftActive();
         else
             selectionActions.setActiveItem(type);
     }
@@ -168,10 +172,10 @@ class Options extends Component {
                     selectionActions.switchUnit(number);
             }
             else if (this.state.activeItem === "group")
-                selectionActions.switchGroup();
+                operation === "+" ? selectionActions.switchGroup(this.state.group+1) : selectionActions.switchGroup(this.state.group-1)
         }
         else
-            selectionActions.switchShift();
+            operation === "+" ?selectionActions.switchShift(this.state.shift+1): selectionActions.switchShift(this.state.shift-1);
     }
 
     componentDidMount() {

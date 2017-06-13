@@ -13,17 +13,7 @@ var _store = {
     error: false
 };
 
-var showMessage = function(message,error){
-    _store.showMessage = true;
-    _store.message = message;
-    _store.error = error;
-    setTimeout(() => hideMessage(), 5000);
-};
 
-var hideMessage = function(){
-    _store.showMessage = false;
-    serverStore.emit(CHANGE_EVENT);
-};
 
 var serverStore = objectAssign({}, EventEmitter.prototype, {
     addChangeListener: function(cb){
@@ -43,6 +33,18 @@ var serverStore = objectAssign({}, EventEmitter.prototype, {
     }
 });
 
+var hideMessage = function(){
+    _store.showMessage = false;
+    serverStore.emit(CHANGE_EVENT);
+};
+
+var showMessage = function(message,error){
+    _store.showMessage = true;
+    _store.message = message;
+    _store.error = error;
+    setTimeout(() => hideMessage(), 5000);
+};
+
 Dispatcher.register(function(payload){
     var action = payload.action;
     switch(action.actionType){
@@ -54,5 +56,7 @@ Dispatcher.register(function(payload){
             return true;
     }
 });
+
+
 
 module.exports = serverStore;

@@ -18,7 +18,7 @@ class App extends Component {
             user: loginStore.getLoggedUser(),
             infoPage: false,
             helpPage: false,
-            mobile: ((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 767
+            mobile: ((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 720
         };
         this.changeLanguage = this.changeLanguage.bind(this);
         this.getLoggedUser = this.getLoggedUser.bind(this);

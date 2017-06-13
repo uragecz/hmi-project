@@ -1,6 +1,7 @@
 /**
  * Created by urunzl on 3.10.2016.
  */
+/* eslint-disable */
 import setGroup from '../../../assets/group.png';
 import setShift from '../../../assets/shift.png';
 import setUnit from '../../../assets/ClearerService.png';
@@ -27,7 +28,7 @@ class Option extends Component{
                     d={"M"+center+"," +center+ " L" +prevX.toFixed(2)+ ", " +prevY.toFixed(2)+ " A"+outerSize+","+outerSize+" 0 0,1 "+x+" "+y+", z"} >
                 </path>
                 <image href={type === 'shift' ? setShift : type === 'group' ? setGroup : setUnit} x={optionsPosition[type][activeItem].imgX[count-1]} y={optionsPosition[type][activeItem].imgY[count-1]}  height="35px" width="35px"/>
-                <text x={optionsPosition[type][activeItem].txtX[count-1]} y={optionsPosition[type][activeItem].txtY[count-1]} fontFamily="Arial" fontSize="16" strokeWidth="0.5" textAnchor="middle" stroke={activeItem? "white" : "black"} fill={activeItem? "white" : "black"}>{type === "shift" ? activeItem ? "2" : "current" : value}
+                <text x={optionsPosition[type][activeItem].txtX[count-1]} y={optionsPosition[type][activeItem].txtY[count-1]} fontFamily="Arial" fontSize="16" strokeWidth="0.5" textAnchor="middle" stroke={activeItem? "white" : "black"} fill={activeItem? "white" : "black"}>{type === "shift" ? activeItem ? value[0] : "current" : value}
                 </text>
                 {type === "shift"? <line x1={(center)+lineWidth} y1={(center)-lineWidth} x2={x-lineWidth} y2={y+lineWidth} stroke={mobile? "#e2ea66" : "#d3dbde"} strokeWidth={"8"} /> : false}
                 {activeItem && type !== "shift" ? 

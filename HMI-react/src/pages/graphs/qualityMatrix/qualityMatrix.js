@@ -3,10 +3,10 @@
  */
 //components
 import React, { Component } from 'react';
-import Print from '../../../component/Graph';
 import Page from '../../../component/Page/Page';
 import QmSettingsStore from '../../../stores/qmSettingsStore';
 import LoadingModal from '../../../component/ModalWindow/LoadingModal';
+import Matrix from "../../../component/Matrix/Matrix";
 
 //styles and images
 import './qualityMatrix.css';
@@ -28,7 +28,6 @@ class QualityMatrix extends Component{
         setTimeout(() => {
             this.setState({done: true});
         }, 200);  //delay this to allow React to actually render the initial state.    
-
     }
 
     render(){
@@ -39,7 +38,6 @@ class QualityMatrix extends Component{
                 height: height
             }
         }
-
         return(
             <Page>
                 <div className="item column-4">
@@ -50,14 +48,14 @@ class QualityMatrix extends Component{
                             </div>
                             <div className="hamburger">
                                 <svg width={30} height={30} strokeWidth={3} stroke='black'>
-                                    <path d="M0,8 L30,8"/>
-                                    <path d="M0,15 L30,15"/>
-                                    <path d="M0,22 L30,22"/>
+                                    <path d="M0,13 L30,13"/>
+                                    <path d="M0,20 L30,20"/>
+                                    <path d="M0,27 L30,27"/>
                                 </svg>
                             </div>
                         </div>
                         {this.state.done ?
-                            <div className={"optionSwitch " + (this.state.openOption ? "rollDown" : this.state.firstClick ? "showOf" : "rollUp")} id="bla" style={!this.props.mobile ? settingStyle : null}>
+                            <div className={"optionSwitch " + (this.state.openOption ? "rollDown" : this.state.firstClick ? "showOf" : "rollUp settings")} id="bla" style={!this.props.mobile ? settingStyle : null}>
                                 <div className="optionSwitch-item radioButtons">
                                     <div className="item-caption">Values :</div>
                                     <div className="customRadioButton">
@@ -91,10 +89,10 @@ class QualityMatrix extends Component{
                             </div>
                             : false}
                     </div>
-                    <div className={"element column-3 " + (this.state.openOption && this.props.mobile ? "rollDown" : !this.state.openOption && this.props.mobile ? "rollUp" : false)} id="qmGraph">
-                    <div id="forScale">
+                    <div className="element column-3" id="heightMatrix">
+                    <div id="forScale" className={!this.props.mobile ? "matrix-center": ""}>
                         {!this.state.done ? <LoadingModal/> : false}
-                        {this.state.done ? <Print scale="forScale" top='50%' mobile={this.props.mobile} channels={this.state.channels} /> : false}
+                        {this.state.done ? <Matrix scale="forScale" mobile={this.props.mobile} channels={this.state.channels} /> : false}
                     </div>
                     </div>
                 </div>

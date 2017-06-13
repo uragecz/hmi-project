@@ -20,7 +20,7 @@ class Rect extends React.Component {
 
   render() {
     if (this.state.clicked) {
-      return (<div></div>);
+      return (null);
     }else
       return (null);
   }
@@ -46,7 +46,6 @@ class Rect extends React.Component {
         width: this.props.width,
         stroke: 'black',
         fill: 'rgba(0, 0, 0, 0)',
-        selectable: false
       });
       this.text1= new fabric.Text(this.props.QM_Rem.toString(), {
         fontSize: 15,
@@ -63,7 +62,8 @@ class Rect extends React.Component {
         left: this.props.x + 50,
         top: this.props.y,
         lockMovementX: true,
-        lockMovementY: true
+        lockMovementY: true,
+        selectable: false
       });
       this.group.on('mouseup', () => {
         this.setState({
@@ -71,9 +71,12 @@ class Rect extends React.Component {
         })
       });
       this.state.canvas.add(this.group);
+       /*
       this.state.canvas.forEachObject(function (o) {
         o.hasControls = false;
       });
+      */
+      
     }else{
       this.rect= new fabric.Rect({
         height: this.props.height,
@@ -354,7 +357,7 @@ class Grid extends React.Component {
 
     return (
       <div>
-        <Rect canvas={this.state.canvas} x={0} y={0} width={840} height={550} select={0} id={null}
+          <Rect canvas={this.state.canvas} x={0} y={0} width={840} height={550} select={0} id={null}
               QM_Dec={0} QM_Rem={0}/>
         <Rect canvas={this.state.canvas} x={0} y={300} width={560} height={100} select={0} id={null}
               QM_Dec={0} QM_Rem={0}/>
@@ -480,6 +483,7 @@ class Graph extends React.Component {
 
   componentWillUnmount(){
     graphActions.stopLoadValue();
+    console.log(this.props.canvas.getObjects().length);
   }
 }
 Graph.propTypes = {
@@ -519,6 +523,7 @@ class Print extends React.Component {
       }
       canWidth.toFixed(3);
       let newHeight = canWidth * 560;
+      console.log(canWidth);
       graphContainer.style.height = newHeight + 'px';
       graphContainer.style.transform = 'scale('+canWidth+')';
       graphContainer.style.transformOrigin = '100% '+origY+'';
@@ -528,9 +533,9 @@ class Print extends React.Component {
     return (
       <div id="graph-container">
         <canvas className="canvas" ref="canvas" id="contextCanvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT}/>
-        <div>
+       
           {this.state.canvas !== null ? <Graph canvas={this.state.canvas} channels={this.props.channels}/> : false}
-        </div>
+        
       </div>
     )
   }

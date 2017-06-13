@@ -7,6 +7,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import List from '../List/List';
 import './ModalWindow.css'
+import selectionActions from '../../actions/selectionActions';
 
 var customStyles = {
     overlay : {
@@ -21,6 +22,7 @@ var customStyles = {
         top                   : '50%',
         left                  : '50%',
         width                 : 'auto',
+        minWidth            : "30%",
         height                : 'auto',
         right                 : 'auto',
         bottom                : 'auto',
@@ -32,7 +34,7 @@ class ListModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            item: null
+            index: this.props.item
         };
     };
 
@@ -46,11 +48,11 @@ class ListModal extends React.Component {
                     style={customStyles}>
                     <div className="modal">
                         <div className="modal-content">
-                            <List {...others}/>
+                            <List {...others} updateIndex={this.updateIndex.bind(this)} />
                         </div>
                         <div className="bottom-buttons">
                             <img className="close-modal" onClick={onUpdate.bind(this,false)} src="../../assets/cancel-button.png"/>
-                            <img className="save-modal" onClick={this.saveToInput.bind(this,this.state.item)} src="../../assets/ok-button.png"/>
+                            <img className="save-modal" onClick={this.saveNewActive.bind(this,this.state.item)} src="../../assets/ok-button.png"/>
                         </div>
                     </div>
                 </Modal>
@@ -68,8 +70,18 @@ class ListModal extends React.Component {
         })
     }
 
-    saveToInput(){
-        this.props.editValue(this.state.item);
+    updateIndex(num){
+        this.setState({
+            index: num
+        })
+    }
+
+    saveNewActive(){
+        if (this.props.type === "shift")
+            selectionActions.switchShift(this.state.index);
+        else
+            selectionActions.switchGroup(this.state.index);
+        this.props.onUpdate(false);
     }
 
     closeModal(e){

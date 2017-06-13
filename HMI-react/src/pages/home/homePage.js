@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import Page from '../../component/Page/Page'
+import Matrix from '../../component/Matrix/Matrix.js';
 
 
 class HomePage extends React.Component {
@@ -11,8 +12,8 @@ class HomePage extends React.Component {
             <Page>
                 <div className="layout horizontal-big start">
                     <div className="layout vertical third-column">
-                        <div className="layout vertical start">
-                            <h1>haha</h1>
+                        <div id="matrixScale" className="layout vertical start">
+                            <Matrix scale="matrixScale"/>
                         </div>
                     </div>
                 </div>

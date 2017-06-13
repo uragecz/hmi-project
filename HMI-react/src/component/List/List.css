@@ -5,11 +5,28 @@
     background-color: rgb(226,234,102);
     padding: 5px;
 }
-
 .modalTitle{
     margin: 0;
 }
-
 .listItems{
     margin-top: 10px;
+}
+.option-listItems {
+    width: 100%;
+}
+.option-listItems .shift{
+    text-align: right;
+    padding: 10px;
+    border-bottom: 0.5px solid #f1f1f1;
+}
+.option-listItem{
+    height: 30px;
+}
+.option-listItem.active{
+    background-color: #bdc9ce;
+}
+.option-listItems .group{
+    text-align: center;
+    border-bottom: 0.5px solid #f1f1f1;
+    padding: 10px;
 }

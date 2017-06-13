@@ -9,39 +9,50 @@ var EventEmitter = require('events').EventEmitter;
 var CHANGE_EVENT = 'change';
 
 var _store = {
-    group: "PG1",
+    isShiftActive: true,
+    group: 0,
     unit: 1,
-    shift: "current",
+    shift: 0,
+    article: 0,
     minUnit: 0,
     maxUnit: 30,
     unitStep: 1,
-    shiftList: {},
-    groupList: {},
     activeItem: 'group',
-    activeShift: true
+    groupList: ["PB1","PB2","PB3"],
+    shiftList:[["1","Smena1","7:00","15:30","27.7"],["2","Smena2","15:30","21:30","27.7"]],
+    articleList:["Perla a.s CZ, Bavlna, 22Text, 5,5Tex", "Article2 CZ UNO","Article3 EN UNO"]
 };
 
 var setActiveItem = function(item){
     _store.activeItem = item;
 };
-var setActiveShift = function(){
-    _store.activeShift = !_store.activeShift;
+var setShiftActive= function(){
+    _store.isShiftActive = !_store.isShiftActive;
 };
+
 var setGroup = function(group){
-    _store.group = group;
+   _store.group = group < 0 || group >= _store.groupList.length ? _store.group : group;
 };
 var setUnit = function(unit){
     _store.unit = unit;
 };
-var setShift = function(current){
-    _store.shift = current;
+var setShift = function(shift){
+    _store.shift = shift < 0 || shift >= _store.shiftList.length ? _store.shift : shift
 };
+var setArticle = function(article){
+    _store.article = article < 0 || article >= _store.articleList.length ? _store.article : article;
+};
+
 var setShiftList = function(shiftList){
     _store.shiftList = shiftList;
 };
 var setGroupList = function(groupList){
     _store.groupList = groupList;
 };
+var setArticleList = function(articleList){
+    _store.articleList = articleList;
+};
+
 var setMaxUnit = function(max){
     _store.maxUnit = max;
 };
@@ -59,15 +70,6 @@ var selectionStore = objectAssign({}, EventEmitter.prototype, {
     removeChangeListener: function(cb){
         this.removeListener(CHANGE_EVENT, cb);
     },
-    getGroup: function(){
-        return _store.group;
-    },
-    getUnit: function(){
-        return _store.unit;
-    },
-    getShift: function(){
-        return _store.shift;
-    },
     getMaxUnit: function(){
         return _store.maxUnit;
     },
@@ -77,17 +79,35 @@ var selectionStore = objectAssign({}, EventEmitter.prototype, {
     getUnitStep: function(){
         return _store.unitStep;
     },
+
     getGroupList: function(){
         return _store.groupList;
+    },
+     getArticleList: function(){
+        return _store.articleList;
     },
     getShiftList: function(){
         return _store.shiftList;
     },
+
+    getShift: function () {
+        return _store.shift;
+    },
+    getArticle: function(){
+        return _store.article;
+    },
+    getGroup: function(){
+        return _store.group;
+    },
+    getUnit: function(){
+        return _store.unit;
+    },
+
     getActiveItem: function () {
         return _store.activeItem;
     },
-    getActiveShift: function () {
-        return _store.activeShift;
+    isShiftActive: function(){
+        return _store.isShiftActive;
     }
 });
 
@@ -106,6 +126,10 @@ Dispatcher.register(function(payload){
             setUnit(action.data);
             selectionStore.emit(CHANGE_EVENT);
             break;
+        case selectionConstants.SWITCH_ARTICLE:
+            setArticle(action.data);
+            selectionStore.emit(CHANGE_EVENT);
+            break;
         case selectionConstants.SET_GROUPS:
             setGroupList(action.data);
             setMaxUnit(action.data.maxUnit);
@@ -121,8 +145,8 @@ Dispatcher.register(function(payload){
             setActiveItem(action.data);
             selectionStore.emit(CHANGE_EVENT);
             break;
-        case selectionConstants.SET_ACTIVE_SHIFT:
-            setActiveShift();
+        case selectionConstants.SET_SHIFT_ACTIVE:
+            setShiftActive();
             selectionStore.emit(CHANGE_EVENT);
             break;
         default:

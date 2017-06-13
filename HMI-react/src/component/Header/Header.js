@@ -28,9 +28,8 @@ class Header extends Component{
         this.state = {
             showMenu : false,
             showLogin: false,
-            unit: selectionStore.getUnit(),
             activeItem: selectionStore.getActiveItem(),
-            activeShift: selectionStore.getActiveShift()
+           
         };
         this.pageClick = this.pageClick.bind(this);
         this.update = this.update.bind(this);
@@ -68,32 +67,12 @@ class Header extends Component{
                 <div id="info">
                     <div id="article-shift">
                         <div id="infoName"><p className="scrollAnim">Perla a.s. CZ, Bavlna, 22Text, 5,5Tex</p></div>
-                    </div>
-                    <div id="group-others">
-                        <div className ={"group-item " + (this.state.activeItem === "group" ? "active" : "false" )}>
-                            PG1
-                        </div>
-                        <div className={"group-item " + (this.state.activeItem === "unit" ? "active" : "false")}>
-                            {this.state.unit}
-                        </div>
-                        <div className={"group-item shift " + (this.state.activeShift ? "active" : "false")}>
-                            {!this.state.activeShift ? 
-                                <div id="shift-number">
-                                    current
-                                </div>
-                            :
-                                <div>
-                                    <div className="shift-time from">
-                                        26.3
-                                    </div>
-                                    <div id="shift-number">
-                                        2
-                                    </div>
-                                    <div className="shift-time to">
-                                        6:00 - 14:30
-                                    </div>
-                                </div>
-                            }
+                        <div id="shift-hamburger">
+                            <svg width="12" height="12" stroke="#244c5a" stroke-width="2">
+                                <path d="M0,2 L12,2"></path>
+                                <path d="M0,6 L12,6"></path>
+                                <path d="M0,10 L12,10"></path>
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -154,10 +133,8 @@ class Header extends Component{
 
     update() {
         this.setState({
-            unit: selectionStore.getUnit(),
             activeItem: selectionStore.getActiveItem(),
-            activeShift: selectionStore.getActiveShift()
-        });
+           });
     }
 
     componentWillMount() {

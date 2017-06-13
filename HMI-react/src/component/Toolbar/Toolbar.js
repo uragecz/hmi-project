@@ -41,7 +41,7 @@ class Toolbar extends Component{
     update(){
         this.setState({
             openTabs : tabsStore.getOpenTabs(),
-            activeTab: tabsStore.getActiveTab()
+            activeTab : tabsStore.getActiveTab()
         });
     }
 
@@ -54,10 +54,10 @@ class Toolbar extends Component{
                     counter++;
                     let active = counter === this.state.activeTab;
                     return(
-                        <div onClick={this.handleChangeActiveTab.bind(this,counter)} key={counter} className={"toolbarItem " + (active ? "true" : false)}>
+                        <div onClick={this.handleChangeActiveTab.bind(this,counter)} key={counter} className={"toolbarItem " + (active ? "true" : false)}> 
                             <div className="toolbarText">
                                 <Link key={item.name} to={active? actualPage.hash : item.hash} className="toolbarLink">
-                                    {active? actualPage.value + " " + actualPage.names[this.props.lang] : item.value + " " +item.names[this.props.lang]}
+                                    {active ? actualPage.value + " " + actualPage.names[this.props.lang] : item.value + " " +item.names[this.props.lang]}
                                 </Link>
                                 <div className="closeTab" onClick={this.handleCloseTab.bind(this,counter)}>x</div>
                             </div>

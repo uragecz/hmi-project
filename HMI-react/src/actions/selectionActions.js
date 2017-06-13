@@ -8,6 +8,7 @@ import serverActions from './serverActions';
 
 var shiftURL = "";
 var groupURL = "";
+var articleURL = "";
 
 var selectionActions = {
     switchUnit: function(unit){
@@ -23,6 +24,14 @@ var selectionActions = {
             data: group
         });
     },
+
+     switchArticle: function(article){
+        Dispatcher.handleAction({
+            actionType: selectionConstants.SWITCH_ARTICLE,
+            data: article
+        });
+    },
+
 
     switchShift: function(shift){
         Dispatcher.handleAction({
@@ -51,6 +60,16 @@ var selectionActions = {
         }
     },
 
+    getActicleList: function(){
+        let obj = serverActions.getData(articleURL);
+        if(obj){
+            Dispatcher.handleAction({
+                actionType: selectionConstants.SET_GROUPS,
+                data: obj
+            });
+        }
+    },
+
     setActiveItem: function(data){
         Dispatcher.handleAction({
             actionType: selectionConstants.SET_ACTIVE_ITEM,
@@ -58,9 +77,9 @@ var selectionActions = {
         });
     },
 
-    setActiveShift: function () {
+    setShiftActive: function () {
         Dispatcher.handleAction({
-            actionType: selectionConstants.SET_ACTIVE_SHIFT,
+            actionType: selectionConstants.SET_SHIFT_ACTIVE,
         });
     }
 };
