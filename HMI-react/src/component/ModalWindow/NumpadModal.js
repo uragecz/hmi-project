@@ -17,7 +17,8 @@ var customStyles = {
         left              : 0,
         right             : 0,
         bottom            : 0,
-        backgroundColor   : 'none'
+        backgroundColor   : 'none',
+        zIndex            : 20
     },
     content : {
         top                   : '50%',

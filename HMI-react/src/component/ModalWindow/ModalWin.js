@@ -18,7 +18,12 @@ var customStyles = {
         bottom                : 'auto',
         transform             : 'translate(-50%, -50%)',
         maxHeight             : '100%'
+    },
+     overlay : {
+        zIndex          : 10,
+        background: "rgba(0, 0, 0, 0.7)"
     }
+
 };
 
 class ModalWin extends React.Component {
