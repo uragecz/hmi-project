@@ -1,3 +1,4 @@
-HMI-react/node_modules/*
-HMI-react/build/*
 .idea/
+.vscode/
+build/
+node_modules/
