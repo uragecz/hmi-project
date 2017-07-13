@@ -16,6 +16,10 @@ var customStyles = {
         transform             : 'translate(-50%, -50%)',
         background            : 'transparent',
         border                : 'none'
+     },
+     overlay: {
+         zIndex: "10",
+         background: "rgba(0, 0, 0, 0.75)"
      }
 };
 
@@ -25,6 +29,7 @@ class ModalWin extends React.Component {
             <div>
                 <Modal
                     isOpen={true}
+                    contentLabel="Modal"
                     style={customStyles}>
                     <div className="modal">
                         <div className="modal-content">

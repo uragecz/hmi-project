@@ -36,6 +36,7 @@ class ModalHelp extends React.Component {
                 <Modal
                     isOpen={true}
                     onRequestClose={update.bind(this,false)}
+                    contentLabel="Modal"
                     style={customStyles}>
                     <div className="modal">
                         <div className="modal-content">
