@@ -48,6 +48,7 @@ class NumpadModal extends React.Component {
                     className="numpadModal"
                     isOpen={true}
                     onRequestClose={onUpdate.bind(this,false)}
+                    contentLabel="Modal"
                     style={customStyles}>
                     <div className="modal">
                         <div className="modal-content">

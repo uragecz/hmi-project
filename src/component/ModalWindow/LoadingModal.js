@@ -29,6 +29,7 @@ class ModalWin extends React.Component {
             <div>
                 <Modal
                     isOpen={true}
+                    contentLabel="Modal"
                     style={customStyles}>
                     <div className="modal">
                         <div className="modal-content">

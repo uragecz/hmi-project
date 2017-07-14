@@ -45,6 +45,7 @@ class ListModal extends React.Component {
                 <Modal
                     isOpen={true}
                     onRequestClose={this.closeModal.bind(this)}
+                    contentLabel="Modal"
                     style={customStyles}>
                     <div className="modal">
                         <div className="modal-content">

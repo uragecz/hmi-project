@@ -10,7 +10,7 @@ class Axis extends Component {
         let y = 4;
         for (let i = 0; i< xAxis.length; i++){
             x += 70;
-            xArr.push(<text x={x} y={-15} fontSize={"normal"} textAnchor="middle">{xAxis[i]}</text>)
+            xArr.push(<text key={'i'+i} x={x} y={-15} fontSize={"normal"} textAnchor="middle">{xAxis[i]}</text>)
             if (i > 3)
                 xArr.push(<text key={i} x={x} y={578} fontSize={"normal"} textAnchor="middle">{xAxis[i]}</text>)
         }
